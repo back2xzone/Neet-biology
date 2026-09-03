@@ -78,8 +78,13 @@ function show(id){
  document.querySelectorAll(".screen")
  .forEach(x=>x.classList.remove("active"));
 
- document.getElementById(id)
- .classList.add("active");
+ const screen=document.getElementById(id);
+
+ if(screen){
+
+   screen.classList.add("active");
+
+ }
 
  window.scrollTo(0,0);
 
@@ -120,9 +125,53 @@ function openClass(cls){
 
 function backToChapters(){
 
+ stopTimer();
+
  renderChapters();
 
  show("chapters");
+
+}
+
+
+/*
+  Used by the Results screen.
+
+  The old code called showChapter()
+  but the function did not exist.
+  That is why the button did nothing.
+*/
+
+function showChapter(){
+
+ stopTimer();
+
+ if(!currentChapter){
+
+   home();
+
+   return;
+
+ }
+
+ const chapter=
+ CHAPTERS[currentClass].find(
+   c=>c[2]===currentChapter
+ );
+
+ if(!chapter){
+
+   home();
+
+   return;
+
+ }
+
+ openChapter(
+   chapter[2],
+   chapter[1],
+   chapter[0]
+ );
 
 }
 
@@ -184,6 +233,8 @@ function renderChapters(){
 
 
 function openChapter(id,name,num){
+
+ stopTimer();
 
  currentChapter=id;
 
@@ -288,6 +339,8 @@ function startChapterPractice(){
 
 function startTimer(){
 
+ stopTimer();
+
  quizStart=Date.now();
 
  timerInterval=setInterval(()=>{
@@ -336,6 +389,14 @@ function renderQuestion(){
  stopTimer();
 
  const q=quiz[quizIndex];
+
+ if(!q){
+
+   showResults();
+
+   return;
+
+ }
 
  document.getElementById("quizMeta").textContent=
  `Question ${quizIndex+1} of ${quiz.length} • ${q.topic}`;
@@ -517,13 +578,17 @@ function exitQuiz(){
 
 function showResults(){
 
+ stopTimer();
+
  const totalTime=
  questionTimes.reduce((a,b)=>a+b,0);
 
  const accuracy=
- Math.round(
- quizScore/quiz.length*100
- );
+ quiz.length
+ ?Math.round(
+   quizScore/quiz.length*100
+ )
+ :0;
 
 
  document.getElementById("resultScore").textContent=
@@ -536,9 +601,11 @@ function showResults(){
  formatDuration(totalTime);
 
  document.getElementById("resultAvg").textContent=
- formatSeconds(
- Math.round(totalTime/quiz.length)
- );
+ quiz.length
+ ?formatSeconds(
+   Math.round(totalTime/quiz.length)
+ )
+ :"—";
 
 
  document.getElementById("resultTitle").textContent=
@@ -627,18 +694,6 @@ function updateDashboard(){
 
 
  renderWeakTopics();
-
-}
-
-
-function getAccuracy(arr){
-
- if(!arr.length)return "—";
-
- return Math.round(
-   arr.filter(x=>x.correct).length
-   /arr.length*100
- )+"%";
 
 }
 
