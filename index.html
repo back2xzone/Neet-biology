@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEET Biology • Respiration</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#101828;color:white;padding:20px;position:sticky;top:0;z-index:5}
+h1{margin:0;font-size:23px}
+.sub{color:#b9c3d0;font-size:13px;margin-top:4px}
+.bar{height:5px;background:#344054;border-radius:5px;margin-top:15px}
+.fill{height:100%;width:0;background:#a5b4fc;border-radius:5px}
+main{max-width:760px;margin:auto;padding:16px}
+.card{background:white;border:1px solid #e4e7ec;border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 3px 12px #1018280d}
+.hero h2{font-size:27px;margin:0 0 8px}
+p{line-height:1.5;color:#667085}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:white;border:1px solid #e4e7ec;border-radius:15px;padding:15px}
+.stat b{font-size:24px;display:block}
+.stat small{color:#667085}
+button,select{font:inherit}
+button{cursor:pointer}
+.primary{width:100%;padding:14px;border:0;border-radius:13px;background:#4f46e5;color:white;font-weight:700}
+.secondary{padding:11px 14px;border:1px solid #d0d5dd;border-radius:12px;background:white}
+select{width:100%;padding:13px;border:1px solid #d0d5dd;border-radius:12px;background:white;margin:7px 0 14px}
+label{font-size:13px;font-weight:700}
+.screen{display:none}
+.screen.active{display:block}
+.meta{font-size:12px;color:#667085;font-weight:700;margin-bottom:10px}
+.source{display:inline-block;background:#eef2ff;color:#4338ca;border-radius:20px;padding:5px 9px;font-size:11px;font-weight:700;margin-bottom:12px}
+.question{font-size:20px;font-weight:750;line-height:1.4;margin-bottom:15px}
+.option{width:100%;text-align:left;background:white;border:1.5px solid #e4e7ec;border-radius:13px;padding:14px;margin:6px 0;display:flex;gap:10px}
+.letter{width:27px;height:27px;border-radius:50%;background:#f2f4f7;display:grid;place-items:center;font-weight:700;flex:none}
+.option.correct{background:#ecfdf3;border-color:#12b76a}
+.option.wrong{background:#fef3f2;border-color:#f04438}
+.feedback{margin-top:14px;padding:14px;border-radius:13px;line-height:1.5}
+.good{background:#ecfdf3;color:#05603a}
+.bad{background:#fef3f2;color:#912018}
+.explain{background:#f8fafc;border:1px solid #e4e7ec;padding:14px;border-radius:13px;margin-top:9px;line-height:1.5}
+.actions{display:flex;gap:9px;margin-top:15px}
+.actions button{flex:1}
+.note{font-size:12px}
+</style>
+</head>
+
+<body>
+<header>
+<h1>Respiration in Plants</h1>
+<div class="sub">NEET Biology • NCERT-first practice</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
+</header>
+
+<main>
+
+<section id="home" class="screen active">
+<div class="card hero">
+<h2>Respiration Practice</h2>
+<p>Understand the mechanism. Recall the NCERT details. Then test whether your brain actually kept them.</p>
+</div>
+
+<div class="stats">
+<div class="stat"><b id="attempted">0</b><small>Attempted</small></div>
+<div class="stat"><b id="accuracy">0%</b><small>Accuracy</small></div>
+<div class="stat"><b id="correct">0</b><small>Correct</small></div>
+<div class="stat"><b id="wrong">0</b><small>Wrong</small></div>
+</div>
+
+<div class="card">
+<label>Practice mode</label>
+<select id="mode">
+<option value="all">All questions</option>
+<option value="exemplar">NCERT Exemplar</option>
+<option value="concept">NCERT application</option>
+<option value="wrong">Wrong questions</option>
+</select>
+
+<label>Number of questions</label>
+<select id="num">
+<option>10</option>
+<option>15</option>
+<option>17</option>
+</select>
+
+<button class="primary" onclick="start()">Start Practice</button>
+</div>
+
+<div class="card">
+<b>How to use this</b>
+<p class="note">Answer before looking at the explanation. Wrong questions are remembered on this device. Use "Wrong questions" to attack weak spots later.</p>
+</div>
+</section>
+
+<section id="quiz" class="screen">
+<div class="card">
+<div class="meta" id="meta"></div>
+<div class="source" id="source"></div>
+<div class="question" id="q"></div>
+<div id="opts"></div>
+<div id="feedback"></div>
+
+<div class="actions">
+<button class="secondary" onclick="home()">Exit</button>
+<button class="primary" id="next" onclick="next()" style="display:none">Next</button>
+</div>
+</div>
+</section>
+
+<section id="result" class="screen">
+<div class="card hero">
+<h2 id="resultTitle"></h2>
+<p id="resultText"></p>
+</div>
+
+<div class="stats">
+<div class="stat"><b id="rscore"></b><small>Score</small></div>
+<div class="stat"><b id="racc"></b><small>Accuracy</small></div>
+</div>
+
+<div class="card">
+<button class="primary" onclick="wrongSet()">Redo Wrong Questions</button>
+<br><br>
+<button class="secondary" style="width:100%" onclick="home()">Back Home</button>
+</div>
+</section>
+
+</main>
+
+<script>
+const Q=[
+{
+s:"NCERT Exemplar",
+t:"ETS",
+q:"The ultimate electron acceptor of respiration in an aerobic organism is:",
+o:["Cytochrome","Oxygen","Hydrogen","Glucose"],
+a:1,
+e:"Oxygen acts as the final electron/hydrogen acceptor at the terminal stage of aerobic respiration and is reduced to water."
+},
+{
+s:"NCERT Exemplar",
+t:"Glycolysis",
+q:"Phosphorylation of glucose during glycolysis is catalysed by:",
+o:["Phosphoglucomutase","Phosphoglucoisomerase","Hexokinase","Phosphorylase"],
+a:2,
+e:"Hexokinase catalyses phosphorylation of glucose to glucose-6-phosphate."
+},
+{
+s:"NCERT Exemplar",
+t:"Pyruvate",
+q:"Under aerobic conditions pyruvate is converted into:",
+o:["Lactic acid","Ethanol","Acetyl-CoA + CO₂","Glucose"],
+a:2,
+e:"Pyruvate undergoes oxidative decarboxylation to form acetyl-CoA, releasing CO₂ and producing NADH."
+},
+{
+s:"NCERT Exemplar",
+t:"ETS",
+q:"Electron Transport System is located in the mitochondrial:",
+o:["Outer membrane","Intermembrane space","Inner membrane","Matrix"],
+a:2,
+e:"The components of the electron transport system are located on the inner mitochondrial membrane."
+},
+{
+s:"NCERT Exemplar",
+t:"Plant respiration",
+q:"Which generally exhibits a very high rate of respiration?",
+o:["A dry seed","A germinating seed","A dead leaf","A mature woody stem"],
+a:1,
+e:"Germinating seeds have intense metabolic activity and therefore a high respiratory rate."
+},
+{
+s:"NCERT Exemplar",
+t:"Concept",
+q:"Which statement is correct?",
+o:[
+"Pyruvate is formed in mitochondria.",
+"Fermentation involves complete oxidation of glucose.",
+"Oxygen is vital as the terminal electron/hydrogen acceptor.",
+"Glycolysis occurs only when oxygen is present."
+],
+a:2,
+e:"Glycolysis occurs in the cytoplasm and can occur without oxygen. Fermentation is incomplete oxidation. Oxygen accepts electrons/hydrogen at the terminal stage of aerobic respiration."
+},
+{
+s:"NCERT Exemplar",
+t:"Mitochondria",
+q:"The 'powerhouse' description of mitochondria is primarily related to their ability to:",
+o:["Synthesise ATP","Store DNA","Make ribosomes","Digest proteins"],
+a:0,
+e:"Mitochondria are major sites of aerobic respiration and ATP generation."
+},
+{
+s:"NCERT Exemplar",
+t:"Oxidative phosphorylation",
+q:"Oxidative phosphorylation refers to:",
+o:[
+"Formation of glucose using ATP",
+"ATP formation coupled to oxidation of reduced coenzymes through ETS",
+"Breakdown of ATP",
+"Conversion of pyruvate to lactate"
+],
+a:1,
+e:"Oxidative phosphorylation couples electron transfer through the respiratory chain with ATP synthesis."
+},
+{
+s:"NCERT Exemplar",
+t:"Glycolysis",
+q:"One molecule of glucose entering glycolysis produces:",
+o:["One pyruvate","Two pyruvates","Three pyruvates","Six pyruvates"],
+a:1,
+e:"The six-carbon glucose molecule is split into two three-carbon pyruvate molecules."
+},
+{
+s:"NCERT Exemplar",
+t:"Krebs cycle",
+q:"Which reaction involves substrate-level phosphorylation in the TCA cycle?",
+o:[
+"Citrate → Isocitrate",
+"Succinate → Fumarate",
+"Succinyl-CoA → Succinate",
+"Malate → Oxaloacetate"
+],
+a:2,
+e:"Conversion of succinyl-CoA to succinate produces GTP. GTP can subsequently form ATP."
+},
+{
+s:"NCERT application",
+t:"Glycolysis",
+q:"Why can glycolysis occur in cells without mitochondria?",
+o:[
+"It occurs in the cytoplasm.",
+"It occurs in the nucleus.",
+"It requires chloroplasts.",
+"It requires the mitochondrial matrix."
+],
+a:0,
+e:"Glycolysis takes place in the cytoplasm, so it does not require mitochondria."
+},
+{
+s:"NCERT application",
+t:"RQ",
+q:"The respiratory quotient for carbohydrates is generally:",
+o:["0.7","0.9","1.0","2.0"],
+a:2,
+e:"For carbohydrates, the volume of CO₂ evolved equals the volume of O₂ consumed, giving RQ = 1."
+},
+{
+s:"NCERT application",
+t:"RQ",
+q:"The respiratory quotient of fats is generally:",
+o:["Less than 1","Exactly 1","Greater than 2","Infinite"],
+a:0,
+e:"Fats generally have an RQ below 1. NCERT gives about 0.7 for tripalmitin."
+},
+{
+s:"NCERT application",
+t:"Amphibolic",
+q:"The respiratory pathway is called amphibolic because it:",
+o:[
+"Occurs only anaerobically",
+"Participates in both catabolic and anabolic processes",
+"Produces only CO₂",
+"Occurs only in mitochondria"
+],
+a:1,
+e:"Respiratory intermediates can be used for breakdown to release energy and can also be withdrawn as precursors for biosynthesis."
+},
+{
+s:"NCERT application",
+t:"Chemiosmosis",
+q:"In mitochondrial ATP synthase, the F₀ component primarily:",
+o:[
+"Acts as the proton channel",
+"Carries oxygen",
+"Produces glucose",
+"Breaks down pyruvate"
+],
+a:0,
+e:"F₀ forms the membrane channel through which protons move. F₁ contains the catalytic portion associated with ATP synthesis."
+},
+{
+s:"NCERT application",
+t:"Balance sheet",
+q:"The theoretical net ATP gain per glucose given in the NCERT balance sheet is:",
+o:["2","18","36","38"],
+a:3,
+e:"NCERT presents 38 ATP as the theoretical net gain under the stated assumptions, while noting that these assumptions are not completely valid in living systems."
+},
+{
+s:"NCERT application",
+t:"Respiration",
+q:"Why is respiration described as an amphibolic pathway rather than simply a catabolic pathway?",
+o:[
+"Respiratory intermediates also serve as substrates for biosynthetic pathways.",
+"It occurs only in animals.",
+"It never produces ATP.",
+"It only synthesises carbohydrates."
+],
+a:0,
+e:"Respiratory intermediates are not merely breakdown products. They can be diverted into pathways for synthesis of other biomolecules."
+}
+];
+
+let quiz=[],i=0,score=0,answered=false,wrongRun=[];
+let state=JSON.parse(localStorage.getItem("respirationNEET")||'{"attempted":{},"wrong":[]}');
+
+function save(){
+localStorage.setItem("respirationNEET",JSON.stringify(state));
+stats();
+}
+
+function stats(){
+let ids=Object.keys(state.attempted);
+let c=ids.filter(x=>state.attempted[x]).length;
+document.getElementById("attempted").textContent=ids.length;
+document.getElementById("correct").textContent=c;
+document.getElementById("wrong").textContent=ids.length-c;
+document.getElementById("accuracy").textContent=(ids.length?Math.round(c/ids.length*100):0)+"%";
+}
+
+function show(x){
+document.querySelectorAll(".screen").forEach(e=>e.classList.remove("active"));
+document.getElementById(x).classList.add("active");
+scrollTo(0,0);
+}
+
+function home(){
+show("home");
+document.getElementById("fill").style.width="0";
+stats();
+}
+
+function start(){
+let mode=document.getElementById("mode").value;
+let pool=Q.filter(x=>{
+if(mode=="all")return true;
+if(mode=="exemplar")return x.s=="NCERT Exemplar";
+if(mode=="concept")return x.s=="NCERT application";
+if(mode=="wrong")return state.wrong.includes(Q.indexOf(x)+1);
+});
+pool.sort(()=>Math.random()-.5);
+let n=Math.min(+document.getElementById("num").value,pool.length);
+quiz=pool.slice(0,n);
+i=0;score=0;wrongRun=[];
+show("quiz");
+render();
+}
+
+function render(){
+answered=false;
+let x=quiz[i];
+document.getElementById("meta").textContent=`Question ${i+1} of ${quiz.length} • ${x.t}`;
+document.getElementById("source").textContent=x.s;
+document.getElementById("q").textContent=x.q;
+document.getElementById("opts").innerHTML=x.o.map((o,j)=>
+`<button class="option" onclick="answer(${j})" id="o${j}">
+<span class="letter">${String.fromCharCode(65+j)}</span><span>${o}</span>
+</button>`).join("");
+document.getElementById("feedback").innerHTML="";
+document.getElementById("next").style.display="none";
+document.getElementById("fill").style.width=(i/quiz.length*100)+"%";
+}
+
+function answer(n){
+if(answered)return;
+answered=true;
+let x=quiz[i],ok=n==x.a;
+if(ok)score++;
+else{
+let id=Q.indexOf(x)+1;
+if(!state.wrong.includes(id))state.wrong.push(id);
+wrongRun.push(x);
+}
+state.attempted[Q.indexOf(x)+1]=ok;
+document.querySelectorAll(".option").forEach((b,j)=>{
+b.style.pointerEvents="none";
+if(j==x.a)b.classList.add("correct");
+if(j==n&&n!=x.a)b.classList.add("wrong");
+});
+document.getElementById("feedback").innerHTML=
+`<div class="feedback ${ok?"good":"bad"}"><b>${ok?"Correct":"Incorrect"}</b><br>${ok?"Good recall.":"Correct answer: "+String.fromCharCode(65+x.a)}</div>
+<div class="explain"><b>Why:</b> ${x.e}</div>`;
+document.getElementById("next").style.display="block";
+document.getElementById("next").textContent=i==quiz.length-1?"See Results":"Next";
+save();
+}
+
+function next(){
+if(i<quiz.length-1){i++;render()}
+else results();
+}
+
+function results(){
+document.getElementById("fill").style.width="100%";
+let a=Math.round(score/quiz.length*100);
+document.getElementById("rscore").textContent=score+"/"+quiz.length;
+document.getElementById("racc").textContent=a+"%";
+document.getElementById("resultTitle").textContent=a>=85?"Strong performance.":"Diagnostic complete.";
+document.getElementById("resultText").textContent=
+a>=85?"Your recall is holding up. Now protect it with spaced revision."
+:"The score is useful only because it shows where to revise. Redo the wrong questions, then return to the NCERT section behind them.";
+show("result");
+}
+
+function wrongSet(){
+document.getElementById("mode").value="wrong";
+document.getElementById("num").value="10";
+start();
+}
+
+stats();
+</script>
+</body>
+</html>
