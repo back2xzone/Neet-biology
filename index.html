@@ -1,415 +1,1446 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NEET Biology • Respiration</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101828">
+
+<title>NEET Biology</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{background:#101828;color:white;padding:20px;position:sticky;top:0;z-index:5}
-h1{margin:0;font-size:23px}
-.sub{color:#b9c3d0;font-size:13px;margin-top:4px}
-.bar{height:5px;background:#344054;border-radius:5px;margin-top:15px}
-.fill{height:100%;width:0;background:#a5b4fc;border-radius:5px}
-main{max-width:760px;margin:auto;padding:16px}
-.card{background:white;border:1px solid #e4e7ec;border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 3px 12px #1018280d}
-.hero h2{font-size:27px;margin:0 0 8px}
-p{line-height:1.5;color:#667085}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat{background:white;border:1px solid #e4e7ec;border-radius:15px;padding:15px}
-.stat b{font-size:24px;display:block}
-.stat small{color:#667085}
-button,select{font:inherit}
-button{cursor:pointer}
-.primary{width:100%;padding:14px;border:0;border-radius:13px;background:#4f46e5;color:white;font-weight:700}
-.secondary{padding:11px 14px;border:1px solid #d0d5dd;border-radius:12px;background:white}
-select{width:100%;padding:13px;border:1px solid #d0d5dd;border-radius:12px;background:white;margin:7px 0 14px}
-label{font-size:13px;font-weight:700}
-.screen{display:none}
-.screen.active{display:block}
-.meta{font-size:12px;color:#667085;font-weight:700;margin-bottom:10px}
-.source{display:inline-block;background:#eef2ff;color:#4338ca;border-radius:20px;padding:5px 9px;font-size:11px;font-weight:700;margin-bottom:12px}
-.question{font-size:20px;font-weight:750;line-height:1.4;margin-bottom:15px}
-.option{width:100%;text-align:left;background:white;border:1.5px solid #e4e7ec;border-radius:13px;padding:14px;margin:6px 0;display:flex;gap:10px}
-.letter{width:27px;height:27px;border-radius:50%;background:#f2f4f7;display:grid;place-items:center;font-weight:700;flex:none}
-.option.correct{background:#ecfdf3;border-color:#12b76a}
-.option.wrong{background:#fef3f2;border-color:#f04438}
-.feedback{margin-top:14px;padding:14px;border-radius:13px;line-height:1.5}
-.good{background:#ecfdf3;color:#05603a}
-.bad{background:#fef3f2;color:#912018}
-.explain{background:#f8fafc;border:1px solid #e4e7ec;padding:14px;border-radius:13px;margin-top:9px;line-height:1.5}
-.actions{display:flex;gap:9px;margin-top:15px}
-.actions button{flex:1}
-.note{font-size:12px}
+
+body{
+  margin:0;
+  background:#f5f7fb;
+  color:#172033;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+header{
+  background:#101828;
+  color:white;
+  padding:22px 18px 18px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.header{
+  max-width:850px;
+  margin:auto;
+}
+
+h1{
+  margin:0;
+  font-size:26px;
+}
+
+.subtitle{
+  color:#b9c3d0;
+  font-size:13px;
+  margin-top:4px;
+}
+
+main{
+  max-width:850px;
+  margin:auto;
+  padding:18px;
+}
+
+.screen{
+  display:none;
+}
+
+.screen.active{
+  display:block;
+}
+
+.card{
+  background:white;
+  border:1px solid #e4e7ec;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 3px 12px rgba(16,24,40,.05);
+}
+
+.hero{
+  padding:22px;
+}
+
+.hero h2{
+  margin:0 0 8px;
+  font-size:28px;
+}
+
+p{
+  color:#667085;
+  line-height:1.5;
+}
+
+.section-title{
+  font-size:15px;
+  font-weight:800;
+  margin:22px 0 10px;
+}
+
+.class-card{
+  background:white;
+  border:1px solid #e4e7ec;
+  border-radius:17px;
+  padding:18px;
+  margin-bottom:12px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.class-card:active{
+  transform:scale(.99);
+}
+
+.class-card h3{
+  margin:0 0 4px;
+  font-size:18px;
+}
+
+.class-card p{
+  margin:0;
+  font-size:12px;
+}
+
+.arrow{
+  font-size:22px;
+  color:#98a2b3;
+}
+
+.chapter-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+.chapter{
+  background:white;
+  border:1px solid #e4e7ec;
+  border-radius:15px;
+  padding:16px;
+  cursor:pointer;
+}
+
+.chapter:active{
+  transform:scale(.99);
+}
+
+.chapter-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.chapter h3{
+  margin:0;
+  font-size:16px;
+  line-height:1.3;
+}
+
+.number{
+  color:#667085;
+  font-size:12px;
+  font-weight:700;
+}
+
+.count{
+  margin-top:9px;
+  font-size:12px;
+  color:#667085;
+}
+
+.count.ready{
+  color:#067647;
+  font-weight:700;
+}
+
+.back{
+  margin-bottom:14px;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.secondary{
+  padding:10px 14px;
+  border:1px solid #d0d5dd;
+  border-radius:11px;
+  background:white;
+  color:#172033;
+}
+
+.primary{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:13px;
+  background:#4f46e5;
+  color:white;
+  font-weight:750;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.stat{
+  background:white;
+  border:1px solid #e4e7ec;
+  border-radius:15px;
+  padding:15px;
+}
+
+.stat b{
+  display:block;
+  font-size:23px;
+}
+
+.stat small{
+  color:#667085;
+}
+
+.mode{
+  margin-top:15px;
+}
+
+select{
+  width:100%;
+  padding:13px;
+  border:1px solid #d0d5dd;
+  border-radius:12px;
+  background:white;
+  margin:7px 0 14px;
+}
+
+label{
+  font-size:13px;
+  font-weight:750;
+}
+
+.meta{
+  font-size:12px;
+  color:#667085;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.source{
+  display:inline-block;
+  background:#eef2ff;
+  color:#4338ca;
+  border-radius:20px;
+  padding:5px 9px;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.question{
+  font-size:20px;
+  font-weight:750;
+  line-height:1.4;
+  margin-bottom:15px;
+}
+
+.option{
+  width:100%;
+  text-align:left;
+  background:white;
+  border:1.5px solid #e4e7ec;
+  border-radius:13px;
+  padding:14px;
+  margin:6px 0;
+  display:flex;
+  gap:10px;
+}
+
+.letter{
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  background:#f2f4f7;
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  flex:none;
+}
+
+.option.correct{
+  background:#ecfdf3;
+  border-color:#12b76a;
+}
+
+.option.wrong{
+  background:#fef3f2;
+  border-color:#f04438;
+}
+
+.feedback{
+  margin-top:14px;
+  padding:14px;
+  border-radius:13px;
+  line-height:1.5;
+}
+
+.good{
+  background:#ecfdf3;
+  color:#05603a;
+}
+
+.bad{
+  background:#fef3f2;
+  color:#912018;
+}
+
+.explain{
+  background:#f8fafc;
+  border:1px solid #e4e7ec;
+  padding:14px;
+  border-radius:13px;
+  margin-top:9px;
+  line-height:1.5;
+}
+
+.actions{
+  display:flex;
+  gap:9px;
+  margin-top:15px;
+}
+
+.actions button{
+  flex:1;
+}
+
+.note{
+  font-size:12px;
+}
+
+.empty{
+  text-align:center;
+  padding:30px 15px;
+  color:#667085;
+}
+
+@media(min-width:650px){
+  .chapter-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
 </style>
 </head>
 
 <body>
+
 <header>
-<h1>Respiration in Plants</h1>
-<div class="sub">NEET Biology • NCERT-first practice</div>
-<div class="bar"><div class="fill" id="fill"></div></div>
+  <div class="header">
+    <h1>NEET Biology</h1>
+    <div class="subtitle">NCERT-first • Practice • Track • Improve</div>
+  </div>
 </header>
 
 <main>
 
+<!-- HOME -->
+
 <section id="home" class="screen active">
-<div class="card hero">
-<h2>Respiration Practice</h2>
-<p>Understand the mechanism. Recall the NCERT details. Then test whether your brain actually kept them.</p>
-</div>
 
-<div class="stats">
-<div class="stat"><b id="attempted">0</b><small>Attempted</small></div>
-<div class="stat"><b id="accuracy">0%</b><small>Accuracy</small></div>
-<div class="stat"><b id="correct">0</b><small>Correct</small></div>
-<div class="stat"><b id="wrong">0</b><small>Wrong</small></div>
-</div>
+  <div class="card hero">
+    <h2>Your Biology Practice System</h2>
+    <p>
+      Choose your class, pick a chapter, and practice.
+      Your progress is stored on this device.
+    </p>
+  </div>
 
-<div class="card">
-<label>Practice mode</label>
-<select id="mode">
-<option value="all">All questions</option>
-<option value="exemplar">NCERT Exemplar</option>
-<option value="concept">NCERT application</option>
-<option value="wrong">Wrong questions</option>
-</select>
+  <div class="stats">
+    <div class="stat">
+      <b id="totalQuestions">17</b>
+      <small>Questions available</small>
+    </div>
 
-<label>Number of questions</label>
-<select id="num">
-<option>10</option>
-<option>15</option>
-<option>17</option>
-</select>
+    <div class="stat">
+      <b id="attempted">0</b>
+      <small>Attempted</small>
+    </div>
 
-<button class="primary" onclick="start()">Start Practice</button>
-</div>
+    <div class="stat">
+      <b id="accuracy">0%</b>
+      <small>Accuracy</small>
+    </div>
 
-<div class="card">
-<b>How to use this</b>
-<p class="note">Answer before looking at the explanation. Wrong questions are remembered on this device. Use "Wrong questions" to attack weak spots later.</p>
-</div>
+    <div class="stat">
+      <b id="wrong">0</b>
+      <small>Wrong</small>
+    </div>
+  </div>
+
+  <div class="section-title">Choose your class</div>
+
+  <div class="class-card" onclick="openClass(11)">
+    <div>
+      <h3>Class 11 Biology</h3>
+      <p>19 chapters</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="class-card" onclick="openClass(12)">
+    <div>
+      <h3>Class 12 Biology</h3>
+      <p>13 chapters</p>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
 </section>
+
+
+<!-- CHAPTERS -->
+
+<section id="chapters" class="screen">
+
+  <button class="secondary back" onclick="home()">← Home</button>
+
+  <div class="card">
+    <h2 id="classTitle" style="margin:0"></h2>
+    <p id="classSubtitle"></p>
+  </div>
+
+  <div id="chapterList" class="chapter-grid"></div>
+
+</section>
+
+
+<!-- CHAPTER DASHBOARD -->
+
+<section id="chapter" class="screen">
+
+  <button class="secondary back" onclick="backToChapters()">← Chapters</button>
+
+  <div class="card hero">
+    <h2 id="chapterTitle"></h2>
+    <p id="chapterDescription"></p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <b id="chapterQuestions">0</b>
+      <small>Questions</small>
+    </div>
+
+    <div class="stat">
+      <b id="chapterAccuracy">—</b>
+      <small>Accuracy</small>
+    </div>
+  </div>
+
+  <div class="card mode">
+
+    <label>Practice mode</label>
+
+    <select id="practiceMode">
+      <option value="all">All available questions</option>
+      <option value="ncert">NCERT</option>
+      <option value="exemplar">NCERT Exemplar</option>
+      <option value="pyq">NEET PYQs</option>
+      <option value="wrong">Wrong questions</option>
+    </select>
+
+    <label>Number of questions</label>
+
+    <select id="questionCount">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+      <option value="all">All available</option>
+    </select>
+
+    <button class="primary" onclick="startChapterPractice()">
+      Start Practice
+    </button>
+
+  </div>
+
+  <div class="card">
+    <b>Chapter status</b>
+    <p id="chapterStatus" class="note"></p>
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
 
 <section id="quiz" class="screen">
-<div class="card">
-<div class="meta" id="meta"></div>
-<div class="source" id="source"></div>
-<div class="question" id="q"></div>
-<div id="opts"></div>
-<div id="feedback"></div>
 
-<div class="actions">
-<button class="secondary" onclick="home()">Exit</button>
-<button class="primary" id="next" onclick="next()" style="display:none">Next</button>
-</div>
-</div>
+  <div class="card">
+
+    <div id="quizMeta" class="meta"></div>
+
+    <div id="quizSource" class="source"></div>
+
+    <div id="quizQuestion" class="question"></div>
+
+    <div id="quizOptions"></div>
+
+    <div id="quizFeedback"></div>
+
+    <div class="actions">
+
+      <button class="secondary" onclick="exitQuiz()">
+        Exit
+      </button>
+
+      <button
+        id="nextButton"
+        class="primary"
+        onclick="nextQuestion()"
+        style="display:none">
+        Next
+      </button>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section id="result" class="screen">
-<div class="card hero">
-<h2 id="resultTitle"></h2>
-<p id="resultText"></p>
-</div>
 
-<div class="stats">
-<div class="stat"><b id="rscore"></b><small>Score</small></div>
-<div class="stat"><b id="racc"></b><small>Accuracy</small></div>
-</div>
+<!-- RESULTS -->
 
-<div class="card">
-<button class="primary" onclick="wrongSet()">Redo Wrong Questions</button>
-<br><br>
-<button class="secondary" style="width:100%" onclick="home()">Back Home</button>
-</div>
+<section id="results" class="screen">
+
+  <div class="card hero">
+
+    <h2 id="resultTitle"></h2>
+
+    <p id="resultText"></p>
+
+  </div>
+
+  <div class="stats">
+
+    <div class="stat">
+      <b id="resultScore"></b>
+      <small>Score</small>
+    </div>
+
+    <div class="stat">
+      <b id="resultAccuracy"></b>
+      <small>Accuracy</small>
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <button class="primary" onclick="redoWrong()">
+      Redo Wrong Questions
+    </button>
+
+    <br><br>
+
+    <button
+      class="secondary"
+      style="width:100%"
+      onclick="showChapter()">
+      Back to Chapter
+    </button>
+
+  </div>
+
 </section>
 
 </main>
 
+
 <script>
-const Q=[
+
+/* =========================================================
+   QUESTION DATABASE
+
+   Eventually this will be moved into separate chapter files.
+   For now Respiration is our first populated chapter.
+========================================================= */
+
+const QUESTIONS = [
+
 {
-s:"NCERT Exemplar",
-t:"ETS",
-q:"The ultimate electron acceptor of respiration in an aerobic organism is:",
-o:["Cytochrome","Oxygen","Hydrogen","Glucose"],
-a:1,
-e:"Oxygen acts as the final electron/hydrogen acceptor at the terminal stage of aerobic respiration and is reduced to water."
+ id:"resp-001",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"ETS",
+ question:"The ultimate electron acceptor of respiration in an aerobic organism is:",
+ options:[
+   "Cytochrome",
+   "Oxygen",
+   "Hydrogen",
+   "Glucose"
+ ],
+ answer:1,
+ explanation:"Oxygen acts as the final electron/hydrogen acceptor at the terminal stage of aerobic respiration and is reduced to water."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Glycolysis",
-q:"Phosphorylation of glucose during glycolysis is catalysed by:",
-o:["Phosphoglucomutase","Phosphoglucoisomerase","Hexokinase","Phosphorylase"],
-a:2,
-e:"Hexokinase catalyses phosphorylation of glucose to glucose-6-phosphate."
+ id:"resp-002",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Glycolysis",
+ question:"Phosphorylation of glucose during glycolysis is catalysed by:",
+ options:[
+   "Phosphoglucomutase",
+   "Phosphoglucoisomerase",
+   "Hexokinase",
+   "Phosphorylase"
+ ],
+ answer:2,
+ explanation:"Hexokinase catalyses phosphorylation of glucose to glucose-6-phosphate."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Pyruvate",
-q:"Under aerobic conditions pyruvate is converted into:",
-o:["Lactic acid","Ethanol","Acetyl-CoA + CO₂","Glucose"],
-a:2,
-e:"Pyruvate undergoes oxidative decarboxylation to form acetyl-CoA, releasing CO₂ and producing NADH."
+ id:"resp-003",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Pyruvate",
+ question:"Under aerobic conditions pyruvate is converted into:",
+ options:[
+   "Lactic acid",
+   "Ethanol",
+   "Acetyl-CoA + CO₂",
+   "Glucose"
+ ],
+ answer:2,
+ explanation:"Pyruvate undergoes oxidative decarboxylation to form acetyl-CoA, releasing CO₂ and producing NADH."
 },
+
 {
-s:"NCERT Exemplar",
-t:"ETS",
-q:"Electron Transport System is located in the mitochondrial:",
-o:["Outer membrane","Intermembrane space","Inner membrane","Matrix"],
-a:2,
-e:"The components of the electron transport system are located on the inner mitochondrial membrane."
+ id:"resp-004",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"ETS",
+ question:"Electron Transport System is located in the mitochondrial:",
+ options:[
+   "Outer membrane",
+   "Intermembrane space",
+   "Inner membrane",
+   "Matrix"
+ ],
+ answer:2,
+ explanation:"The components of the electron transport system are located on the inner mitochondrial membrane."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Plant respiration",
-q:"Which generally exhibits a very high rate of respiration?",
-o:["A dry seed","A germinating seed","A dead leaf","A mature woody stem"],
-a:1,
-e:"Germinating seeds have intense metabolic activity and therefore a high respiratory rate."
+ id:"resp-005",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Plant respiration",
+ question:"Which generally exhibits a very high rate of respiration?",
+ options:[
+   "A dry seed",
+   "A germinating seed",
+   "A dead leaf",
+   "A mature woody stem"
+ ],
+ answer:1,
+ explanation:"Germinating seeds have intense metabolic activity and therefore a high respiratory rate."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Concept",
-q:"Which statement is correct?",
-o:[
-"Pyruvate is formed in mitochondria.",
-"Fermentation involves complete oxidation of glucose.",
-"Oxygen is vital as the terminal electron/hydrogen acceptor.",
-"Glycolysis occurs only when oxygen is present."
-],
-a:2,
-e:"Glycolysis occurs in the cytoplasm and can occur without oxygen. Fermentation is incomplete oxidation. Oxygen accepts electrons/hydrogen at the terminal stage of aerobic respiration."
+ id:"resp-006",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Concept",
+ question:"Which statement is correct?",
+ options:[
+   "Pyruvate is formed in mitochondria.",
+   "Fermentation involves complete oxidation of glucose.",
+   "Oxygen is vital as the terminal electron/hydrogen acceptor.",
+   "Glycolysis occurs only when oxygen is present."
+ ],
+ answer:2,
+ explanation:"Glycolysis occurs in the cytoplasm and can occur without oxygen. Fermentation is incomplete oxidation. Oxygen accepts electrons/hydrogen at the terminal stage of aerobic respiration."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Mitochondria",
-q:"The 'powerhouse' description of mitochondria is primarily related to their ability to:",
-o:["Synthesise ATP","Store DNA","Make ribosomes","Digest proteins"],
-a:0,
-e:"Mitochondria are major sites of aerobic respiration and ATP generation."
+ id:"resp-007",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Mitochondria",
+ question:"The 'powerhouse' description of mitochondria is primarily related to their ability to:",
+ options:[
+   "Synthesise ATP",
+   "Store DNA",
+   "Make ribosomes",
+   "Digest proteins"
+ ],
+ answer:0,
+ explanation:"Mitochondria are major sites of aerobic respiration and ATP generation."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Oxidative phosphorylation",
-q:"Oxidative phosphorylation refers to:",
-o:[
-"Formation of glucose using ATP",
-"ATP formation coupled to oxidation of reduced coenzymes through ETS",
-"Breakdown of ATP",
-"Conversion of pyruvate to lactate"
-],
-a:1,
-e:"Oxidative phosphorylation couples electron transfer through the respiratory chain with ATP synthesis."
+ id:"resp-008",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Oxidative phosphorylation",
+ question:"Oxidative phosphorylation refers to:",
+ options:[
+   "Formation of glucose using ATP",
+   "ATP formation coupled to oxidation of reduced coenzymes through ETS",
+   "Breakdown of ATP",
+   "Conversion of pyruvate to lactate"
+ ],
+ answer:1,
+ explanation:"Oxidative phosphorylation couples electron transfer through the respiratory chain with ATP synthesis."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Glycolysis",
-q:"One molecule of glucose entering glycolysis produces:",
-o:["One pyruvate","Two pyruvates","Three pyruvates","Six pyruvates"],
-a:1,
-e:"The six-carbon glucose molecule is split into two three-carbon pyruvate molecules."
+ id:"resp-009",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Glycolysis",
+ question:"One molecule of glucose entering glycolysis produces:",
+ options:[
+   "One pyruvate",
+   "Two pyruvates",
+   "Three pyruvates",
+   "Six pyruvates"
+ ],
+ answer:1,
+ explanation:"The six-carbon glucose molecule is split into two three-carbon pyruvate molecules."
 },
+
 {
-s:"NCERT Exemplar",
-t:"Krebs cycle",
-q:"Which reaction involves substrate-level phosphorylation in the TCA cycle?",
-o:[
-"Citrate → Isocitrate",
-"Succinate → Fumarate",
-"Succinyl-CoA → Succinate",
-"Malate → Oxaloacetate"
-],
-a:2,
-e:"Conversion of succinyl-CoA to succinate produces GTP. GTP can subsequently form ATP."
+ id:"resp-010",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT Exemplar",
+ topic:"Krebs cycle",
+ question:"Which reaction involves substrate-level phosphorylation in the TCA cycle?",
+ options:[
+   "Citrate → Isocitrate",
+   "Succinate → Fumarate",
+   "Succinyl-CoA → Succinate",
+   "Malate → Oxaloacetate"
+ ],
+ answer:2,
+ explanation:"Conversion of succinyl-CoA to succinate produces GTP. GTP can subsequently form ATP."
 },
+
 {
-s:"NCERT application",
-t:"Glycolysis",
-q:"Why can glycolysis occur in cells without mitochondria?",
-o:[
-"It occurs in the cytoplasm.",
-"It occurs in the nucleus.",
-"It requires chloroplasts.",
-"It requires the mitochondrial matrix."
-],
-a:0,
-e:"Glycolysis takes place in the cytoplasm, so it does not require mitochondria."
+ id:"resp-011",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"Glycolysis",
+ question:"Why can glycolysis occur in cells without mitochondria?",
+ options:[
+   "It occurs in the cytoplasm.",
+   "It occurs in the nucleus.",
+   "It requires chloroplasts.",
+   "It requires the mitochondrial matrix."
+ ],
+ answer:0,
+ explanation:"Glycolysis takes place in the cytoplasm, so it does not require mitochondria."
 },
+
 {
-s:"NCERT application",
-t:"RQ",
-q:"The respiratory quotient for carbohydrates is generally:",
-o:["0.7","0.9","1.0","2.0"],
-a:2,
-e:"For carbohydrates, the volume of CO₂ evolved equals the volume of O₂ consumed, giving RQ = 1."
+ id:"resp-012",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"RQ",
+ question:"The respiratory quotient for carbohydrates is generally:",
+ options:[
+   "0.7",
+   "0.9",
+   "1.0",
+   "2.0"
+ ],
+ answer:2,
+ explanation:"For carbohydrates, the volume of CO₂ evolved equals the volume of O₂ consumed, giving RQ = 1."
 },
+
 {
-s:"NCERT application",
-t:"RQ",
-q:"The respiratory quotient of fats is generally:",
-o:["Less than 1","Exactly 1","Greater than 2","Infinite"],
-a:0,
-e:"Fats generally have an RQ below 1. NCERT gives about 0.7 for tripalmitin."
+ id:"resp-013",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"RQ",
+ question:"The respiratory quotient of fats is generally:",
+ options:[
+   "Less than 1",
+   "Exactly 1",
+   "Greater than 2",
+   "Infinite"
+ ],
+ answer:0,
+ explanation:"Fats generally have an RQ below 1. NCERT gives about 0.7 for tripalmitin."
 },
+
 {
-s:"NCERT application",
-t:"Amphibolic",
-q:"The respiratory pathway is called amphibolic because it:",
-o:[
-"Occurs only anaerobically",
-"Participates in both catabolic and anabolic processes",
-"Produces only CO₂",
-"Occurs only in mitochondria"
-],
-a:1,
-e:"Respiratory intermediates can be used for breakdown to release energy and can also be withdrawn as precursors for biosynthesis."
+ id:"resp-014",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"Amphibolic",
+ question:"The respiratory pathway is called amphibolic because it:",
+ options:[
+   "Occurs only anaerobically",
+   "Participates in both catabolic and anabolic processes",
+   "Produces only CO₂",
+   "Occurs only in mitochondria"
+ ],
+ answer:1,
+ explanation:"Respiratory intermediates can be used for breakdown to release energy and can also be withdrawn as precursors for biosynthesis."
 },
+
 {
-s:"NCERT application",
-t:"Chemiosmosis",
-q:"In mitochondrial ATP synthase, the F₀ component primarily:",
-o:[
-"Acts as the proton channel",
-"Carries oxygen",
-"Produces glucose",
-"Breaks down pyruvate"
-],
-a:0,
-e:"F₀ forms the membrane channel through which protons move. F₁ contains the catalytic portion associated with ATP synthesis."
+ id:"resp-015",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"Chemiosmosis",
+ question:"In mitochondrial ATP synthase, the F₀ component primarily:",
+ options:[
+   "Acts as the proton channel",
+   "Carries oxygen",
+   "Produces glucose",
+   "Breaks down pyruvate"
+ ],
+ answer:0,
+ explanation:"F₀ forms the membrane channel through which protons move. F₁ contains the catalytic portion associated with ATP synthesis."
 },
+
 {
-s:"NCERT application",
-t:"Balance sheet",
-q:"The theoretical net ATP gain per glucose given in the NCERT balance sheet is:",
-o:["2","18","36","38"],
-a:3,
-e:"NCERT presents 38 ATP as the theoretical net gain under the stated assumptions, while noting that these assumptions are not completely valid in living systems."
+ id:"resp-016",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"Balance sheet",
+ question:"The theoretical net ATP gain per glucose given in the NCERT balance sheet is:",
+ options:[
+   "2",
+   "18",
+   "36",
+   "38"
+ ],
+ answer:3,
+ explanation:"NCERT presents 38 ATP as the theoretical net gain under the stated assumptions, while noting that these assumptions are not completely valid in living systems."
 },
+
 {
-s:"NCERT application",
-t:"Respiration",
-q:"Why is respiration described as an amphibolic pathway rather than simply a catabolic pathway?",
-o:[
-"Respiratory intermediates also serve as substrates for biosynthetic pathways.",
-"It occurs only in animals.",
-"It never produces ATP.",
-"It only synthesises carbohydrates."
-],
-a:0,
-e:"Respiratory intermediates are not merely breakdown products. They can be diverted into pathways for synthesis of other biomolecules."
+ id:"resp-017",
+ class:11,
+ chapter:"respiration",
+ source:"NCERT application",
+ topic:"Respiration",
+ question:"Why is respiration described as an amphibolic pathway rather than simply a catabolic pathway?",
+ options:[
+   "Respiratory intermediates also serve as substrates for biosynthetic pathways.",
+   "It occurs only in animals.",
+   "It never produces ATP.",
+   "It only synthesises carbohydrates."
+ ],
+ answer:0,
+ explanation:"Respiratory intermediates are not merely breakdown products. They can be diverted into pathways for synthesis of other biomolecules."
 }
+
 ];
 
-let quiz=[],i=0,score=0,answered=false,wrongRun=[];
-let state=JSON.parse(localStorage.getItem("respirationNEET")||'{"attempted":{},"wrong":[]}');
 
-function save(){
-localStorage.setItem("respirationNEET",JSON.stringify(state));
-stats();
+/* =========================================================
+   CHAPTER STRUCTURE
+========================================================= */
+
+const CHAPTERS = {
+
+11:[
+
+["1","The Living World","living-world"],
+["2","Biological Classification","biological-classification"],
+["3","Plant Kingdom","plant-kingdom"],
+["4","Animal Kingdom","animal-kingdom"],
+["5","Morphology of Flowering Plants","morphology"],
+["6","Anatomy of Flowering Plants","anatomy"],
+["7","Structural Organisation in Animals","structural-animals"],
+["8","Cell: The Unit of Life","cell"],
+["9","Biomolecules","biomolecules"],
+["10","Cell Cycle and Cell Division","cell-cycle"],
+["11","Photosynthesis in Higher Plants","photosynthesis"],
+["12","Respiration in Plants","respiration"],
+["13","Plant Growth and Development","plant-growth"],
+["14","Breathing and Exchange of Gases","breathing"],
+["15","Body Fluids and Circulation","body-fluids"],
+["16","Excretory Products and their Elimination","excretion"],
+["17","Locomotion and Movement","locomotion"],
+["18","Neural Control and Coordination","neural"],
+["19","Chemical Coordination and Integration","endocrine"]
+
+],
+
+12:[
+
+["1","Sexual Reproduction in Flowering Plants","flowering-reproduction"],
+["2","Human Reproduction","human-reproduction"],
+["3","Reproductive Health","reproductive-health"],
+["4","Principles of Inheritance and Variation","inheritance"],
+["5","Molecular Basis of Inheritance","molecular-inheritance"],
+["6","Evolution","evolution"],
+["7","Human Health and Disease","human-health"],
+["8","Microbes in Human Welfare","microbes"],
+["9","Biotechnology: Principles and Processes","biotech-principles"],
+["10","Biotechnology and its Applications","biotech-applications"],
+["11","Organisms and Populations","organisms-populations"],
+["12","Ecosystem","ecosystem"],
+["13","Biodiversity and Conservation","biodiversity"]
+
+]
+
+};
+
+
+/* =========================================================
+   APP STATE
+========================================================= */
+
+let currentClass=11;
+let currentChapter=null;
+
+let quiz=[];
+let quizIndex=0;
+let quizScore=0;
+let answered=false;
+let wrongThisRun=[];
+
+let state=JSON.parse(
+ localStorage.getItem("NEET_BIOLOGY_STATE")
+ ||
+ '{"attempted":{},"wrong":[]}'
+);
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function show(id){
+
+ document.querySelectorAll(".screen")
+ .forEach(x=>x.classList.remove("active"));
+
+ document.getElementById(id)
+ .classList.add("active");
+
+ window.scrollTo(0,0);
 }
 
-function stats(){
-let ids=Object.keys(state.attempted);
-let c=ids.filter(x=>state.attempted[x]).length;
-document.getElementById("attempted").textContent=ids.length;
-document.getElementById("correct").textContent=c;
-document.getElementById("wrong").textContent=ids.length-c;
-document.getElementById("accuracy").textContent=(ids.length?Math.round(c/ids.length*100):0)+"%";
-}
-
-function show(x){
-document.querySelectorAll(".screen").forEach(e=>e.classList.remove("active"));
-document.getElementById(x).classList.add("active");
-scrollTo(0,0);
-}
 
 function home(){
-show("home");
-document.getElementById("fill").style.width="0";
-stats();
+
+ show("home");
+
+ updateStats();
+
 }
 
-function start(){
-let mode=document.getElementById("mode").value;
-let pool=Q.filter(x=>{
-if(mode=="all")return true;
-if(mode=="exemplar")return x.s=="NCERT Exemplar";
-if(mode=="concept")return x.s=="NCERT application";
-if(mode=="wrong")return state.wrong.includes(Q.indexOf(x)+1);
-});
-pool.sort(()=>Math.random()-.5);
-let n=Math.min(+document.getElementById("num").value,pool.length);
-quiz=pool.slice(0,n);
-i=0;score=0;wrongRun=[];
-show("quiz");
-render();
+
+function openClass(cls){
+
+ currentClass=cls;
+
+ document.getElementById("classTitle").textContent=
+ "Class "+cls+" Biology";
+
+ document.getElementById("classSubtitle").textContent=
+ cls===11
+ ? "19 chapters • NCERT-first practice"
+ : "13 chapters • NCERT-first practice";
+
+ renderChapters();
+
+ show("chapters");
+
 }
 
-function render(){
-answered=false;
-let x=quiz[i];
-document.getElementById("meta").textContent=`Question ${i+1} of ${quiz.length} • ${x.t}`;
-document.getElementById("source").textContent=x.s;
-document.getElementById("q").textContent=x.q;
-document.getElementById("opts").innerHTML=x.o.map((o,j)=>
-`<button class="option" onclick="answer(${j})" id="o${j}">
-<span class="letter">${String.fromCharCode(65+j)}</span><span>${o}</span>
-</button>`).join("");
-document.getElementById("feedback").innerHTML="";
-document.getElementById("next").style.display="none";
-document.getElementById("fill").style.width=(i/quiz.length*100)+"%";
+
+function backToChapters(){
+
+ renderChapters();
+
+ show("chapters");
+
 }
 
-function answer(n){
-if(answered)return;
-answered=true;
-let x=quiz[i],ok=n==x.a;
-if(ok)score++;
-else{
-let id=Q.indexOf(x)+1;
-if(!state.wrong.includes(id))state.wrong.push(id);
-wrongRun.push(x);
-}
-state.attempted[Q.indexOf(x)+1]=ok;
-document.querySelectorAll(".option").forEach((b,j)=>{
-b.style.pointerEvents="none";
-if(j==x.a)b.classList.add("correct");
-if(j==n&&n!=x.a)b.classList.add("wrong");
-});
-document.getElementById("feedback").innerHTML=
-`<div class="feedback ${ok?"good":"bad"}"><b>${ok?"Correct":"Incorrect"}</b><br>${ok?"Good recall.":"Correct answer: "+String.fromCharCode(65+x.a)}</div>
-<div class="explain"><b>Why:</b> ${x.e}</div>`;
-document.getElementById("next").style.display="block";
-document.getElementById("next").textContent=i==quiz.length-1?"See Results":"Next";
-save();
+
+function renderChapters(){
+
+ const box=document.getElementById("chapterList");
+
+ box.innerHTML="";
+
+ CHAPTERS[currentClass].forEach(c=>{
+
+   const num=c[0];
+   const name=c[1];
+   const id=c[2];
+
+   const qs=QUESTIONS.filter(
+     q=>q.class===currentClass && q.chapter===id
+   );
+
+   let countText;
+
+   if(qs.length){
+
+     countText=
+       qs.length+" question"+
+       (qs.length===1?"":"s");
+
+   }else{
+
+     countText="No questions yet";
+
+   }
+
+   const div=document.createElement("div");
+
+   div.className="chapter";
+
+   div.onclick=()=>openChapter(id,name,num);
+
+   div.innerHTML=`
+
+     <div class="chapter-top">
+
+       <div>
+
+         <div class="number">Chapter ${num}</div>
+
+         <h3>${name}</h3>
+
+       </div>
+
+       <div class="arrow">›</div>
+
+     </div>
+
+     <div class="count ${qs.length?'ready':''}">
+       ${countText}
+     </div>
+
+   `;
+
+   box.appendChild(div);
+
+ });
+
 }
 
-function next(){
-if(i<quiz.length-1){i++;render()}
-else results();
+
+function openChapter(id,name,num){
+
+ currentChapter=id;
+
+ document.getElementById("chapterTitle").textContent=
+ "Chapter "+num+" • "+name;
+
+ document.getElementById("chapterDescription").textContent=
+ "Practice questions, track mistakes, and build mastery.";
+
+ const qs=QUESTIONS.filter(
+   q=>q.class===currentClass && q.chapter===id
+ );
+
+ document.getElementById("chapterQuestions").textContent=
+ qs.length;
+
+ document.getElementById("chapterAccuracy").textContent=
+ getChapterAccuracy();
+
+ if(qs.length){
+
+   document.getElementById("chapterStatus").textContent=
+   "This chapter is ready for practice.";
+
+ }else{
+
+   document.getElementById("chapterStatus").textContent=
+   "Question bank not added yet. This chapter is a placeholder. We will populate it from your resources.";
+
+ }
+
+ show("chapter");
+
 }
 
-function results(){
-document.getElementById("fill").style.width="100%";
-let a=Math.round(score/quiz.length*100);
-document.getElementById("rscore").textContent=score+"/"+quiz.length;
-document.getElementById("racc").textContent=a+"%";
-document.getElementById("resultTitle").textContent=a>=85?"Strong performance.":"Diagnostic complete.";
-document.getElementById("resultText").textContent=
-a>=85?"Your recall is holding up. Now protect it with spaced revision."
-:"The score is useful only because it shows where to revise. Redo the wrong questions, then return to the NCERT section behind them.";
-show("result");
+
+function showChapter(){
+
+ openChapter(
+   currentChapter,
+   getChapterName(currentClass,currentChapter),
+   getChapterNumber(currentClass,currentChapter)
+ );
+
 }
 
-function wrongSet(){
-document.getElementById("mode").value="wrong";
-document.getElementById("num").value="10";
-start();
+
+/* =========================================================
+   CHAPTER HELPERS
+========================================================= */
+
+function getChapterName(cls,id){
+
+ const x=CHAPTERS[cls].find(c=>c[2]===id);
+
+ return x?x[1]:"Chapter";
+
 }
 
-stats();
+
+function getChapterNumber(cls,id){
+
+ const x=CHAPTERS[cls].find(c=>c[2]===id);
+
+ return x?x[0]:"";
+
+}
+
+
+function getChapterAccuracy(){
+
+ const qs=QUESTIONS.filter(
+   q=>q.class===currentClass &&
+   q.chapter===currentChapter
+ );
+
+ const ids=qs
+ .map(q=>q.id)
+ .filter(id=>state.attempted[id]!==undefined);
+
+ if(!ids.length)return "—";
+
+ const correct=ids.filter(
+   id=>state.attempted[id]===true
+ ).length;
+
+ return Math.round(correct/ids.length*100)+"%";
+
+}
+
+
+/* =========================================================
+   PRACTICE
+========================================================= */
+
+function startChapterPractice(){
+
+ let pool=QUESTIONS.filter(
+   q=>q.class===currentClass &&
+   q.chapter===currentChapter
+ );
+
+ const mode=document.getElementById("practiceMode").value;
+
+ if(mode==="ncert")
+   pool=pool.filter(q=>q.source==="NCERT");
+
+ if(mode==="exemplar")
+   pool=pool.filter(q=>q.source==="NCERT Exemplar");
+
+ if(mode==="pyq")
+   pool=pool.filter(q=>q.source==="NEET PYQ");
+
+ if(mode==="wrong")
+   pool=pool.filter(q=>state.wrong.includes(q.id));
+
+ if(!pool.length){
+
+   alert(
+    "There are no questions in this category yet."
+   );
+
+   return;
+
+ }
+
+ pool.sort(()=>Math.random()-.5);
+
+ const requested=
+   document.getElementById("questionCount").value;
+
+ let n=
+   requested==="all"
+   ?pool.length
+   :Math.min(+requested,pool.length);
+
+ quiz=pool.slice(0,n);
+
+ quizIndex=0;
+ quizScore=0;
+ wrongThisRun=[];
+
+ show("quiz");
+
+ renderQuestion();
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+function renderQuestion(){
+
+ answered=false;
+
+ const q=quiz[quizIndex];
+
+ document.getElementById("quizMeta").textContent=
+ `Question ${quizIndex+1} of ${quiz.length} • ${q.topic}`;
+
+ document.getElementById("quizSource").textContent=
+ q.source;
+
+ document.getElementById("quizQuestion").textContent=
+ q.question;
+
+ const letters=["A","B","C","D"];
+
+ document.getElementById("quizOptions").innerHTML=
+ q.options.map((o,i)=>`
+
+ <button
+   class="option"
+   id="option${i}"
+   onclick="answerQuestion(${i})">
+
+   <span class="letter">
+     ${letters[i]}
+   </span>
+
+   <span>${o}</span>
+
+ </button>
+
+ `).join("");
+
+ document.getElementById("quizFeedback").innerHTML="";
+
+ document.getElementById("nextButton").style.display="none";
+
+}
+
+
+function answerQuestion(choice){
+
+ if(answered)return;
+
+ answered=true;
+
+ const q=quiz[quizIndex];
+
+ const correct=
+ choice===q.answer;
+
+ if(correct){
+
+   quizScore++;
+
+ }else{
+
+   if(!state.wrong.includes(q.id))
+     state.wrong.push(q.id);
+
+   wrongThisRun.push(q);
+
+ }
+
+ state.attempted[q.id]=correct;
+
+ saveState();
+
+ document.querySelectorAll(".option")
+ .forEach((button,index)=>{
+
+   button.style.pointerEvents="none";
+
+   if(index===q.answer)
+     button.classList.add("correct");
+
+   if(index===choice && choice!==q.answer)
+     button.classList.add("wrong");
+
+ });
+
+ document.getElementById("quizFeedback").innerHTML=`
+
+ <div class="feedback ${correct?"good":"bad"}">
+
+   <b>${correct?"Correct":"Incorrect"}</b>
+
+   <br>
+
+   ${correct
+     ?"Good. Keep the mechanism, not just the option."
+     :"Correct answer: "+String.fromCharCode(65+q.answer)}
+
+ </div>
+
+ <div class="explain">
+
+   <b>Why:</b> ${q.explanation}
+
+ </div>
+
+ `;
+
+ const next=document.getElementById("nextButton");
+
+ next.style.display="block";
+
+ next.textContent=
+   quizIndex===quiz.length-1
+   ?"See Results"
+   :"Next";
+
+}
+
+
+function nextQuestion(){
+
+ if(quizIndex<quiz.length-1){
+
+   quizIndex++;
+
+   renderQuestion();
+
+ }else{
+
+   showResults();
+
+ }
+
+}
+
+
+function exitQuiz(){
+
+ showChapter();
+
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+function showResults(){
+
+ const accuracy=
+   Math.round(
+     quizScore/quiz.length*100
+   );
+
+ document.getElementById("resultScore").textContent=
+   quizScore+"/"+quiz.length;
+
+ document.getElementById("resultAccuracy").textContent=
+   accuracy+"%";
+
+ document.getElementById("resultTitle").textContent=
+   accuracy>=85
+   ?"Strong performance."
+   :"Useful diagnostic.";
+
+ document.getElementById("resultText").textContent=
+   accuracy>=85
+   ?"Your recall is holding up. Keep it alive with spaced revision."
+   :"The important information is where you went wrong. Redo those questions and revisit the NCERT behind them.";
+
+ show("results");
+
+}
+
+
+function redoWrong(){
+
+ document.getElementById("practiceMode").value="wrong";
+
+ startChapterPractice();
+
+}
+
+
+/* =========================================================
+   STORAGE
+========================================================= */
+
+function saveState(){
+
+ localStorage.setItem(
+   "NEET_BIOLOGY_STATE",
+   JSON.stringify(state)
+ );
+
+ updateStats();
+
+}
+
+
+function updateStats(){
+
+ const attempted=
+   Object.keys(state.attempted);
+
+ const correct=
+   attempted.filter(
+     id=>state.attempted[id]===true
+   );
+
+ document.getElementById("attempted").textContent=
+   attempted.length;
+
+ document.getElementById("wrong").textContent=
+   state.wrong.length;
+
+ document.getElementById("accuracy").textContent=
+   attempted.length
+   ?Math.round(correct.length/attempted.length*100)+"%"
+   :"0%";
+
+ document.getElementById("totalQuestions").textContent=
+   QUESTIONS.length;
+
+}
+
+
+updateStats();
+
 </script>
+
 </body>
 </html>
