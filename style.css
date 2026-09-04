@@ -552,11 +552,27 @@ select{
    WRONG QUESTIONS
 ========================================================= */
 
-.wrong-section{
-  margin-top:6px;
+.wrong-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
 }
 
-.wrong-card{
+.wrong-header b{
+  display:block;
+  font-size:16px;
+}
+
+.wrong-header .note{
+  margin:5px 0 0;
+}
+
+#wrongQuestions{
+  margin-top:10px;
+}
+
+#wrongQuestions .wrong-card{
   background:white;
   border:1px solid #e4e7ec;
   border-radius:14px;
@@ -564,47 +580,53 @@ select{
   margin-bottom:10px;
 }
 
-.wrong-card-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:10px;
-}
-
-.wrong-question{
+#wrongQuestions .wrong-question{
   font-weight:650;
   line-height:1.45;
 }
 
-.wrong-topic{
+#wrongQuestions .wrong-topic{
   color:#667085;
   font-size:12px;
   margin-top:5px;
 }
 
-.wrong-source{
+#wrongQuestions .wrong-source{
   color:#98a2b3;
   font-size:11px;
   margin-top:3px;
 }
 
-.wrong-actions{
+#wrongQuestions .wrong-actions{
   display:flex;
   gap:8px;
   margin-top:12px;
 }
 
-.wrong-actions button{
+#wrongQuestions .wrong-actions button{
   flex:1;
 }
 
-.wrong-empty{
+#wrongQuestions .wrong-empty{
   background:white;
   border:1px solid #e4e7ec;
   border-radius:14px;
   padding:17px;
   color:#667085;
   font-size:14px;
+}
+
+@media(max-width:650px){
+
+  .wrong-header{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .wrong-header .primary{
+    width:100%;
+  }
+
 }
 
 
