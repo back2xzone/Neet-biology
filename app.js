@@ -1,6 +1,7 @@
 /* =========================================================
    NEET BIOLOGY APP ENGINE
    Navigation + Practice + Timer + Analytics
+   + Wrong Questions System
 ========================================================= */
 
 
@@ -100,20 +101,22 @@ if(
 }
 
 
-/* ================= NAVIGATION ================= */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 function show(id){
 
-  const screens =
-    document.querySelectorAll(".screen");
-
-  screens.forEach(screen => {
-    screen.classList.remove("active");
-  });
+  document
+    .querySelectorAll(".screen")
+    .forEach(screen => {
+      screen.classList.remove("active");
+    });
 
 
   const target =
     document.getElementById(id);
+
 
   if(!target){
 
@@ -134,10 +137,7 @@ function show(id){
 }
 
 
-/* =========================================================
-   HOME
-   Renamed from home() because id="home" exists in HTML.
-========================================================= */
+/* ================= HOME ================= */
 
 function goHome(){
 
@@ -147,7 +147,25 @@ function goHome(){
 
   renderCalendar();
 
+  renderWrongQuestions();
+
   show("home");
+
+}
+
+
+/*
+   Compatibility alias.
+
+   Older HTML may still contain:
+   onclick="home()"
+
+   This keeps that working.
+*/
+
+function home(){
+
+  goHome();
 
 }
 
@@ -158,6 +176,7 @@ function openClass(cls){
 
   currentClass = Number(cls);
 
+
   const title =
     document.getElementById("classTitle");
 
@@ -165,14 +184,22 @@ function openClass(cls){
     document.getElementById("classSubtitle");
 
 
-  title.textContent =
-    "Class " + currentClass + " Biology";
+  if(title){
+
+    title.textContent =
+      "Class " + currentClass + " Biology";
+
+  }
 
 
-  subtitle.textContent =
-    currentClass === 11
-    ? "19 chapters • NCERT-first practice"
-    : "13 chapters • NCERT-first practice";
+  if(subtitle){
+
+    subtitle.textContent =
+      currentClass === 11
+      ? "19 chapters • NCERT-first practice"
+      : "13 chapters • NCERT-first practice";
+
+  }
 
 
   renderChapters();
@@ -192,13 +219,6 @@ function backToChapters(){
 
 }
 
-
-/*
-   Important:
-   Chapter cards now use addEventListener()
-   instead of relying on inline/global onclick
-   behaviour.
-*/
 
 function renderChapters(){
 
@@ -244,12 +264,6 @@ function renderChapters(){
 
     div.className = "chapter";
 
-
-    /*
-       Direct event listener.
-       This is deliberately NOT:
-       onclick="openChapter(...)"
-    */
 
     div.addEventListener(
       "click",
@@ -303,12 +317,6 @@ function renderChapters(){
 }
 
 
-/*
-   New chapter-opening function.
-   Renamed to avoid any possible global
-   name collision.
-*/
-
 function openChapterPage(
   id,
   name,
@@ -320,16 +328,31 @@ function openChapterPage(
   currentChapterNumber = num;
 
 
-  document.getElementById(
-    "chapterNumber"
-  ).textContent =
-    "CHAPTER " + num;
+  const number =
+    document.getElementById(
+      "chapterNumber"
+    );
+
+  const title =
+    document.getElementById(
+      "chapterTitle"
+    );
 
 
-  document.getElementById(
-    "chapterTitle"
-  ).textContent =
-    name;
+  if(number){
+
+    number.textContent =
+      "CHAPTER " + num;
+
+  }
+
+
+  if(title){
+
+    title.textContent =
+      name;
+
+  }
 
 
   const qs =
@@ -383,15 +406,12 @@ function openChapterPage(
 }
 
 
-/*
-   Used by the Results page.
-   Your old HTML called showChapter(),
-   but the function didn't exist.
-*/
+/* ================= RESULTS → CHAPTER ================= */
 
 function showChapter(){
 
   stopTimer();
+
 
   if(!currentChapter){
 
@@ -444,7 +464,9 @@ function getChapterQuestions(
 }
 
 
-/* ================= PRACTICE ================= */
+/* =========================================================
+   PRACTICE
+========================================================= */
 
 function startChapterPractice(){
 
@@ -455,10 +477,16 @@ function startChapterPractice(){
     );
 
 
-  const mode =
+  const modeElement =
     document.getElementById(
       "practiceMode"
-    ).value;
+    );
+
+
+  const mode =
+    modeElement
+    ? modeElement.value
+    : "all";
 
 
   if(mode === "ncert"){
@@ -512,18 +540,19 @@ function startChapterPractice(){
   }
 
 
-  /*
-     Fisher-Yates shuffle.
-     More reliable than sort(() => Math.random()-.5)
-  */
-
   shuffle(pool);
 
 
-  const requested =
+  const requestedElement =
     document.getElementById(
       "questionCount"
-    ).value;
+    );
+
+
+  const requested =
+    requestedElement
+    ? requestedElement.value
+    : "10";
 
 
   const n =
@@ -533,6 +562,73 @@ function startChapterPractice(){
         Number(requested),
         pool.length
       );
+
+
+  quiz =
+    pool.slice(0,n);
+
+
+  quizIndex = 0;
+  quizScore = 0;
+
+  questionTimes = [];
+  wrongThisRun = [];
+
+
+  show("quiz");
+
+  renderQuestion();
+
+}
+
+
+/* =========================================================
+   PRACTICE ALL WRONG QUESTIONS
+========================================================= */
+
+function startWrongPractice(){
+
+  if(
+    typeof QUESTIONS === "undefined" ||
+    !Array.isArray(QUESTIONS)
+  ){
+
+    alert(
+      "Question bank is unavailable."
+    );
+
+    return;
+
+  }
+
+
+  let pool =
+    QUESTIONS.filter(
+      q => state.wrong.includes(q.id)
+    );
+
+
+  if(!pool.length){
+
+    alert(
+      "Your wrong-question bank is empty."
+    );
+
+    return;
+
+  }
+
+
+  shuffle(pool);
+
+
+  /*
+     Practice up to 50 wrong questions at once.
+     If there are fewer than 50, use all of them.
+  */
+
+  const n =
+    Math.min(50,pool.length);
 
 
   quiz =
@@ -583,7 +679,9 @@ function shuffle(array){
 }
 
 
-/* ================= TIMER ================= */
+/* =========================================================
+   TIMER
+========================================================= */
 
 function startTimer(){
 
@@ -649,7 +747,9 @@ function formatTime(seconds){
 }
 
 
-/* ================= QUESTIONS ================= */
+/* =========================================================
+   QUESTIONS
+========================================================= */
 
 function renderQuestion(){
 
@@ -726,12 +826,14 @@ function renderQuestion(){
 
   document.getElementById(
     "nextButton"
-  ).style.display = "none";
+  ).style.display =
+    "none";
 
 
   document.getElementById(
     "timer"
-  ).textContent = "00:00";
+  ).textContent =
+    "00:00";
 
 
   startTimer();
@@ -739,7 +841,9 @@ function renderQuestion(){
 }
 
 
-/* ================= ANSWER ================= */
+/* =========================================================
+   ANSWER
+========================================================= */
 
 function answerQuestion(choice){
 
@@ -782,6 +886,30 @@ function answerQuestion(choice){
   if(correct){
 
     quizScore++;
+
+
+    /*
+       IMPORTANT:
+
+       If the question was previously wrong,
+       answering it correctly removes it from
+       the ACTIVE wrong-question bank.
+
+       Historical attempts remain untouched.
+    */
+
+    const wrongIndex =
+      state.wrong.indexOf(q.id);
+
+
+    if(wrongIndex !== -1){
+
+      state.wrong.splice(
+        wrongIndex,
+        1
+      );
+
+    }
 
   }else{
 
@@ -946,7 +1074,9 @@ function exitQuiz(){
 }
 
 
-/* ================= RESULTS ================= */
+/* =========================================================
+   RESULTS
+========================================================= */
 
 function showResults(){
 
@@ -1021,19 +1151,24 @@ function showResults(){
 
   updateDashboard();
 
+  renderWrongQuestions();
+
 
   show("results");
 
 }
 
 
-/* ================= REDO WRONG ================= */
+/* =========================================================
+   REDO WRONG
+========================================================= */
 
 function redoWrong(){
 
   document.getElementById(
     "practiceMode"
-  ).value = "wrong";
+  ).value =
+    "wrong";
 
 
   const wrongPool =
@@ -1061,7 +1196,9 @@ function redoWrong(){
 }
 
 
-/* ================= DASHBOARD ================= */
+/* =========================================================
+   DASHBOARD
+========================================================= */
 
 function updateDashboard(){
 
@@ -1097,73 +1234,108 @@ function updateDashboard(){
     );
 
 
-  document.getElementById(
-    "todayQuestions"
-  ).textContent =
-    today.length;
-
-
-  document.getElementById(
-    "todayAccuracy"
-  ).textContent =
-    getAccuracy(today);
-
-
-  document.getElementById(
-    "todayTime"
-  ).textContent =
-    formatDuration(
-      today.reduce(
-        (a,b) => a + b.time,
-        0
-      )
+  const todayQuestions =
+    document.getElementById(
+      "todayQuestions"
     );
 
+  if(todayQuestions)
+    todayQuestions.textContent =
+      today.length;
 
-  document.getElementById(
-    "todayAvg"
-  ).textContent =
 
-    today.length
-    ? formatSeconds(
-        Math.round(
-          today.reduce(
-            (a,b) =>
-              a + b.time,
-            0
-          )
-          /
-          today.length
+  const todayAccuracy =
+    document.getElementById(
+      "todayAccuracy"
+    );
+
+  if(todayAccuracy)
+    todayAccuracy.textContent =
+      getAccuracy(today);
+
+
+  const todayTime =
+    document.getElementById(
+      "todayTime"
+    );
+
+  if(todayTime)
+    todayTime.textContent =
+      formatDuration(
+        today.reduce(
+          (a,b) =>
+            a + (Number(b.time) || 0),
+          0
         )
-      )
-    : "—";
+      );
 
 
-  document.getElementById(
-    "weekQuestions"
-  ).textContent =
-    week.length;
+  const todayAvg =
+    document.getElementById(
+      "todayAvg"
+    );
+
+  if(todayAvg)
+    todayAvg.textContent =
+
+      today.length
+      ? formatSeconds(
+          Math.round(
+            today.reduce(
+              (a,b) =>
+                a + (Number(b.time) || 0),
+              0
+            )
+            /
+            today.length
+          )
+        )
+      : "—";
 
 
-  document.getElementById(
-    "monthQuestions"
-  ).textContent =
-    month.length;
+  const weekQuestions =
+    document.getElementById(
+      "weekQuestions"
+    );
+
+  if(weekQuestions)
+    weekQuestions.textContent =
+      week.length;
 
 
-  document.getElementById(
-    "allQuestions"
-  ).textContent =
-    attempts.length;
+  const monthQuestions =
+    document.getElementById(
+      "monthQuestions"
+    );
+
+  if(monthQuestions)
+    monthQuestions.textContent =
+      month.length;
 
 
-  document.getElementById(
-    "allAccuracy"
-  ).textContent =
-    getAccuracy(attempts);
+  const allQuestions =
+    document.getElementById(
+      "allQuestions"
+    );
+
+  if(allQuestions)
+    allQuestions.textContent =
+      attempts.length;
+
+
+  const allAccuracy =
+    document.getElementById(
+      "allAccuracy"
+    );
+
+  if(allAccuracy)
+    allAccuracy.textContent =
+      getAccuracy(attempts);
 
 
   renderWeakTopics();
+
+  renderWrongQuestions();
 
 }
 
@@ -1192,7 +1364,9 @@ function getAccuracy(arr){
 }
 
 
-/* ================= WEAK TOPICS ================= */
+/* =========================================================
+   WEAK TOPICS
+========================================================= */
 
 function renderWeakTopics(){
 
@@ -1200,6 +1374,10 @@ function renderWeakTopics(){
     document.getElementById(
       "weakTopics"
     );
+
+
+  if(!box)
+    return;
 
 
   const groups = {};
@@ -1282,16 +1460,6 @@ function renderWeakTopics(){
         );
 
 
-      /*
-         Weakness score
-
-         Lower accuracy
-         +
-         repeated mistakes
-         +
-         slow solving
-      */
-
       g.weakness =
 
         (100 - g.accuracy)
@@ -1347,7 +1515,7 @@ function renderWeakTopics(){
         <div class="weak-top">
 
           <div class="weak-name">
-            ${g.topic}
+            ${escapeHTML(g.topic)}
           </div>
 
           <div class="weak-score">
@@ -1372,7 +1540,417 @@ function renderWeakTopics(){
 }
 
 
-/* ================= CHAPTER STATS ================= */
+/* =========================================================
+   WRONG QUESTIONS HOME SECTION
+========================================================= */
+
+function renderWrongQuestions(){
+
+  /*
+     We create the entire section dynamically.
+
+     Therefore NO HTML modification is required.
+  */
+
+
+  const homeScreen =
+    document.getElementById(
+      "home"
+    );
+
+
+  if(!homeScreen)
+    return;
+
+
+  let section =
+    document.getElementById(
+      "wrongQuestionsSection"
+    );
+
+
+  /*
+     Create it once.
+  */
+
+  if(!section){
+
+    section =
+      document.createElement("div");
+
+    section.id =
+      "wrongQuestionsSection";
+
+
+    /*
+       Put it after Weak Topics if possible.
+    */
+
+    const weakBox =
+      document.getElementById(
+        "weakTopics"
+      );
+
+
+    if(
+      weakBox &&
+      weakBox.parentNode
+    ){
+
+      weakBox.parentNode.insertBefore(
+        section,
+        weakBox.nextSibling
+      );
+
+    }else{
+
+      homeScreen.appendChild(
+        section
+      );
+
+    }
+
+  }
+
+
+  const wrongIds =
+    Array.from(
+      new Set(
+        state.wrong
+      )
+    );
+
+
+  /*
+     Find actual question objects.
+  */
+
+  let wrongQuestions = [];
+
+
+  if(
+    typeof QUESTIONS !== "undefined" &&
+    Array.isArray(QUESTIONS)
+  ){
+
+    wrongQuestions =
+      QUESTIONS.filter(
+        q => wrongIds.includes(q.id)
+      );
+
+  }
+
+
+  /*
+     Keep only questions that still exist
+     in the current question bank.
+  */
+
+  const validIds =
+    new Set(
+      wrongQuestions.map(
+        q => q.id
+      )
+    );
+
+
+  /*
+     If old/deleted IDs exist, don't display
+     broken cards.
+  */
+
+
+  if(!wrongQuestions.length){
+
+    section.innerHTML = `
+
+      <div class="section-title">
+        Wrong Questions
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Your wrong-question bank is empty.
+        </h3>
+
+        <p class="note">
+          Questions you get wrong will appear here
+          so you can turn mistakes into strengths.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  /*
+     Maximum 10 displayed on Home.
+     The full bank can still be practised.
+  */
+
+  const displayed =
+    wrongQuestions.slice(0,10);
+
+
+  section.innerHTML = `
+
+    <div class="section-title">
+      Wrong Questions
+    </div>
+
+    <div class="card">
+
+      <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:12px;
+        margin-bottom:12px;
+      ">
+
+        <div>
+
+          <h3 style="margin:0">
+            ${wrongQuestions.length}
+            question${wrongQuestions.length === 1 ? "" : "s"}
+          </h3>
+
+          <p class="note" style="margin:4px 0 0">
+            Questions currently needing revision.
+          </p>
+
+        </div>
+
+        <button
+          class="primary"
+          onclick="startWrongPractice()">
+
+          Practice Wrong
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <div id="wrongQuestionList">
+
+      ${displayed.map((q,index) => `
+
+        <div
+          class="weak-card"
+          style="cursor:pointer"
+          onclick="openWrongQuestion(
+            '${escapeJS(q.id)}'
+          )">
+
+          <div class="weak-top">
+
+            <div class="weak-name">
+
+              ${index + 1}.
+              ${escapeHTML(
+                truncateText(
+                  q.question,
+                  110
+                )
+              )}
+
+            </div>
+
+          </div>
+
+          <div class="weak-details">
+
+            Class ${q.class}
+            • ${escapeHTML(
+              getChapterName(
+                q.class,
+                q.chapter
+              )
+            )}
+
+            • ${escapeHTML(
+              q.topic || "General"
+            )}
+
+            • ${escapeHTML(
+              q.source || ""
+            )}
+
+          </div>
+
+        </div>
+
+      `).join("")}
+
+    </div>
+
+    ${
+      wrongQuestions.length > 10
+      ? `
+
+        <div class="card">
+
+          <p class="note">
+
+            Showing 10 of
+            ${wrongQuestions.length}
+            wrong questions.
+
+          </p>
+
+          <button
+            class="secondary full"
+            onclick="startWrongPractice()">
+
+            Practice Full Wrong Bank
+
+          </button>
+
+        </div>
+
+      `
+      : ""
+    }
+
+  `;
+
+}
+
+
+/* =========================================================
+   OPEN INDIVIDUAL WRONG QUESTION
+========================================================= */
+
+function openWrongQuestion(id){
+
+  const q =
+    QUESTIONS.find(
+      question =>
+        String(question.id) ===
+        String(id)
+    );
+
+
+  if(!q){
+
+    alert(
+      "Question could not be found."
+    );
+
+    return;
+
+  }
+
+
+  currentClass =
+    Number(q.class);
+
+
+  currentChapter =
+    q.chapter;
+
+
+  const chapterInfo =
+    findChapter(
+      currentClass,
+      currentChapter
+    );
+
+
+  if(!chapterInfo){
+
+    alert(
+      "Chapter information could not be found."
+    );
+
+    return;
+
+  }
+
+
+  currentChapterName =
+    chapterInfo[1];
+
+  currentChapterNumber =
+    chapterInfo[0];
+
+
+  openChapterPage(
+    currentChapter,
+    currentChapterName,
+    currentChapterNumber
+  );
+
+
+  const mode =
+    document.getElementById(
+      "practiceMode"
+    );
+
+
+  if(mode){
+
+    mode.value =
+      "wrong";
+
+  }
+
+}
+
+
+/* =========================================================
+   FIND CHAPTER
+========================================================= */
+
+function findChapter(
+  cls,
+  chapterId
+){
+
+  const chapters =
+    CHAPTERS[
+      Number(cls)
+    ] || [];
+
+
+  return chapters.find(
+    c =>
+      String(c[2]) ===
+      String(chapterId)
+  );
+
+}
+
+
+function getChapterName(
+  cls,
+  chapterId
+){
+
+  const chapter =
+    findChapter(
+      cls,
+      chapterId
+    );
+
+
+  return chapter
+    ? chapter[1]
+    : chapterId;
+
+}
+
+
+/* =========================================================
+   CHAPTER STATS
+========================================================= */
 
 function getChapterStats(
   cls,
@@ -1433,9 +2011,26 @@ function getChapterStats(
 }
 
 
-/* ================= CALENDAR ================= */
+/* =========================================================
+   CALENDAR
+========================================================= */
 
 function renderCalendar(){
+
+  const title =
+    document.getElementById(
+      "calendarTitle"
+    );
+
+  const box =
+    document.getElementById(
+      "calendar"
+    );
+
+
+  if(!title || !box)
+    return;
+
 
   const year =
     calendarDate.getFullYear();
@@ -1461,21 +2056,13 @@ function renderCalendar(){
     ).getDate();
 
 
-  document.getElementById(
-    "calendarTitle"
-  ).textContent =
+  title.textContent =
     first.toLocaleString(
       "en-US",
       {
         month: "long",
         year: "numeric"
       }
-    );
-
-
-  const box =
-    document.getElementById(
-      "calendar"
     );
 
 
@@ -1627,167 +2214,10 @@ function nextMonth(){
 }
 
 
-/* ================= HELPERS ================= */
+/* =========================================================
+   HELPERS
+========================================================= */
 
 function getDateKey(date){
 
   return (
-    date.getFullYear()
-    + "-"
-    + String(
-        date.getMonth() + 1
-      ).padStart(2,"0")
-    + "-"
-    + String(
-        date.getDate()
-      ).padStart(2,"0")
-  );
-
-}
-
-
-function withinDays(
-  dateKey,
-  days
-){
-
-  const date =
-    new Date(
-      dateKey +
-      "T00:00:00"
-    );
-
-
-  const now =
-    new Date();
-
-
-  const today =
-    new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate()
-    );
-
-
-  const diff =
-    (today - date)
-    /
-    (1000 * 60 * 60 * 24);
-
-
-  return (
-    diff >= 0 &&
-    diff < days
-  );
-
-}
-
-
-function formatSeconds(
-  seconds
-){
-
-  seconds =
-    Number(seconds) || 0;
-
-
-  if(seconds < 60){
-
-    return seconds + "s";
-
-  }
-
-
-  const min =
-    Math.floor(
-      seconds / 60
-    );
-
-
-  const sec =
-    seconds % 60;
-
-
-  return (
-    min +
-    "m " +
-    sec +
-    "s"
-  );
-
-}
-
-
-function formatDuration(
-  seconds
-){
-
-  seconds =
-    Number(seconds) || 0;
-
-
-  if(!seconds){
-
-    return "0m";
-
-  }
-
-
-  const hours =
-    Math.floor(
-      seconds / 3600
-    );
-
-
-  const min =
-    Math.floor(
-      (seconds % 3600) / 60
-    );
-
-
-  if(hours){
-
-    return (
-      hours +
-      "h " +
-      min +
-      "m"
-    );
-
-  }
-
-
-  return min + "m";
-
-}
-
-
-/* ================= STORAGE ================= */
-
-function saveState(){
-
-  try{
-
-    localStorage.setItem(
-      "NEET_BIOLOGY_STATE",
-      JSON.stringify(state)
-    );
-
-  }catch(error){
-
-    console.error(
-      "Could not save study data:",
-      error
-    );
-
-  }
-
-}
-
-
-/* ================= START ================= */
-
-updateDashboard();
-
-renderCalendar();
