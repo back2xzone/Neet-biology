@@ -586,7 +586,7 @@ function startChapterPractice(){
    PRACTICE ALL WRONG QUESTIONS
 ========================================================= */
 
-function startWrongPractice(){
+function startAllWrongPractice(){
 
   if(
     typeof QUESTIONS === "undefined" ||
