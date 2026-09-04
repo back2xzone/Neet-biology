@@ -9,43 +9,43 @@
 
 const CHAPTERS = {
 
-11:[
-["1","The Living World","living-world"],
-["2","Biological Classification","biological-classification"],
-["3","Plant Kingdom","plant-kingdom"],
-["4","Animal Kingdom","animal-kingdom"],
-["5","Morphology of Flowering Plants","morphology"],
-["6","Anatomy of Flowering Plants","anatomy"],
-["7","Structural Organisation in Animals","structural-animals"],
-["8","Cell: The Unit of Life","cell"],
-["9","Biomolecules","biomolecules"],
-["10","Cell Cycle and Cell Division","cell-cycle"],
-["11","Photosynthesis in Higher Plants","photosynthesis"],
-["12","Respiration in Plants","respiration"],
-["13","Plant Growth and Development","plant-growth"],
-["14","Breathing and Exchange of Gases","breathing"],
-["15","Body Fluids and Circulation","body-fluids"],
-["16","Excretory Products and their Elimination","excretion"],
-["17","Locomotion and Movement","locomotion"],
-["18","Neural Control and Coordination","neural"],
-["19","Chemical Coordination and Integration","endocrine"]
-],
+  11: [
+    ["1","The Living World","living-world"],
+    ["2","Biological Classification","biological-classification"],
+    ["3","Plant Kingdom","plant-kingdom"],
+    ["4","Animal Kingdom","animal-kingdom"],
+    ["5","Morphology of Flowering Plants","morphology"],
+    ["6","Anatomy of Flowering Plants","anatomy"],
+    ["7","Structural Organisation in Animals","structural-animals"],
+    ["8","Cell: The Unit of Life","cell"],
+    ["9","Biomolecules","biomolecules"],
+    ["10","Cell Cycle and Cell Division","cell-cycle"],
+    ["11","Photosynthesis in Higher Plants","photosynthesis"],
+    ["12","Respiration in Plants","respiration"],
+    ["13","Plant Growth and Development","plant-growth"],
+    ["14","Breathing and Exchange of Gases","breathing"],
+    ["15","Body Fluids and Circulation","body-fluids"],
+    ["16","Excretory Products and their Elimination","excretion"],
+    ["17","Locomotion and Movement","locomotion"],
+    ["18","Neural Control and Coordination","neural"],
+    ["19","Chemical Coordination and Integration","endocrine"]
+  ],
 
-12:[
-["1","Sexual Reproduction in Flowering Plants","flowering-reproduction"],
-["2","Human Reproduction","human-reproduction"],
-["3","Reproductive Health","reproductive-health"],
-["4","Principles of Inheritance and Variation","inheritance"],
-["5","Molecular Basis of Inheritance","molecular-inheritance"],
-["6","Evolution","evolution"],
-["7","Human Health and Disease","human-health"],
-["8","Microbes in Human Welfare","microbes"],
-["9","Biotechnology: Principles and Processes","biotech-principles"],
-["10","Biotechnology and its Applications","biotech-applications"],
-["11","Organisms and Populations","organisms-populations"],
-["12","Ecosystem","ecosystem"],
-["13","Biodiversity and Conservation","biodiversity"]
-]
+  12: [
+    ["1","Sexual Reproduction in Flowering Plants","flowering-reproduction"],
+    ["2","Human Reproduction","human-reproduction"],
+    ["3","Reproductive Health","reproductive-health"],
+    ["4","Principles of Inheritance and Variation","inheritance"],
+    ["5","Molecular Basis of Inheritance","molecular-inheritance"],
+    ["6","Evolution","evolution"],
+    ["7","Human Health and Disease","human-health"],
+    ["8","Microbes in Human Welfare","microbes"],
+    ["9","Biotechnology: Principles and Processes","biotech-principles"],
+    ["10","Biotechnology and its Applications","biotech-applications"],
+    ["11","Organisms and Populations","organisms-populations"],
+    ["12","Ecosystem","ecosystem"],
+    ["13","Biodiversity and Conservation","biodiversity"]
+  ]
 
 };
 
@@ -70,9 +70,11 @@ let wrongThisRun = [];
 let calendarDate = new Date();
 
 
-/* ================= STORAGE ================= */
+/* =========================================================
+   STORAGE
+========================================================= */
 
-let state;
+let state = null;
 
 try {
 
@@ -82,21 +84,54 @@ try {
 
 } catch(error) {
 
-  state = null;
+  console.error(
+    "Could not read saved state:",
+    error
+  );
 
 }
 
 
-if(
-  !state ||
-  !Array.isArray(state.attempts) ||
-  !Array.isArray(state.wrong)
-){
+if(!state || typeof state !== "object"){
 
-  state = {
-    attempts: [],
-    wrong: []
-  };
+  state = {};
+
+}
+
+
+if(!Array.isArray(state.attempts)){
+
+  state.attempts = [];
+
+}
+
+
+if(!Array.isArray(state.wrong)){
+
+  state.wrong = [];
+
+}
+
+
+/* ================= SAVE STATE ================= */
+
+function saveState(){
+
+  try {
+
+    localStorage.setItem(
+      "NEET_BIOLOGY_STATE",
+      JSON.stringify(state)
+    );
+
+  } catch(error) {
+
+    console.error(
+      "Could not save state:",
+      error
+    );
+
+  }
 
 }
 
@@ -110,7 +145,9 @@ function show(id){
   document
     .querySelectorAll(".screen")
     .forEach(screen => {
+
       screen.classList.remove("active");
+
     });
 
 
@@ -154,15 +191,6 @@ function goHome(){
 }
 
 
-/*
-   Compatibility alias.
-
-   Older HTML may still contain:
-   onclick="home()"
-
-   This keeps that working.
-*/
-
 function home(){
 
   goHome();
@@ -170,24 +198,34 @@ function home(){
 }
 
 
-/* ================= CLASS NAVIGATION ================= */
+/* =========================================================
+   CLASS NAVIGATION
+========================================================= */
 
 function openClass(cls){
 
-  currentClass = Number(cls);
+  currentClass =
+    Number(cls);
 
 
   const title =
-    document.getElementById("classTitle");
+    document.getElementById(
+      "classTitle"
+    );
+
 
   const subtitle =
-    document.getElementById("classSubtitle");
+    document.getElementById(
+      "classSubtitle"
+    );
 
 
   if(title){
 
     title.textContent =
-      "Class " + currentClass + " Biology";
+      "Class " +
+      currentClass +
+      " Biology";
 
   }
 
@@ -209,7 +247,9 @@ function openClass(cls){
 }
 
 
-/* ================= CHAPTER NAVIGATION ================= */
+/* =========================================================
+   CHAPTER NAVIGATION
+========================================================= */
 
 function backToChapters(){
 
@@ -223,7 +263,9 @@ function backToChapters(){
 function renderChapters(){
 
   const box =
-    document.getElementById("chapterList");
+    document.getElementById(
+      "chapterList"
+    );
 
 
   if(!box){
@@ -262,7 +304,8 @@ function renderChapters(){
       document.createElement("div");
 
 
-    div.className = "chapter";
+    div.className =
+      "chapter";
 
 
     div.addEventListener(
@@ -289,7 +332,7 @@ function renderChapters(){
             Chapter ${num}
           </div>
 
-          <h3>${name}</h3>
+          <h3>${escapeHTML(name)}</h3>
 
         </div>
 
@@ -300,11 +343,13 @@ function renderChapters(){
       </div>
 
       <div class="count ${qs.length ? "ready" : ""}">
+
         ${
           qs.length
           ? qs.length + " questions"
           : "No questions yet"
         }
+
       </div>
 
     `;
@@ -316,6 +361,10 @@ function renderChapters(){
 
 }
 
+
+/* =========================================================
+   CHAPTER PAGE
+========================================================= */
 
 function openChapterPage(
   id,
@@ -332,6 +381,7 @@ function openChapterPage(
     document.getElementById(
       "chapterNumber"
     );
+
 
   const title =
     document.getElementById(
@@ -362,10 +412,18 @@ function openChapterPage(
     );
 
 
-  document.getElementById(
-    "chapterQuestions"
-  ).textContent =
-    qs.length;
+  const chapterQuestions =
+    document.getElementById(
+      "chapterQuestions"
+    );
+
+
+  if(chapterQuestions){
+
+    chapterQuestions.textContent =
+      qs.length;
+
+  }
 
 
   const stats =
@@ -375,30 +433,62 @@ function openChapterPage(
     );
 
 
-  document.getElementById(
-    "chapterAccuracy"
-  ).textContent =
-    stats.accuracy;
+  const chapterAccuracy =
+    document.getElementById(
+      "chapterAccuracy"
+    );
 
 
-  document.getElementById(
-    "chapterTime"
-  ).textContent =
-    stats.avgTime;
+  if(chapterAccuracy){
+
+    chapterAccuracy.textContent =
+      stats.accuracy;
+
+  }
 
 
-  document.getElementById(
-    "chapterWrong"
-  ).textContent =
-    stats.wrong;
+  const chapterTime =
+    document.getElementById(
+      "chapterTime"
+    );
 
 
-  document.getElementById(
-    "chapterStatus"
-  ).textContent =
-    qs.length
-    ? "This chapter is ready for practice."
-    : "Question bank not added yet.";
+  if(chapterTime){
+
+    chapterTime.textContent =
+      stats.avgTime;
+
+  }
+
+
+  const chapterWrong =
+    document.getElementById(
+      "chapterWrong"
+    );
+
+
+  if(chapterWrong){
+
+    chapterWrong.textContent =
+      stats.wrong;
+
+  }
+
+
+  const status =
+    document.getElementById(
+      "chapterStatus"
+    );
+
+
+  if(status){
+
+    status.textContent =
+      qs.length
+      ? "This chapter is ready for practice."
+      : "Question bank not added yet.";
+
+  }
 
 
   show("chapter");
@@ -431,7 +521,9 @@ function showChapter(){
 }
 
 
-/* ================= QUESTION HELPERS ================= */
+/* =========================================================
+   QUESTION HELPERS
+========================================================= */
 
 function getChapterQuestions(
   cls,
@@ -493,7 +585,9 @@ function startChapterPractice(){
 
     pool =
       pool.filter(
-        q => q.source === "NCERT"
+        q =>
+          String(q.source).toLowerCase()
+          === "ncert"
       );
 
   }
@@ -503,7 +597,9 @@ function startChapterPractice(){
 
     pool =
       pool.filter(
-        q => q.source === "NCERT Exemplar"
+        q =>
+          String(q.source).toLowerCase()
+          === "ncert exemplar"
       );
 
   }
@@ -513,7 +609,9 @@ function startChapterPractice(){
 
     pool =
       pool.filter(
-        q => q.source === "NEET PYQ"
+        q =>
+          String(q.source).toLowerCase()
+          === "neet pyq"
       );
 
   }
@@ -523,7 +621,11 @@ function startChapterPractice(){
 
     pool =
       pool.filter(
-        q => state.wrong.includes(q.id)
+        q =>
+          state.wrong.some(
+            id =>
+              String(id) === String(q.id)
+          )
       );
 
   }
@@ -602,9 +704,13 @@ function startAllWrongPractice(){
   }
 
 
-  let pool =
+  const pool =
     QUESTIONS.filter(
-      q => state.wrong.includes(q.id)
+      q =>
+        state.wrong.some(
+          id =>
+            String(id) === String(q.id)
+        )
     );
 
 
@@ -622,13 +728,11 @@ function startAllWrongPractice(){
   shuffle(pool);
 
 
-  /*
-     Practice up to 50 wrong questions at once.
-     If there are fewer than 50, use all of them.
-  */
-
   const n =
-    Math.min(50,pool.length);
+    Math.min(
+      50,
+      pool.length
+    );
 
 
   quiz =
@@ -649,7 +753,20 @@ function startAllWrongPractice(){
 }
 
 
-/* ================= SHUFFLE ================= */
+/*
+   Compatibility alias for older code/buttons.
+*/
+
+function startWrongPractice(){
+
+  startAllWrongPractice();
+
+}
+
+
+/* =========================================================
+   SHUFFLE
+========================================================= */
 
 function shuffle(array){
 
@@ -685,7 +802,10 @@ function shuffle(array){
 
 function startTimer(){
 
-  quizStart = Date.now();
+  stopTimer();
+
+  quizStart =
+    Date.now();
 
 
   timerInterval =
@@ -693,7 +813,10 @@ function startTimer(){
 
       const seconds =
         Math.floor(
-          (Date.now() - quizStart) / 1000
+          (
+            Date.now() -
+            quizStart
+          ) / 1000
         );
 
 
@@ -719,7 +842,9 @@ function stopTimer(){
 
   if(timerInterval){
 
-    clearInterval(timerInterval);
+    clearInterval(
+      timerInterval
+    );
 
     timerInterval = null;
 
@@ -731,7 +856,9 @@ function stopTimer(){
 function formatTime(seconds){
 
   const min =
-    Math.floor(seconds / 60);
+    Math.floor(
+      seconds / 60
+    );
 
 
   const sec =
@@ -740,8 +867,10 @@ function formatTime(seconds){
 
   return (
     String(min).padStart(2,"0")
-    + ":"
-    + String(sec).padStart(2,"0")
+    +
+    ":"
+    +
+    String(sec).padStart(2,"0")
   );
 
 }
@@ -772,68 +901,132 @@ function renderQuestion(){
   }
 
 
-  document.getElementById(
-    "quizMeta"
-  ).textContent =
-    `Question ${quizIndex + 1} of ${quiz.length} • ${q.topic}`;
+  const meta =
+    document.getElementById(
+      "quizMeta"
+    );
 
 
-  document.getElementById(
-    "quizSource"
-  ).textContent =
-    q.source || "";
+  if(meta){
+
+    meta.textContent =
+      `Question ${
+        quizIndex + 1
+      } of ${
+        quiz.length
+      } • ${
+        q.topic || ""
+      }`;
+
+  }
 
 
-  document.getElementById(
-    "quizQuestion"
-  ).textContent =
-    q.question || "";
+  const source =
+    document.getElementById(
+      "quizSource"
+    );
+
+
+  if(source){
+
+    source.textContent =
+      q.source || "";
+
+  }
+
+
+  const question =
+    document.getElementById(
+      "quizQuestion"
+    );
+
+
+  if(question){
+
+    question.textContent =
+      q.question || "";
+
+  }
 
 
   const letters =
     ["A","B","C","D"];
 
 
-  document.getElementById(
-    "quizOptions"
-  ).innerHTML =
-
-    Array.isArray(q.options)
-    ? q.options.map((o,i) => `
-
-      <button
-        class="option"
-        onclick="answerQuestion(${i})">
-
-        <span class="letter">
-          ${letters[i]}
-        </span>
-
-        <span>
-          ${o}
-        </span>
-
-      </button>
-
-    `).join("")
-    : "";
+  const options =
+    document.getElementById(
+      "quizOptions"
+    );
 
 
-  document.getElementById(
-    "quizFeedback"
-  ).innerHTML = "";
+  if(options){
+
+    options.innerHTML =
+      Array.isArray(q.options)
+      ? q.options.map(
+          (o,i) => `
+
+            <button
+              class="option"
+              onclick="answerQuestion(${i})">
+
+              <span class="letter">
+                ${letters[i] || ""}
+              </span>
+
+              <span>
+                ${escapeHTML(String(o))}
+              </span>
+
+            </button>
+
+          `
+        ).join("")
+      : "";
+
+  }
 
 
-  document.getElementById(
-    "nextButton"
-  ).style.display =
-    "none";
+  const feedback =
+    document.getElementById(
+      "quizFeedback"
+    );
 
 
-  document.getElementById(
-    "timer"
-  ).textContent =
-    "00:00";
+  if(feedback){
+
+    feedback.innerHTML =
+      "";
+
+  }
+
+
+  const next =
+    document.getElementById(
+      "nextButton"
+    );
+
+
+  if(next){
+
+    next.style.display =
+      "none";
+
+  }
+
+
+  const timer =
+    document.getElementById(
+      "timer"
+    );
+
+
+  if(timer){
+
+    timer.textContent =
+      "00:00";
+
+  }
 
 
   startTimer();
@@ -868,9 +1061,19 @@ function answerQuestion(choice){
     quiz[quizIndex];
 
 
+  if(!q){
+
+    return;
+
+  }
+
+
   const timeTaken =
     Math.round(
-      (Date.now() - quizStart) / 1000
+      (
+        Date.now() -
+        quizStart
+      ) / 1000
     );
 
 
@@ -880,7 +1083,7 @@ function answerQuestion(choice){
 
 
   const correct =
-    choice === q.answer;
+    Number(choice) === Number(q.answer);
 
 
   if(correct){
@@ -888,18 +1091,12 @@ function answerQuestion(choice){
     quizScore++;
 
 
-    /*
-       IMPORTANT:
-
-       If the question was previously wrong,
-       answering it correctly removes it from
-       the ACTIVE wrong-question bank.
-
-       Historical attempts remain untouched.
-    */
-
     const wrongIndex =
-      state.wrong.indexOf(q.id);
+      state.wrong.findIndex(
+        id =>
+          String(id) ===
+          String(q.id)
+      );
 
 
     if(wrongIndex !== -1){
@@ -913,11 +1110,19 @@ function answerQuestion(choice){
 
   }else{
 
-    if(
-      !state.wrong.includes(q.id)
-    ){
+    const alreadyWrong =
+      state.wrong.some(
+        id =>
+          String(id) ===
+          String(q.id)
+      );
 
-      state.wrong.push(q.id);
+
+    if(!alreadyWrong){
+
+      state.wrong.push(
+        q.id
+      );
 
     }
 
@@ -963,7 +1168,10 @@ function answerQuestion(choice){
           "none";
 
 
-        if(index === q.answer){
+        if(
+          Number(index) ===
+          Number(q.answer)
+        ){
 
           button.classList.add(
             "correct"
@@ -973,7 +1181,8 @@ function answerQuestion(choice){
 
 
         if(
-          index === choice &&
+          Number(index) ===
+          Number(choice) &&
           !correct
         ){
 
@@ -989,38 +1198,62 @@ function answerQuestion(choice){
 
   const correctLetter =
     String.fromCharCode(
-      65 + q.answer
+      65 + Number(q.answer)
     );
 
 
-  document.getElementById(
-    "quizFeedback"
-  ).innerHTML = `
+  const feedback =
+    document.getElementById(
+      "quizFeedback"
+    );
 
-    <div class="feedback ${correct ? "good" : "bad"}">
 
-      <b>
-        ${correct ? "Correct" : "Incorrect"}
-      </b>
+  if(feedback){
 
-      <br>
+    feedback.innerHTML = `
 
-      ${
+      <div class="feedback ${
         correct
-        ? "Good. Keep the reasoning."
-        : "Correct answer: " + correctLetter
-      }
+        ? "good"
+        : "bad"
+      }">
 
-    </div>
+        <b>
+          ${
+            correct
+            ? "Correct"
+            : "Incorrect"
+          }
+        </b>
 
-    <div class="explain">
+        <br>
 
-      <b>Why:</b>
-      ${q.explanation || "No explanation available."}
+        ${
+          correct
+          ? "Good. Keep the reasoning."
+          : "Correct answer: " +
+            correctLetter
+        }
 
-    </div>
+      </div>
 
-  `;
+      <div class="explain">
+
+        <b>Why:</b>
+        ${
+          escapeHTML(
+            String(
+              q.explanation ||
+              "No explanation available."
+            )
+          )
+        }
+
+      </div>
+
+    `;
+
+  }
 
 
   const next =
@@ -1029,19 +1262,26 @@ function answerQuestion(choice){
     );
 
 
-  next.style.display =
-    "block";
+  if(next){
+
+    next.style.display =
+      "block";
 
 
-  next.textContent =
-    quizIndex === quiz.length - 1
-    ? "See Results"
-    : "Next";
+    next.textContent =
+      quizIndex ===
+      quiz.length - 1
+      ? "See Results"
+      : "Next";
+
+  }
 
 }
 
 
-/* ================= NEXT ================= */
+/* =========================================================
+   NEXT
+========================================================= */
 
 function nextQuestion(){
 
@@ -1063,7 +1303,9 @@ function nextQuestion(){
 }
 
 
-/* ================= EXIT ================= */
+/* =========================================================
+   EXIT
+========================================================= */
 
 function exitQuiz(){
 
@@ -1085,7 +1327,8 @@ function showResults(){
 
   const totalTime =
     questionTimes.reduce(
-      (a,b) => a + b,
+      (a,b) =>
+        a + b,
       0
     );
 
@@ -1093,66 +1336,116 @@ function showResults(){
   const accuracy =
     quiz.length
     ? Math.round(
-        quizScore /
-        quiz.length *
-        100
+        (
+          quizScore /
+          quiz.length
+        ) * 100
       )
     : 0;
 
 
-  document.getElementById(
-    "resultScore"
-  ).textContent =
-    quizScore + "/" + quiz.length;
-
-
-  document.getElementById(
-    "resultAccuracy"
-  ).textContent =
-    accuracy + "%";
-
-
-  document.getElementById(
-    "resultTime"
-  ).textContent =
-    formatDuration(
-      totalTime
+  const score =
+    document.getElementById(
+      "resultScore"
     );
 
 
-  document.getElementById(
-    "resultAvg"
-  ).textContent =
-    formatSeconds(
-      quiz.length
-      ? Math.round(
-          totalTime /
-          quiz.length
-        )
-      : 0
+  if(score){
+
+    score.textContent =
+      quizScore +
+      "/" +
+      quiz.length;
+
+  }
+
+
+  const resultAccuracy =
+    document.getElementById(
+      "resultAccuracy"
     );
 
 
-  document.getElementById(
-    "resultTitle"
-  ).textContent =
-    accuracy >= 85
-    ? "Strong performance."
-    : "Useful diagnostic.";
+  if(resultAccuracy){
+
+    resultAccuracy.textContent =
+      accuracy + "%";
+
+  }
 
 
-  document.getElementById(
-    "resultText"
-  ).textContent =
-    accuracy >= 85
-    ? "Accuracy is solid. Keep revisiting mistakes."
-    : "Your mistakes identify what deserves another look in NCERT.";
+  const resultTime =
+    document.getElementById(
+      "resultTime"
+    );
+
+
+  if(resultTime){
+
+    resultTime.textContent =
+      formatDuration(
+        totalTime
+      );
+
+  }
+
+
+  const resultAvg =
+    document.getElementById(
+      "resultAvg"
+    );
+
+
+  if(resultAvg){
+
+    resultAvg.textContent =
+      formatSeconds(
+        quiz.length
+        ? Math.round(
+            totalTime /
+            quiz.length
+          )
+        : 0
+      );
+
+  }
+
+
+  const resultTitle =
+    document.getElementById(
+      "resultTitle"
+    );
+
+
+  if(resultTitle){
+
+    resultTitle.textContent =
+      accuracy >= 85
+      ? "Strong performance."
+      : "Useful diagnostic.";
+
+  }
+
+
+  const resultText =
+    document.getElementById(
+      "resultText"
+    );
+
+
+  if(resultText){
+
+    resultText.textContent =
+      accuracy >= 85
+      ? "Accuracy is solid. Keep revisiting mistakes."
+      : "Your mistakes identify what deserves another look in NCERT.";
+
+  }
 
 
   updateDashboard();
 
   renderWrongQuestions();
-
 
   show("results");
 
@@ -1165,10 +1458,18 @@ function showResults(){
 
 function redoWrong(){
 
-  document.getElementById(
-    "practiceMode"
-  ).value =
-    "wrong";
+  const mode =
+    document.getElementById(
+      "practiceMode"
+    );
+
+
+  if(mode){
+
+    mode.value =
+      "wrong";
+
+  }
 
 
   const wrongPool =
@@ -1176,7 +1477,12 @@ function redoWrong(){
       currentClass,
       currentChapter
     ).filter(
-      q => state.wrong.includes(q.id)
+      q =>
+        state.wrong.some(
+          id =>
+            String(id) ===
+            String(q.id)
+        )
     );
 
 
@@ -1203,14 +1509,18 @@ function redoWrong(){
 function updateDashboard(){
 
   const attempts =
-    state.attempts;
+    Array.isArray(state.attempts)
+    ? state.attempts
+    : [];
 
 
   const today =
     attempts.filter(
       x =>
         x.date ===
-        getDateKey(new Date())
+        getDateKey(
+          new Date()
+        )
     );
 
 
@@ -1239,9 +1549,13 @@ function updateDashboard(){
       "todayQuestions"
     );
 
-  if(todayQuestions)
+
+  if(todayQuestions){
+
     todayQuestions.textContent =
       today.length;
+
+  }
 
 
   const todayAccuracy =
@@ -1249,9 +1563,13 @@ function updateDashboard(){
       "todayAccuracy"
     );
 
-  if(todayAccuracy)
+
+  if(todayAccuracy){
+
     todayAccuracy.textContent =
       getAccuracy(today);
+
+  }
 
 
   const todayTime =
@@ -1259,15 +1577,23 @@ function updateDashboard(){
       "todayTime"
     );
 
-  if(todayTime)
+
+  if(todayTime){
+
     todayTime.textContent =
       formatDuration(
         today.reduce(
           (a,b) =>
-            a + (Number(b.time) || 0),
+            a +
+            (
+              Number(b.time) ||
+              0
+            ),
           0
         )
       );
+
+  }
 
 
   const todayAvg =
@@ -1275,15 +1601,20 @@ function updateDashboard(){
       "todayAvg"
     );
 
-  if(todayAvg)
-    todayAvg.textContent =
 
+  if(todayAvg){
+
+    todayAvg.textContent =
       today.length
       ? formatSeconds(
           Math.round(
             today.reduce(
               (a,b) =>
-                a + (Number(b.time) || 0),
+                a +
+                (
+                  Number(b.time) ||
+                  0
+                ),
               0
             )
             /
@@ -1292,15 +1623,21 @@ function updateDashboard(){
         )
       : "—";
 
+  }
+
 
   const weekQuestions =
     document.getElementById(
       "weekQuestions"
     );
 
-  if(weekQuestions)
+
+  if(weekQuestions){
+
     weekQuestions.textContent =
       week.length;
+
+  }
 
 
   const monthQuestions =
@@ -1308,9 +1645,13 @@ function updateDashboard(){
       "monthQuestions"
     );
 
-  if(monthQuestions)
+
+  if(monthQuestions){
+
     monthQuestions.textContent =
       month.length;
+
+  }
 
 
   const allQuestions =
@@ -1318,9 +1659,13 @@ function updateDashboard(){
       "allQuestions"
     );
 
-  if(allQuestions)
+
+  if(allQuestions){
+
     allQuestions.textContent =
       attempts.length;
+
+  }
 
 
   const allAccuracy =
@@ -1328,9 +1673,13 @@ function updateDashboard(){
       "allAccuracy"
     );
 
-  if(allAccuracy)
+
+  if(allAccuracy){
+
     allAccuracy.textContent =
       getAccuracy(attempts);
+
+  }
 
 
   renderWeakTopics();
@@ -1340,11 +1689,16 @@ function updateDashboard(){
 }
 
 
-/* ================= ACCURACY ================= */
+/* =========================================================
+   ACCURACY
+========================================================= */
 
 function getAccuracy(arr){
 
-  if(!arr.length){
+  if(
+    !Array.isArray(arr) ||
+    !arr.length
+  ){
 
     return "—";
 
@@ -1353,7 +1707,8 @@ function getAccuracy(arr){
 
   return Math.round(
     arr.filter(
-      x => x.correct
+      x =>
+        x.correct
     ).length
     /
     arr.length
@@ -1376,8 +1731,11 @@ function renderWeakTopics(){
     );
 
 
-  if(!box)
+  if(!box){
+
     return;
+
+  }
 
 
   const groups = {};
@@ -1444,7 +1802,6 @@ function renderWeakTopics(){
     Object.values(groups)
     .map(g => {
 
-
       g.accuracy =
         Math.round(
           g.correct /
@@ -1461,25 +1818,23 @@ function renderWeakTopics(){
 
 
       g.weakness =
-
         (100 - g.accuracy)
-
         +
-
         (g.wrong * 3)
-
         +
-
-        (g.avgTime > 60
+        (
+          g.avgTime > 60
           ? 10
-          : 0);
+          : 0
+        );
 
 
       return g;
 
     })
     .filter(
-      g => g.attempts >= 2
+      g =>
+        g.attempts >= 2
     )
     .sort(
       (a,b) =>
@@ -1515,7 +1870,9 @@ function renderWeakTopics(){
         <div class="weak-top">
 
           <div class="weak-name">
-            ${escapeHTML(g.topic)}
+            ${escapeHTML(
+              String(g.topic || "General")
+            )}
           </div>
 
           <div class="weak-score">
@@ -1546,69 +1903,20 @@ function renderWeakTopics(){
 
 function renderWrongQuestions(){
 
-  /*
-     We create the entire section dynamically.
-
-     Therefore NO HTML modification is required.
-  */
-
-
-  const homeScreen =
+  const section =
     document.getElementById(
-      "home"
-    );
-
-
-  if(!homeScreen)
-    return;
-
-
-  let section =
-    document.getElementById(
-      "wrongQuestionsSection"
+      "wrongQuestions"
     );
 
 
   /*
-     Create it once.
+     The HTML already contains the Wrong Questions
+     section, so we use that existing container.
   */
 
   if(!section){
 
-    section =
-      document.createElement("div");
-
-    section.id =
-      "wrongQuestionsSection";
-
-
-    /*
-       Put it after Weak Topics if possible.
-    */
-
-    const weakBox =
-      document.getElementById(
-        "weakTopics"
-      );
-
-
-    if(
-      weakBox &&
-      weakBox.parentNode
-    ){
-
-      weakBox.parentNode.insertBefore(
-        section,
-        weakBox.nextSibling
-      );
-
-    }else{
-
-      homeScreen.appendChild(
-        section
-      );
-
-    }
+    return;
 
   }
 
@@ -1616,14 +1924,12 @@ function renderWrongQuestions(){
   const wrongIds =
     Array.from(
       new Set(
-        state.wrong
+        state.wrong.map(
+          id => String(id)
+        )
       )
     );
 
-
-  /*
-     Find actual question objects.
-  */
 
   let wrongQuestions = [];
 
@@ -1635,49 +1941,27 @@ function renderWrongQuestions(){
 
     wrongQuestions =
       QUESTIONS.filter(
-        q => wrongIds.includes(q.id)
+        q =>
+          wrongIds.includes(
+            String(q.id)
+          )
       );
 
   }
-
-
-  /*
-     Keep only questions that still exist
-     in the current question bank.
-  */
-
-  const validIds =
-    new Set(
-      wrongQuestions.map(
-        q => q.id
-      )
-    );
-
-
-  /*
-     If old/deleted IDs exist, don't display
-     broken cards.
-  */
 
 
   if(!wrongQuestions.length){
 
     section.innerHTML = `
 
-      <div class="section-title">
-        Wrong Questions
-      </div>
+      <div class="wrong-empty">
 
-      <div class="card">
+        Your wrong-question bank is empty.
 
-        <h3>
-          Your wrong-question bank is empty.
-        </h3>
+        <br>
 
-        <p class="note">
-          Questions you get wrong will appear here
-          so you can turn mistakes into strengths.
-        </p>
+        Questions you answer incorrectly
+        will appear here for revision.
 
       </div>
 
@@ -1688,138 +1972,97 @@ function renderWrongQuestions(){
   }
 
 
-  /*
-     Maximum 10 displayed on Home.
-     The full bank can still be practised.
-  */
-
   const displayed =
-    wrongQuestions.slice(0,10);
+    wrongQuestions.slice(
+      0,
+      10
+    );
 
 
-  section.innerHTML = `
-
-    <div class="section-title">
-      Wrong Questions
-    </div>
-
-    <div class="card">
-
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        gap:12px;
-        margin-bottom:12px;
-      ">
-
-        <div>
-
-          <h3 style="margin:0">
-            ${wrongQuestions.length}
-            question${wrongQuestions.length === 1 ? "" : "s"}
-          </h3>
-
-          <p class="note" style="margin:4px 0 0">
-            Questions currently needing revision.
-          </p>
-
-        </div>
-
-        <button
-          class="primary"
-          onclick="startWrongPractice()">
-
-          Practice Wrong
-
-        </button>
-
-      </div>
-
-    </div>
-
-    <div id="wrongQuestionList">
-
-      ${displayed.map((q,index) => `
+  section.innerHTML =
+    displayed.map(
+      (q,index) => `
 
         <div
-          class="weak-card"
-          style="cursor:pointer"
-          onclick="openWrongQuestion(
-            '${escapeJS(q.id)}'
-          )">
+          class="wrong-card"
+          onclick="openWrongQuestion('${escapeJS(q.id)}')">
 
-          <div class="weak-top">
+          <div class="wrong-question">
 
-            <div class="weak-name">
-
-              ${index + 1}.
-              ${escapeHTML(
-                truncateText(
-                  q.question,
-                  110
-                )
-              )}
-
-            </div>
+            ${index + 1}.
+            ${escapeHTML(
+              truncateText(
+                String(q.question || ""),
+                120
+              )
+            )}
 
           </div>
 
-          <div class="weak-details">
+          <div class="wrong-topic">
 
             Class ${q.class}
-            • ${escapeHTML(
+            •
+            ${escapeHTML(
               getChapterName(
                 q.class,
                 q.chapter
               )
             )}
-
-            • ${escapeHTML(
-              q.topic || "General"
+            •
+            ${escapeHTML(
+              String(
+                q.topic ||
+                "General"
+              )
             )}
 
-            • ${escapeHTML(
-              q.source || ""
+          </div>
+
+          <div class="wrong-source">
+
+            ${escapeHTML(
+              String(
+                q.source ||
+                ""
+              )
             )}
 
           </div>
 
         </div>
 
-      `).join("")}
-
-    </div>
-
-    ${
-      wrongQuestions.length > 10
-      ? `
-
-        <div class="card">
-
-          <p class="note">
-
-            Showing 10 of
-            ${wrongQuestions.length}
-            wrong questions.
-
-          </p>
-
-          <button
-            class="secondary full"
-            onclick="startWrongPractice()">
-
-            Practice Full Wrong Bank
-
-          </button>
-
-        </div>
-
       `
-      : ""
-    }
+    ).join("");
 
-  `;
+
+  if(wrongQuestions.length > 10){
+
+    section.innerHTML += `
+
+      <div class="card">
+
+        <p class="note">
+
+          Showing 10 of
+          ${wrongQuestions.length}
+          wrong questions.
+
+        </p>
+
+        <button
+          class="secondary full"
+          onclick="startAllWrongPractice()">
+
+          Practice Full Wrong Bank
+
+        </button>
+
+      </div>
+
+    `;
+
+  }
 
 }
 
@@ -1829,6 +2072,20 @@ function renderWrongQuestions(){
 ========================================================= */
 
 function openWrongQuestion(id){
+
+  if(
+    typeof QUESTIONS === "undefined" ||
+    !Array.isArray(QUESTIONS)
+  ){
+
+    alert(
+      "Question bank is unavailable."
+    );
+
+    return;
+
+  }
+
 
   const q =
     QUESTIONS.find(
@@ -1877,6 +2134,7 @@ function openWrongQuestion(id){
 
   currentChapterName =
     chapterInfo[1];
+
 
   currentChapterNumber =
     chapterInfo[0];
@@ -1960,8 +2218,11 @@ function getChapterStats(
   const a =
     state.attempts.filter(
       x =>
-        Number(x.class) === Number(cls) &&
-        String(x.chapter) === String(chapter)
+        Number(x.class) ===
+          Number(cls)
+        &&
+        String(x.chapter) ===
+          String(chapter)
     );
 
 
@@ -1992,7 +2253,10 @@ function getChapterStats(
           a.reduce(
             (x,y) =>
               x +
-              (Number(y.time) || 0),
+              (
+                Number(y.time) ||
+                0
+              ),
             0
           )
           /
@@ -2003,7 +2267,8 @@ function getChapterStats(
 
     wrong:
       a.filter(
-        x => !x.correct
+        x =>
+          !x.correct
       ).length
 
   };
@@ -2022,14 +2287,18 @@ function renderCalendar(){
       "calendarTitle"
     );
 
+
   const box =
     document.getElementById(
       "calendar"
     );
 
 
-  if(!title || !box)
+  if(!title || !box){
+
     return;
+
+  }
 
 
   const year =
@@ -2188,7 +2457,9 @@ function renderCalendar(){
 }
 
 
-/* ================= CALENDAR NAVIGATION ================= */
+/* =========================================================
+   CALENDAR NAVIGATION
+========================================================= */
 
 function previousMonth(){
 
@@ -2215,9 +2486,343 @@ function nextMonth(){
 
 
 /* =========================================================
-   HELPERS
+   DATE HELPERS
 ========================================================= */
 
 function getDateKey(date){
 
+  const year =
+    date.getFullYear();
+
+
+  const month =
+    String(
+      date.getMonth() + 1
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  const day =
+    String(
+      date.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
+
+
   return (
+    year +
+    "-" +
+    month +
+    "-" +
+    day
+  );
+
+}
+
+
+function withinDays(
+  dateString,
+  days
+){
+
+  if(!dateString){
+
+    return false;
+
+  }
+
+
+  const parts =
+    String(
+      dateString
+    ).split("-");
+
+
+  if(parts.length !== 3){
+
+    return false;
+
+  }
+
+
+  const date =
+    new Date(
+      Number(parts[0]),
+      Number(parts[1]) - 1,
+      Number(parts[2])
+    );
+
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  ){
+
+    return false;
+
+  }
+
+
+  const now =
+    new Date();
+
+
+  const today =
+    new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate()
+    );
+
+
+  const difference =
+    today.getTime() -
+    date.getTime();
+
+
+  const dayMs =
+    24 * 60 * 60 * 1000;
+
+
+  return (
+    difference >= 0 &&
+    difference <
+      days * dayMs
+  );
+
+}
+
+
+/* =========================================================
+   FORMAT HELPERS
+========================================================= */
+
+function formatDuration(seconds){
+
+  seconds =
+    Math.max(
+      0,
+      Number(seconds) || 0
+    );
+
+
+  if(seconds < 60){
+
+    return (
+      Math.round(seconds) +
+      "s"
+    );
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const remaining =
+    Math.round(
+      seconds % 60
+    );
+
+
+  if(minutes < 60){
+
+    return (
+      minutes +
+      "m " +
+      remaining +
+      "s"
+    );
+
+  }
+
+
+  const hours =
+    Math.floor(
+      minutes / 60
+    );
+
+
+  const mins =
+    minutes % 60;
+
+
+  return (
+    hours +
+    "h " +
+    mins +
+    "m"
+  );
+
+}
+
+
+function formatSeconds(seconds){
+
+  seconds =
+    Math.max(
+      0,
+      Number(seconds) || 0
+    );
+
+
+  if(seconds < 60){
+
+    return (
+      Math.round(seconds) +
+      "s"
+    );
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const remaining =
+    Math.round(
+      seconds % 60
+    );
+
+
+  return (
+    minutes +
+    "m " +
+    remaining +
+    "s"
+  );
+
+}
+
+
+/* =========================================================
+   SECURITY / TEXT HELPERS
+========================================================= */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+    .replace(
+      /</g,
+      "&lt;"
+    )
+    .replace(
+      />/g,
+      "&gt;"
+    )
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
+
+
+function escapeJS(value){
+
+  return String(value)
+    .replace(
+      /\\/g,
+      "\\\\"
+    )
+    .replace(
+      /'/g,
+      "\\'"
+    )
+    .replace(
+      /\r/g,
+      "\\r"
+    )
+    .replace(
+      /\n/g,
+      "\\n"
+    );
+
+}
+
+
+function truncateText(
+  text,
+  maxLength
+){
+
+  text =
+    String(text || "");
+
+
+  if(
+    text.length <=
+    maxLength
+  ){
+
+    return text;
+
+  }
+
+
+  return (
+    text.slice(
+      0,
+      maxLength
+    ) +
+    "…"
+  );
+
+}
+
+
+/* =========================================================
+   INITIALIZE APP
+========================================================= */
+
+function initializeApp(){
+
+  updateDashboard();
+
+  renderCalendar();
+
+  renderWrongQuestions();
+
+}
+
+
+/*
+   The script is loaded at the bottom of index.html,
+   but DOMContentLoaded makes initialization safe
+   even if script placement changes later.
+*/
+
+if(
+  document.readyState ===
+  "loading"
+){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeApp
+  );
+
+}else{
+
+  initializeApp();
+
+}
