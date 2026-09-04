@@ -1,5 +1,6 @@
 /* =========================================================
    NEET BIOLOGY APP ENGINE
+   Navigation + Practice + Timer + Analytics
 ========================================================= */
 
 
@@ -50,225 +51,395 @@ const CHAPTERS = {
 
 /* ================= STATE ================= */
 
-let currentClass=11;
-let currentChapter=null;
+let currentClass = 11;
+let currentChapter = null;
+let currentChapterName = "";
+let currentChapterNumber = "";
 
-let quiz=[];
-let quizIndex=0;
-let quizScore=0;
-let quizStart=0;
-let timerInterval=null;
-let questionTimes=[];
-let wrongThisRun=[];
+let quiz = [];
+let quizIndex = 0;
+let quizScore = 0;
+let quizStart = 0;
 
-let calendarDate=new Date();
+let timerInterval = null;
+
+let questionTimes = [];
+let wrongThisRun = [];
+
+let calendarDate = new Date();
 
 
-let state=JSON.parse(
- localStorage.getItem("NEET_BIOLOGY_STATE")
- ||
- '{"attempts":[],"wrong":[]}'
-);
+/* ================= STORAGE ================= */
+
+let state;
+
+try {
+
+  state = JSON.parse(
+    localStorage.getItem("NEET_BIOLOGY_STATE")
+  );
+
+} catch(error) {
+
+  state = null;
+
+}
+
+
+if(
+  !state ||
+  !Array.isArray(state.attempts) ||
+  !Array.isArray(state.wrong)
+){
+
+  state = {
+    attempts: [],
+    wrong: []
+  };
+
+}
 
 
 /* ================= NAVIGATION ================= */
 
 function show(id){
 
- document.querySelectorAll(".screen")
- .forEach(x=>x.classList.remove("active"));
+  const screens =
+    document.querySelectorAll(".screen");
 
- const screen=document.getElementById(id);
+  screens.forEach(screen => {
+    screen.classList.remove("active");
+  });
 
- if(screen){
 
-   screen.classList.add("active");
+  const target =
+    document.getElementById(id);
 
- }
+  if(!target){
 
- window.scrollTo(0,0);
+    console.error(
+      "Navigation error: screen not found:",
+      id
+    );
+
+    return;
+
+  }
+
+
+  target.classList.add("active");
+
+  window.scrollTo(0,0);
 
 }
 
 
-function home(){
+/* =========================================================
+   HOME
+   Renamed from home() because id="home" exists in HTML.
+========================================================= */
 
- stopTimer();
+function goHome(){
 
- updateDashboard();
+  stopTimer();
 
- renderCalendar();
+  updateDashboard();
 
- show("home");
+  renderCalendar();
+
+  show("home");
 
 }
 
+
+/* ================= CLASS NAVIGATION ================= */
 
 function openClass(cls){
 
- currentClass=cls;
+  currentClass = Number(cls);
 
- document.getElementById("classTitle").textContent=
- "Class "+cls+" Biology";
+  const title =
+    document.getElementById("classTitle");
 
- document.getElementById("classSubtitle").textContent=
- cls===11
- ?"19 chapters • NCERT-first practice"
- :"13 chapters • NCERT-first practice";
+  const subtitle =
+    document.getElementById("classSubtitle");
 
- renderChapters();
 
- show("chapters");
+  title.textContent =
+    "Class " + currentClass + " Biology";
+
+
+  subtitle.textContent =
+    currentClass === 11
+    ? "19 chapters • NCERT-first practice"
+    : "13 chapters • NCERT-first practice";
+
+
+  renderChapters();
+
+  show("chapters");
 
 }
 
 
+/* ================= CHAPTER NAVIGATION ================= */
+
 function backToChapters(){
 
- stopTimer();
+  renderChapters();
 
- renderChapters();
-
- show("chapters");
+  show("chapters");
 
 }
 
 
 /*
-  Used by the Results screen.
+   Important:
+   Chapter cards now use addEventListener()
+   instead of relying on inline/global onclick
+   behaviour.
+*/
 
-  The old code called showChapter()
-  but the function did not exist.
-  That is why the button did nothing.
+function renderChapters(){
+
+  const box =
+    document.getElementById("chapterList");
+
+
+  if(!box){
+
+    console.error(
+      "chapterList element not found."
+    );
+
+    return;
+
+  }
+
+
+  box.innerHTML = "";
+
+
+  const chapters =
+    CHAPTERS[currentClass] || [];
+
+
+  chapters.forEach(c => {
+
+    const num = c[0];
+    const name = c[1];
+    const id = c[2];
+
+
+    const qs =
+      getChapterQuestions(
+        currentClass,
+        id
+      );
+
+
+    const div =
+      document.createElement("div");
+
+
+    div.className = "chapter";
+
+
+    /*
+       Direct event listener.
+       This is deliberately NOT:
+       onclick="openChapter(...)"
+    */
+
+    div.addEventListener(
+      "click",
+      function(){
+
+        openChapterPage(
+          id,
+          name,
+          num
+        );
+
+      }
+    );
+
+
+    div.innerHTML = `
+
+      <div class="chapter-top">
+
+        <div>
+
+          <div class="number">
+            Chapter ${num}
+          </div>
+
+          <h3>${name}</h3>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </div>
+
+      <div class="count ${qs.length ? "ready" : ""}">
+        ${
+          qs.length
+          ? qs.length + " questions"
+          : "No questions yet"
+        }
+      </div>
+
+    `;
+
+
+    box.appendChild(div);
+
+  });
+
+}
+
+
+/*
+   New chapter-opening function.
+   Renamed to avoid any possible global
+   name collision.
+*/
+
+function openChapterPage(
+  id,
+  name,
+  num
+){
+
+  currentChapter = id;
+  currentChapterName = name;
+  currentChapterNumber = num;
+
+
+  document.getElementById(
+    "chapterNumber"
+  ).textContent =
+    "CHAPTER " + num;
+
+
+  document.getElementById(
+    "chapterTitle"
+  ).textContent =
+    name;
+
+
+  const qs =
+    getChapterQuestions(
+      currentClass,
+      currentChapter
+    );
+
+
+  document.getElementById(
+    "chapterQuestions"
+  ).textContent =
+    qs.length;
+
+
+  const stats =
+    getChapterStats(
+      currentClass,
+      currentChapter
+    );
+
+
+  document.getElementById(
+    "chapterAccuracy"
+  ).textContent =
+    stats.accuracy;
+
+
+  document.getElementById(
+    "chapterTime"
+  ).textContent =
+    stats.avgTime;
+
+
+  document.getElementById(
+    "chapterWrong"
+  ).textContent =
+    stats.wrong;
+
+
+  document.getElementById(
+    "chapterStatus"
+  ).textContent =
+    qs.length
+    ? "This chapter is ready for practice."
+    : "Question bank not added yet.";
+
+
+  show("chapter");
+
+}
+
+
+/*
+   Used by the Results page.
+   Your old HTML called showChapter(),
+   but the function didn't exist.
 */
 
 function showChapter(){
 
- stopTimer();
+  stopTimer();
 
- if(!currentChapter){
+  if(!currentChapter){
 
-   home();
+    backToChapters();
 
-   return;
+    return;
 
- }
+  }
 
- const chapter=
- CHAPTERS[currentClass].find(
-   c=>c[2]===currentChapter
- );
 
- if(!chapter){
-
-   home();
-
-   return;
-
- }
-
- openChapter(
-   chapter[2],
-   chapter[1],
-   chapter[0]
- );
+  openChapterPage(
+    currentChapter,
+    currentChapterName,
+    currentChapterNumber
+  );
 
 }
 
 
-function renderChapters(){
+/* ================= QUESTION HELPERS ================= */
 
- const box=document.getElementById("chapterList");
+function getChapterQuestions(
+  cls,
+  chapter
+){
 
- box.innerHTML="";
+  if(
+    typeof QUESTIONS === "undefined" ||
+    !Array.isArray(QUESTIONS)
+  ){
 
- CHAPTERS[currentClass].forEach(c=>{
+    console.error(
+      "QUESTIONS array is unavailable."
+    );
 
-   const num=c[0];
-   const name=c[1];
-   const id=c[2];
+    return [];
 
-   const qs=QUESTIONS.filter(
-     q=>q.class===currentClass &&
-     q.chapter===id
-   );
-
-   const div=document.createElement("div");
-
-   div.className="chapter";
-
-   div.onclick=()=>openChapter(id,name,num);
-
-   div.innerHTML=`
-
-     <div class="chapter-top">
-
-       <div>
-
-         <div class="number">
-           Chapter ${num}
-         </div>
-
-         <h3>${name}</h3>
-
-       </div>
-
-       <div class="arrow">›</div>
-
-     </div>
-
-     <div class="count ${qs.length?"ready":""}">
-       ${qs.length
-       ?qs.length+" questions"
-       :"No questions yet"}
-     </div>
-
-   `;
-
-   box.appendChild(div);
-
- });
-
-}
+  }
 
 
-function openChapter(id,name,num){
+  return QUESTIONS.filter(q => {
 
- stopTimer();
+    return (
+      Number(q.class) === Number(cls) &&
+      String(q.chapter) === String(chapter)
+    );
 
- currentChapter=id;
-
- document.getElementById("chapterNumber").textContent=
- "CHAPTER "+num;
-
- document.getElementById("chapterTitle").textContent=
- name;
-
- const qs=QUESTIONS.filter(
-   q=>q.class===currentClass &&
-   q.chapter===id
- );
-
- document.getElementById("chapterQuestions").textContent=
- qs.length;
-
- const stats=getChapterStats(currentClass,id);
-
- document.getElementById("chapterAccuracy").textContent=
- stats.accuracy;
-
- document.getElementById("chapterTime").textContent=
- stats.avgTime;
-
- document.getElementById("chapterWrong").textContent=
- stats.wrong;
-
- document.getElementById("chapterStatus").textContent=
- qs.length
- ?"This chapter is ready for practice."
- :"Question bank not added yet.";
-
- show("chapter");
+  });
 
 }
 
@@ -277,60 +448,137 @@ function openChapter(id,name,num){
 
 function startChapterPractice(){
 
- let pool=QUESTIONS.filter(
-   q=>q.class===currentClass &&
-   q.chapter===currentChapter
- );
-
- const mode=document.getElementById("practiceMode").value;
-
- if(mode==="ncert")
-   pool=pool.filter(q=>q.source==="NCERT");
-
- if(mode==="exemplar")
-   pool=pool.filter(q=>q.source==="NCERT Exemplar");
-
- if(mode==="pyq")
-   pool=pool.filter(q=>q.source==="NEET PYQ");
-
- if(mode==="wrong")
-   pool=pool.filter(q=>state.wrong.includes(q.id));
+  let pool =
+    getChapterQuestions(
+      currentClass,
+      currentChapter
+    );
 
 
- if(!pool.length){
-
-   alert("There are no questions in this category yet.");
-
-   return;
-
- }
+  const mode =
+    document.getElementById(
+      "practiceMode"
+    ).value;
 
 
- pool=[...pool].sort(
-   ()=>Math.random()-.5
- );
+  if(mode === "ncert"){
+
+    pool =
+      pool.filter(
+        q => q.source === "NCERT"
+      );
+
+  }
 
 
- const requested=
- document.getElementById("questionCount").value;
+  if(mode === "exemplar"){
+
+    pool =
+      pool.filter(
+        q => q.source === "NCERT Exemplar"
+      );
+
+  }
 
 
- const n=
- requested==="all"
- ?pool.length
- :Math.min(+requested,pool.length);
+  if(mode === "pyq"){
+
+    pool =
+      pool.filter(
+        q => q.source === "NEET PYQ"
+      );
+
+  }
 
 
- quiz=pool.slice(0,n);
+  if(mode === "wrong"){
 
- quizIndex=0;
- quizScore=0;
- questionTimes=[];
- wrongThisRun=[];
+    pool =
+      pool.filter(
+        q => state.wrong.includes(q.id)
+      );
 
- show("quiz");
+  }
 
- renderQuestion();
+
+  if(!pool.length){
+
+    alert(
+      "There are no questions in this category yet."
+    );
+
+    return;
+
+  }
+
+
+  /*
+     Fisher-Yates shuffle.
+     More reliable than sort(() => Math.random()-.5)
+  */
+
+  shuffle(pool);
+
+
+  const requested =
+    document.getElementById(
+      "questionCount"
+    ).value;
+
+
+  const n =
+    requested === "all"
+    ? pool.length
+    : Math.min(
+        Number(requested),
+        pool.length
+      );
+
+
+  quiz =
+    pool.slice(0,n);
+
+
+  quizIndex = 0;
+  quizScore = 0;
+
+  questionTimes = [];
+  wrongThisRun = [];
+
+
+  show("quiz");
+
+  renderQuestion();
+
+}
+
+
+/* ================= SHUFFLE ================= */
+
+function shuffle(array){
+
+  for(
+    let i = array.length - 1;
+    i > 0;
+    i--
+  ){
+
+    const j =
+      Math.floor(
+        Math.random() * (i + 1)
+      );
+
+
+    [
+      array[i],
+      array[j]
+    ] =
+    [
+      array[j],
+      array[i]
+    ];
+
+  }
 
 }
 
@@ -339,45 +587,64 @@ function startChapterPractice(){
 
 function startTimer(){
 
- stopTimer();
+  quizStart = Date.now();
 
- quizStart=Date.now();
 
- timerInterval=setInterval(()=>{
+  timerInterval =
+    setInterval(() => {
 
-   const seconds=
-   Math.floor((Date.now()-quizStart)/1000);
+      const seconds =
+        Math.floor(
+          (Date.now() - quizStart) / 1000
+        );
 
-   document.getElementById("timer").textContent=
-   formatTime(seconds);
 
- },250);
+      const timer =
+        document.getElementById(
+          "timer"
+        );
+
+
+      if(timer){
+
+        timer.textContent =
+          formatTime(seconds);
+
+      }
+
+    },250);
 
 }
 
 
 function stopTimer(){
 
- if(timerInterval){
+  if(timerInterval){
 
-   clearInterval(timerInterval);
+    clearInterval(timerInterval);
 
-   timerInterval=null;
+    timerInterval = null;
 
- }
+  }
 
 }
 
 
 function formatTime(seconds){
 
- const min=Math.floor(seconds/60);
+  const min =
+    Math.floor(seconds / 60);
 
- const sec=seconds%60;
 
- return String(min).padStart(2,"0")
- +":"
- +String(sec).padStart(2,"0");
+  const sec =
+    seconds % 60;
+
+
+  return (
+    String(min).padStart(2,"0")
+    + ":"
+    + String(sec).padStart(2,"0")
+  );
 
 }
 
@@ -386,190 +653,295 @@ function formatTime(seconds){
 
 function renderQuestion(){
 
- stopTimer();
+  stopTimer();
 
- const q=quiz[quizIndex];
 
- if(!q){
+  const q =
+    quiz[quizIndex];
 
-   showResults();
 
-   return;
+  if(!q){
 
- }
+    console.error(
+      "Question not found:",
+      quizIndex
+    );
 
- document.getElementById("quizMeta").textContent=
- `Question ${quizIndex+1} of ${quiz.length} • ${q.topic}`;
+    return;
 
- document.getElementById("quizSource").textContent=
- q.source;
+  }
 
- document.getElementById("quizQuestion").textContent=
- q.question;
 
- const letters=["A","B","C","D"];
+  document.getElementById(
+    "quizMeta"
+  ).textContent =
+    `Question ${quizIndex + 1} of ${quiz.length} • ${q.topic}`;
 
- document.getElementById("quizOptions").innerHTML=
- q.options.map((o,i)=>`
 
- <button
- class="option"
- onclick="answerQuestion(${i})">
+  document.getElementById(
+    "quizSource"
+  ).textContent =
+    q.source || "";
 
- <span class="letter">
- ${letters[i]}
- </span>
 
- <span>${o}</span>
+  document.getElementById(
+    "quizQuestion"
+  ).textContent =
+    q.question || "";
 
- </button>
 
- `).join("");
+  const letters =
+    ["A","B","C","D"];
 
- document.getElementById("quizFeedback").innerHTML="";
 
- document.getElementById("nextButton").style.display="none";
+  document.getElementById(
+    "quizOptions"
+  ).innerHTML =
 
- document.getElementById("timer").textContent="00:00";
+    Array.isArray(q.options)
+    ? q.options.map((o,i) => `
 
- startTimer();
+      <button
+        class="option"
+        onclick="answerQuestion(${i})">
+
+        <span class="letter">
+          ${letters[i]}
+        </span>
+
+        <span>
+          ${o}
+        </span>
+
+      </button>
+
+    `).join("")
+    : "";
+
+
+  document.getElementById(
+    "quizFeedback"
+  ).innerHTML = "";
+
+
+  document.getElementById(
+    "nextButton"
+  ).style.display = "none";
+
+
+  document.getElementById(
+    "timer"
+  ).textContent = "00:00";
+
+
+  startTimer();
 
 }
 
+
+/* ================= ANSWER ================= */
 
 function answerQuestion(choice){
 
- if(
- document.querySelector(".option.correct") ||
- document.querySelector(".option.wrong")
- )return;
+  if(
+    document.querySelector(
+      ".option.correct"
+    ) ||
+    document.querySelector(
+      ".option.wrong"
+    )
+  ){
+
+    return;
+
+  }
 
 
- stopTimer();
+  stopTimer();
 
 
- const q=quiz[quizIndex];
-
- const timeTaken=
- Math.round((Date.now()-quizStart)/1000);
+  const q =
+    quiz[quizIndex];
 
 
- questionTimes.push(timeTaken);
+  const timeTaken =
+    Math.round(
+      (Date.now() - quizStart) / 1000
+    );
 
 
- const correct=
- choice===q.answer;
+  questionTimes.push(
+    timeTaken
+  );
 
 
- if(correct){
-
-   quizScore++;
-
- }else{
-
-   if(!state.wrong.includes(q.id))
-     state.wrong.push(q.id);
-
-   wrongThisRun.push(q);
-
- }
+  const correct =
+    choice === q.answer;
 
 
- state.attempts.push({
+  if(correct){
 
-   id:q.id,
+    quizScore++;
 
-   class:q.class,
+  }else{
 
-   chapter:q.chapter,
+    if(
+      !state.wrong.includes(q.id)
+    ){
 
-   topic:q.topic,
+      state.wrong.push(q.id);
 
-   source:q.source,
-
-   correct:correct,
-
-   time:timeTaken,
-
-   date:getDateKey(new Date())
-
- });
+    }
 
 
- saveState();
+    wrongThisRun.push(q);
+
+  }
 
 
- document.querySelectorAll(".option")
- .forEach((button,index)=>{
+  state.attempts.push({
 
-   button.style.pointerEvents="none";
+    id: q.id,
 
-   if(index===q.answer)
-     button.classList.add("correct");
+    class: q.class,
 
-   if(index===choice && !correct)
-     button.classList.add("wrong");
+    chapter: q.chapter,
 
- });
+    topic: q.topic,
 
+    source: q.source,
 
- document.getElementById("quizFeedback").innerHTML=`
+    correct: correct,
 
- <div class="feedback ${correct?"good":"bad"}">
+    time: timeTaken,
 
- <b>${correct?"Correct":"Incorrect"}</b>
+    date:
+      getDateKey(
+        new Date()
+      )
 
- <br>
-
- ${correct
- ?"Good. Keep the reasoning."
- :"Correct answer: "+String.fromCharCode(65+q.answer)}
-
- </div>
-
- <div class="explain">
-
- <b>Why:</b> ${q.explanation}
-
- </div>
-
- `;
+  });
 
 
- const next=document.getElementById("nextButton");
+  saveState();
 
- next.style.display="block";
 
- next.textContent=
- quizIndex===quiz.length-1
- ?"See Results"
- :"Next";
+  document
+    .querySelectorAll(".option")
+    .forEach(
+      (button,index) => {
+
+        button.style.pointerEvents =
+          "none";
+
+
+        if(index === q.answer){
+
+          button.classList.add(
+            "correct"
+          );
+
+        }
+
+
+        if(
+          index === choice &&
+          !correct
+        ){
+
+          button.classList.add(
+            "wrong"
+          );
+
+        }
+
+      }
+    );
+
+
+  const correctLetter =
+    String.fromCharCode(
+      65 + q.answer
+    );
+
+
+  document.getElementById(
+    "quizFeedback"
+  ).innerHTML = `
+
+    <div class="feedback ${correct ? "good" : "bad"}">
+
+      <b>
+        ${correct ? "Correct" : "Incorrect"}
+      </b>
+
+      <br>
+
+      ${
+        correct
+        ? "Good. Keep the reasoning."
+        : "Correct answer: " + correctLetter
+      }
+
+    </div>
+
+    <div class="explain">
+
+      <b>Why:</b>
+      ${q.explanation || "No explanation available."}
+
+    </div>
+
+  `;
+
+
+  const next =
+    document.getElementById(
+      "nextButton"
+    );
+
+
+  next.style.display =
+    "block";
+
+
+  next.textContent =
+    quizIndex === quiz.length - 1
+    ? "See Results"
+    : "Next";
 
 }
 
+
+/* ================= NEXT ================= */
 
 function nextQuestion(){
 
- if(quizIndex<quiz.length-1){
+  if(
+    quizIndex <
+    quiz.length - 1
+  ){
 
-   quizIndex++;
+    quizIndex++;
 
-   renderQuestion();
+    renderQuestion();
 
- }else{
+  }else{
 
-   showResults();
+    showResults();
 
- }
+  }
 
 }
 
 
+/* ================= EXIT ================= */
+
 function exitQuiz(){
 
- stopTimer();
+  stopTimer();
 
- showChapter();
+  showChapter();
 
 }
 
@@ -578,60 +950,113 @@ function exitQuiz(){
 
 function showResults(){
 
- stopTimer();
-
- const totalTime=
- questionTimes.reduce((a,b)=>a+b,0);
-
- const accuracy=
- quiz.length
- ?Math.round(
-   quizScore/quiz.length*100
- )
- :0;
+  stopTimer();
 
 
- document.getElementById("resultScore").textContent=
- quizScore+"/"+quiz.length;
-
- document.getElementById("resultAccuracy").textContent=
- accuracy+"%";
-
- document.getElementById("resultTime").textContent=
- formatDuration(totalTime);
-
- document.getElementById("resultAvg").textContent=
- quiz.length
- ?formatSeconds(
-   Math.round(totalTime/quiz.length)
- )
- :"—";
+  const totalTime =
+    questionTimes.reduce(
+      (a,b) => a + b,
+      0
+    );
 
 
- document.getElementById("resultTitle").textContent=
- accuracy>=85
- ?"Strong performance."
- :"Useful diagnostic.";
+  const accuracy =
+    quiz.length
+    ? Math.round(
+        quizScore /
+        quiz.length *
+        100
+      )
+    : 0;
 
 
- document.getElementById("resultText").textContent=
- accuracy>=85
- ?"Accuracy is solid. Keep revisiting mistakes."
- :"Your mistakes identify what deserves another look in NCERT.";
+  document.getElementById(
+    "resultScore"
+  ).textContent =
+    quizScore + "/" + quiz.length;
 
 
- updateDashboard();
+  document.getElementById(
+    "resultAccuracy"
+  ).textContent =
+    accuracy + "%";
 
- show("results");
+
+  document.getElementById(
+    "resultTime"
+  ).textContent =
+    formatDuration(
+      totalTime
+    );
+
+
+  document.getElementById(
+    "resultAvg"
+  ).textContent =
+    formatSeconds(
+      quiz.length
+      ? Math.round(
+          totalTime /
+          quiz.length
+        )
+      : 0
+    );
+
+
+  document.getElementById(
+    "resultTitle"
+  ).textContent =
+    accuracy >= 85
+    ? "Strong performance."
+    : "Useful diagnostic.";
+
+
+  document.getElementById(
+    "resultText"
+  ).textContent =
+    accuracy >= 85
+    ? "Accuracy is solid. Keep revisiting mistakes."
+    : "Your mistakes identify what deserves another look in NCERT.";
+
+
+  updateDashboard();
+
+
+  show("results");
 
 }
 
 
+/* ================= REDO WRONG ================= */
+
 function redoWrong(){
 
- document.getElementById("practiceMode").value="wrong";
+  document.getElementById(
+    "practiceMode"
+  ).value = "wrong";
 
- startChapterPractice();
+
+  const wrongPool =
+    getChapterQuestions(
+      currentClass,
+      currentChapter
+    ).filter(
+      q => state.wrong.includes(q.id)
+    );
+
+
+  if(!wrongPool.length){
+
+    alert(
+      "There are no wrong questions to redo in this chapter."
+    );
+
+    return;
+
+  }
+
+
+  startChapterPractice();
 
 }
 
@@ -640,60 +1065,129 @@ function redoWrong(){
 
 function updateDashboard(){
 
- const attempts=state.attempts;
-
- const today=
- attempts.filter(
-   x=>x.date===getDateKey(new Date())
- );
-
- const week=
- attempts.filter(
-   x=>withinDays(x.date,7)
- );
-
- const month=
- attempts.filter(
-   x=>withinDays(x.date,30)
- );
+  const attempts =
+    state.attempts;
 
 
- document.getElementById("todayQuestions").textContent=
- today.length;
-
- document.getElementById("todayAccuracy").textContent=
- getAccuracy(today);
-
- document.getElementById("todayTime").textContent=
- formatDuration(
-   today.reduce((a,b)=>a+b.time,0)
- );
-
- document.getElementById("todayAvg").textContent=
- today.length
- ?formatSeconds(
-   Math.round(
-     today.reduce((a,b)=>a+b.time,0)
-     /today.length
-   )
- )
- :"—";
+  const today =
+    attempts.filter(
+      x =>
+        x.date ===
+        getDateKey(new Date())
+    );
 
 
- document.getElementById("weekQuestions").textContent=
- week.length;
-
- document.getElementById("monthQuestions").textContent=
- month.length;
-
- document.getElementById("allQuestions").textContent=
- attempts.length;
-
- document.getElementById("allAccuracy").textContent=
- getAccuracy(attempts);
+  const week =
+    attempts.filter(
+      x =>
+        withinDays(
+          x.date,
+          7
+        )
+    );
 
 
- renderWeakTopics();
+  const month =
+    attempts.filter(
+      x =>
+        withinDays(
+          x.date,
+          30
+        )
+    );
+
+
+  document.getElementById(
+    "todayQuestions"
+  ).textContent =
+    today.length;
+
+
+  document.getElementById(
+    "todayAccuracy"
+  ).textContent =
+    getAccuracy(today);
+
+
+  document.getElementById(
+    "todayTime"
+  ).textContent =
+    formatDuration(
+      today.reduce(
+        (a,b) => a + b.time,
+        0
+      )
+    );
+
+
+  document.getElementById(
+    "todayAvg"
+  ).textContent =
+
+    today.length
+    ? formatSeconds(
+        Math.round(
+          today.reduce(
+            (a,b) =>
+              a + b.time,
+            0
+          )
+          /
+          today.length
+        )
+      )
+    : "—";
+
+
+  document.getElementById(
+    "weekQuestions"
+  ).textContent =
+    week.length;
+
+
+  document.getElementById(
+    "monthQuestions"
+  ).textContent =
+    month.length;
+
+
+  document.getElementById(
+    "allQuestions"
+  ).textContent =
+    attempts.length;
+
+
+  document.getElementById(
+    "allAccuracy"
+  ).textContent =
+    getAccuracy(attempts);
+
+
+  renderWeakTopics();
+
+}
+
+
+/* ================= ACCURACY ================= */
+
+function getAccuracy(arr){
+
+  if(!arr.length){
+
+    return "—";
+
+  }
+
+
+  return Math.round(
+    arr.filter(
+      x => x.correct
+    ).length
+    /
+    arr.length
+    *
+    100
+  ) + "%";
 
 }
 
@@ -702,163 +1196,239 @@ function updateDashboard(){
 
 function renderWeakTopics(){
 
- const box=document.getElementById("weakTopics");
-
- const groups={};
-
-
- state.attempts.forEach(a=>{
-
-   const key=
-   a.class+"|"+a.chapter+"|"+a.topic;
-
-   if(!groups[key]){
-
-     groups[key]={
-       class:a.class,
-       chapter:a.chapter,
-       topic:a.topic,
-       attempts:0,
-       correct:0,
-       wrong:0,
-       totalTime:0
-     };
-
-   }
-
-   const g=groups[key];
-
-   g.attempts++;
-
-   if(a.correct)
-     g.correct++;
-   else
-     g.wrong++;
-
-   g.totalTime+=a.time;
-
- });
+  const box =
+    document.getElementById(
+      "weakTopics"
+    );
 
 
- const data=
- Object.values(groups)
- .map(g=>{
-
-   g.accuracy=
-   Math.round(
-     g.correct/g.attempts*100
-   );
-
-   g.avgTime=
-   Math.round(
-     g.totalTime/g.attempts
-   );
-
-   /*
-     Weakness score:
-     - low accuracy matters most
-     - repeated wrong answers matter
-     - slow solving adds a smaller signal
-   */
-
-   g.weakness=
-     (100-g.accuracy)
-     +(g.wrong*3)
-     +(g.avgTime>60?10:0);
-
-   return g;
-
- })
- .filter(g=>g.attempts>=2)
- .sort((a,b)=>b.weakness-a.weakness)
- .slice(0,5);
+  const groups = {};
 
 
- if(!data.length){
+  state.attempts.forEach(a => {
 
-   box.innerHTML=`
-
-   <div class="card empty">
-
-     Weak topics will appear here after you've
-     attempted questions.
-
-   </div>
-
-   `;
-
-   return;
-
- }
+    const key =
+      a.class +
+      "|" +
+      a.chapter +
+      "|" +
+      a.topic;
 
 
- box.innerHTML=data.map(g=>`
+    if(!groups[key]){
 
- <div class="weak-card">
+      groups[key] = {
 
-   <div class="weak-top">
+        class: a.class,
 
-     <div class="weak-name">
-       ${g.topic}
-     </div>
+        chapter: a.chapter,
 
-     <div class="weak-score">
-       ${g.accuracy}%
-     </div>
+        topic: a.topic,
 
-   </div>
+        attempts: 0,
 
-   <div class="weak-details">
+        correct: 0,
 
-     ${g.wrong} wrong •
-     ${g.attempts} attempts •
-     ${formatSeconds(g.avgTime)} average
+        wrong: 0,
 
-   </div>
+        totalTime: 0
 
- </div>
+      };
 
- `).join("");
+    }
+
+
+    const g =
+      groups[key];
+
+
+    g.attempts++;
+
+
+    if(a.correct){
+
+      g.correct++;
+
+    }else{
+
+      g.wrong++;
+
+    }
+
+
+    g.totalTime +=
+      Number(a.time) || 0;
+
+  });
+
+
+  const data =
+    Object.values(groups)
+    .map(g => {
+
+
+      g.accuracy =
+        Math.round(
+          g.correct /
+          g.attempts *
+          100
+        );
+
+
+      g.avgTime =
+        Math.round(
+          g.totalTime /
+          g.attempts
+        );
+
+
+      /*
+         Weakness score
+
+         Lower accuracy
+         +
+         repeated mistakes
+         +
+         slow solving
+      */
+
+      g.weakness =
+
+        (100 - g.accuracy)
+
+        +
+
+        (g.wrong * 3)
+
+        +
+
+        (g.avgTime > 60
+          ? 10
+          : 0);
+
+
+      return g;
+
+    })
+    .filter(
+      g => g.attempts >= 2
+    )
+    .sort(
+      (a,b) =>
+        b.weakness -
+        a.weakness
+    )
+    .slice(0,5);
+
+
+  if(!data.length){
+
+    box.innerHTML = `
+
+      <div class="card empty">
+
+        Weak topics will appear here
+        after you've attempted questions.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    data.map(g => `
+
+      <div class="weak-card">
+
+        <div class="weak-top">
+
+          <div class="weak-name">
+            ${g.topic}
+          </div>
+
+          <div class="weak-score">
+            ${g.accuracy}%
+          </div>
+
+        </div>
+
+        <div class="weak-details">
+
+          ${g.wrong} wrong •
+          ${g.attempts} attempts •
+          ${formatSeconds(g.avgTime)}
+          average
+
+        </div>
+
+      </div>
+
+    `).join("");
 
 }
 
 
 /* ================= CHAPTER STATS ================= */
 
-function getChapterStats(cls,chapter){
+function getChapterStats(
+  cls,
+  chapter
+){
 
- const a=
- state.attempts.filter(
-   x=>x.class===cls &&
-   x.chapter===chapter
- );
-
-
- if(!a.length){
-
-   return{
-     accuracy:"—",
-     avgTime:"—",
-     wrong:0
-   };
-
- }
+  const a =
+    state.attempts.filter(
+      x =>
+        Number(x.class) === Number(cls) &&
+        String(x.chapter) === String(chapter)
+    );
 
 
- return{
+  if(!a.length){
 
-   accuracy:getAccuracy(a),
+    return {
 
-   avgTime:formatSeconds(
-     Math.round(
-       a.reduce((x,y)=>x+y.time,0)
-       /a.length
-     )
-   ),
+      accuracy: "—",
 
-   wrong:a.filter(x=>!x.correct).length
+      avgTime: "—",
 
- };
+      wrong: 0
+
+    };
+
+  }
+
+
+  return {
+
+    accuracy:
+      getAccuracy(a),
+
+
+    avgTime:
+      formatSeconds(
+        Math.round(
+          a.reduce(
+            (x,y) =>
+              x +
+              (Number(y.time) || 0),
+            0
+          )
+          /
+          a.length
+        )
+      ),
+
+
+    wrong:
+      a.filter(
+        x => !x.correct
+      ).length
+
+  };
 
 }
 
@@ -867,112 +1437,192 @@ function getChapterStats(cls,chapter){
 
 function renderCalendar(){
 
- const year=calendarDate.getFullYear();
-
- const month=calendarDate.getMonth();
-
- const first=
- new Date(year,month,1);
-
- const days=
- new Date(year,month+1,0).getDate();
-
- document.getElementById("calendarTitle").textContent=
- first.toLocaleString("en-US",{
-   month:"long",
-   year:"numeric"
- });
+  const year =
+    calendarDate.getFullYear();
 
 
- const box=document.getElementById("calendar");
-
- box.innerHTML="";
-
-
- for(let i=0;i<first.getDay();i++){
-
-   const empty=document.createElement("div");
-
-   empty.className="day empty";
-
-   box.appendChild(empty);
-
- }
+  const month =
+    calendarDate.getMonth();
 
 
- for(let day=1;day<=days;day++){
-
-   const d=
-   new Date(year,month,day);
-
-   const key=getDateKey(d);
-
-   const count=
-   state.attempts.filter(
-     x=>x.date===key
-   ).length;
+  const first =
+    new Date(
+      year,
+      month,
+      1
+    );
 
 
-   const div=document.createElement("div");
-
-   div.className="day";
-
-
-   if(
-   d.toDateString()===
-   new Date().toDateString()
-   )
-   div.classList.add("today");
+  const days =
+    new Date(
+      year,
+      month + 1,
+      0
+    ).getDate();
 
 
-   if(count>=1)
-     div.classList.add("active-1");
-
-   if(count>=20)
-     div.classList.add("active-2");
-
-   if(count>=50)
-     div.classList.add("active-3");
-
-
-   div.innerHTML=`
-
-   <div class="day-number">
-     ${day}
-   </div>
-
-   <div class="day-count">
-     ${count?count+" Q":""}
-   </div>
-
-   `;
+  document.getElementById(
+    "calendarTitle"
+  ).textContent =
+    first.toLocaleString(
+      "en-US",
+      {
+        month: "long",
+        year: "numeric"
+      }
+    );
 
 
-   box.appendChild(div);
+  const box =
+    document.getElementById(
+      "calendar"
+    );
 
- }
+
+  box.innerHTML = "";
+
+
+  for(
+    let i = 0;
+    i < first.getDay();
+    i++
+  ){
+
+    const empty =
+      document.createElement(
+        "div"
+      );
+
+
+    empty.className =
+      "day empty";
+
+
+    box.appendChild(
+      empty
+    );
+
+  }
+
+
+  for(
+    let day = 1;
+    day <= days;
+    day++
+  ){
+
+    const d =
+      new Date(
+        year,
+        month,
+        day
+      );
+
+
+    const key =
+      getDateKey(d);
+
+
+    const count =
+      state.attempts.filter(
+        x =>
+          x.date === key
+      ).length;
+
+
+    const div =
+      document.createElement(
+        "div"
+      );
+
+
+    div.className =
+      "day";
+
+
+    if(
+      d.toDateString() ===
+      new Date().toDateString()
+    ){
+
+      div.classList.add(
+        "today"
+      );
+
+    }
+
+
+    if(count >= 1){
+
+      div.classList.add(
+        "active-1"
+      );
+
+    }
+
+
+    if(count >= 20){
+
+      div.classList.add(
+        "active-2"
+      );
+
+    }
+
+
+    if(count >= 50){
+
+      div.classList.add(
+        "active-3"
+      );
+
+    }
+
+
+    div.innerHTML = `
+
+      <div class="day-number">
+        ${day}
+      </div>
+
+      <div class="day-count">
+        ${count ? count + " Q" : ""}
+      </div>
+
+    `;
+
+
+    box.appendChild(
+      div
+    );
+
+  }
 
 }
 
 
+/* ================= CALENDAR NAVIGATION ================= */
+
 function previousMonth(){
 
- calendarDate.setMonth(
-   calendarDate.getMonth()-1
- );
+  calendarDate.setMonth(
+    calendarDate.getMonth() - 1
+  );
 
- renderCalendar();
+
+  renderCalendar();
 
 }
 
 
 function nextMonth(){
 
- calendarDate.setMonth(
-   calendarDate.getMonth()+1
- );
+  calendarDate.setMonth(
+    calendarDate.getMonth() + 1
+  );
 
- renderCalendar();
+
+  renderCalendar();
 
 }
 
@@ -981,73 +1631,157 @@ function nextMonth(){
 
 function getDateKey(date){
 
- return date.getFullYear()
- +"-"
- +String(date.getMonth()+1).padStart(2,"0")
- +"-"
- +String(date.getDate()).padStart(2,"0");
+  return (
+    date.getFullYear()
+    + "-"
+    + String(
+        date.getMonth() + 1
+      ).padStart(2,"0")
+    + "-"
+    + String(
+        date.getDate()
+      ).padStart(2,"0")
+  );
 
 }
 
 
-function withinDays(dateKey,days){
+function withinDays(
+  dateKey,
+  days
+){
 
- const date=
- new Date(dateKey+"T00:00:00");
+  const date =
+    new Date(
+      dateKey +
+      "T00:00:00"
+    );
 
- const now=
- new Date();
 
- const diff=
- (new Date(
-   now.getFullYear(),
-   now.getMonth(),
-   now.getDate()
- )-date)/(1000*60*60*24);
+  const now =
+    new Date();
 
- return diff>=0 && diff<days;
+
+  const today =
+    new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate()
+    );
+
+
+  const diff =
+    (today - date)
+    /
+    (1000 * 60 * 60 * 24);
+
+
+  return (
+    diff >= 0 &&
+    diff < days
+  );
+
+}
+
+
+function formatSeconds(
+  seconds
+){
+
+  seconds =
+    Number(seconds) || 0;
+
+
+  if(seconds < 60){
+
+    return seconds + "s";
+
+  }
+
+
+  const min =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const sec =
+    seconds % 60;
+
+
+  return (
+    min +
+    "m " +
+    sec +
+    "s"
+  );
 
 }
 
 
-function formatSeconds(seconds){
+function formatDuration(
+  seconds
+){
 
- if(seconds<60)
-   return seconds+"s";
+  seconds =
+    Number(seconds) || 0;
 
- const min=Math.floor(seconds/60);
 
- const sec=seconds%60;
+  if(!seconds){
 
- return min+"m "+sec+"s";
+    return "0m";
+
+  }
+
+
+  const hours =
+    Math.floor(
+      seconds / 3600
+    );
+
+
+  const min =
+    Math.floor(
+      (seconds % 3600) / 60
+    );
+
+
+  if(hours){
+
+    return (
+      hours +
+      "h " +
+      min +
+      "m"
+    );
+
+  }
+
+
+  return min + "m";
 
 }
 
 
-function formatDuration(seconds){
-
- if(!seconds)return "0m";
-
- const hours=Math.floor(seconds/3600);
-
- const min=Math.floor(
-   (seconds%3600)/60
- );
-
- if(hours)
-   return hours+"h "+min+"m";
-
- return min+"m";
-
-}
-
+/* ================= STORAGE ================= */
 
 function saveState(){
 
- localStorage.setItem(
-   "NEET_BIOLOGY_STATE",
-   JSON.stringify(state)
- );
+  try{
+
+    localStorage.setItem(
+      "NEET_BIOLOGY_STATE",
+      JSON.stringify(state)
+    );
+
+  }catch(error){
+
+    console.error(
+      "Could not save study data:",
+      error
+    );
+
+  }
 
 }
 
