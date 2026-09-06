@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-<meta name="theme-color" content="#101828">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1,viewport-fit=cover"
+>
+
+<meta
+  name="theme-color"
+  content="#101828"
+>
 
 <title>NEET Biology</title>
 
-<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="style.css"
+>
+
 </head>
+
 
 <body>
 
+
 <header>
+
   <div class="header-inner">
+
     <h1>NEET Biology</h1>
+
     <div class="subtitle">
       NCERT-first • Practice • Track • Improve
     </div>
+
   </div>
+
 </header>
+
 
 <main>
 
+
 <!-- ================= HOME ================= -->
 
-<section id="home" class="screen active">
+<section
+  id="home"
+  class="screen active"
+>
+
 
   <div class="hero card">
 
@@ -41,120 +67,232 @@
 
   <!-- TODAY -->
 
-  <div class="section-title">Today</div>
+  <div class="section-title">
+    Today
+  </div>
+
 
   <div class="stats">
 
     <div class="stat">
-      <b id="todayQuestions">0</b>
-      <small>Questions</small>
+
+      <b id="todayQuestions">
+        0
+      </b>
+
+      <small>
+        Questions
+      </small>
+
     </div>
 
-    <div class="stat">
-      <b id="todayAccuracy">—</b>
-      <small>Accuracy</small>
-    </div>
 
     <div class="stat">
-      <b id="todayTime">0m</b>
-      <small>Practice time</small>
+
+      <b id="todayAccuracy">
+        —
+      </b>
+
+      <small>
+        Accuracy
+      </small>
+
     </div>
 
+
     <div class="stat">
-      <b id="todayAvg">—</b>
-      <small>Avg/question</small>
+
+      <b id="todayTime">
+        0m
+      </b>
+
+      <small>
+        Practice time
+      </small>
+
+    </div>
+
+
+    <div class="stat">
+
+      <b id="todayAvg">
+        —
+      </b>
+
+      <small>
+        Avg/question
+      </small>
+
     </div>
 
   </div>
 
 
-  <!-- PERIOD STATS -->
+  <!-- PROGRESS -->
 
-  <div class="section-title">Progress</div>
+  <div class="section-title">
+    Progress
+  </div>
+
 
   <div class="period-grid">
 
-    <div class="period card">
-      <small>This week</small>
-      <b id="weekQuestions">0</b>
-      <span>questions</span>
-    </div>
 
     <div class="period card">
-      <small>This month</small>
-      <b id="monthQuestions">0</b>
-      <span>questions</span>
+
+      <small>
+        This week
+      </small>
+
+      <b id="weekQuestions">
+        0
+      </b>
+
+      <span>
+        questions
+      </span>
+
     </div>
 
-    <div class="period card">
-      <small>All time</small>
-      <b id="allQuestions">0</b>
-      <span>attempts</span>
-    </div>
 
     <div class="period card">
-      <small>Overall accuracy</small>
-      <b id="allAccuracy">—</b>
-      <span>correct</span>
+
+      <small>
+        This month
+      </small>
+
+      <b id="monthQuestions">
+        0
+      </b>
+
+      <span>
+        questions
+      </span>
+
     </div>
+
+
+    <div class="period card">
+
+      <small>
+        All time
+      </small>
+
+      <b id="allQuestions">
+        0
+      </b>
+
+      <span>
+        attempts
+      </span>
+
+    </div>
+
+
+    <div class="period card">
+
+      <small>
+        Overall accuracy
+      </small>
+
+      <b id="allAccuracy">
+        —
+      </b>
+
+      <span>
+        correct
+      </span>
+
+    </div>
+
 
   </div>
 
 
   <!-- WEAK TOPICS -->
 
-  <div class="section-title">Weak topics</div>
+  <div class="section-title">
+    Weak topics
+  </div>
+
 
   <div id="weakTopics"></div>
-  
-  
-  <!-- ================= WRONG QUESTIONS ================= -->
 
-<div class="section-title">Wrong Questions</div>
 
-<div class="card">
+  <!-- WRONG QUESTIONS -->
 
-  <div class="wrong-header">
+  <div class="section-title">
+    Wrong Questions
+  </div>
 
-    <div>
-      <b>Turn weaknesses into strengths</b>
-      <p class="note">
-        Questions you've answered incorrectly and should revisit.
-      </p>
+
+  <div class="card">
+
+    <div class="wrong-header">
+
+      <div>
+
+        <b>
+          Turn weaknesses into strengths
+        </b>
+
+        <p class="note">
+          Questions you've answered incorrectly
+          and should revisit.
+        </p>
+
+      </div>
+
+
+      <button
+        class="primary"
+        onclick="startAllWrongPractice()"
+      >
+        Practice Wrong
+      </button>
+
     </div>
-
-    <button
-      class="primary"
-      onclick="startAllWrongPractice()">
-
-      Practice Wrong
-
-    </button>
 
   </div>
 
-</div>
 
-<div id="wrongQuestions"></div>
+  <div id="wrongQuestions"></div>
 
 
   <!-- CALENDAR -->
 
-  <div class="section-title">Study calendar</div>
+  <div class="section-title">
+    Study calendar
+  </div>
+
 
   <div class="card">
 
     <div class="calendar-header">
 
-      <button class="secondary" onclick="previousMonth()">‹</button>
+      <button
+        class="secondary"
+        onclick="previousMonth()"
+      >
+        ‹
+      </button>
+
 
       <b id="calendarTitle"></b>
 
-      <button class="secondary" onclick="nextMonth()">›</button>
+
+      <button
+        class="secondary"
+        onclick="nextMonth()"
+      >
+        ›
+      </button>
 
     </div>
 
+
     <div class="weekdays">
+
       <span>Sun</span>
       <span>Mon</span>
       <span>Tue</span>
@@ -162,50 +300,93 @@
       <span>Thu</span>
       <span>Fri</span>
       <span>Sat</span>
+
     </div>
 
-    <div id="calendar" class="calendar"></div>
+
+    <div
+      id="calendar"
+      class="calendar"
+    ></div>
 
   </div>
 
 
   <!-- CLASSES -->
 
-  <div class="section-title">Study</div>
+  <div class="section-title">
+    Study
+  </div>
 
-  <div class="class-card" onclick="openClass(11)">
+
+  <div
+    class="class-card"
+    onclick="openClass(11)"
+  >
 
     <div>
-      <h3>Class 11 Biology</h3>
-      <p>19 chapters</p>
+
+      <h3>
+        Class 11 Biology
+      </h3>
+
+      <p>
+        19 chapters
+      </p>
+
     </div>
 
-    <span class="arrow">›</span>
+
+    <span class="arrow">
+      ›
+    </span>
 
   </div>
 
 
-  <div class="class-card" onclick="openClass(12)">
+  <div
+    class="class-card"
+    onclick="openClass(12)"
+  >
 
     <div>
-      <h3>Class 12 Biology</h3>
-      <p>13 chapters</p>
+
+      <h3>
+        Class 12 Biology
+      </h3>
+
+      <p>
+        13 chapters
+      </p>
+
     </div>
 
-    <span class="arrow">›</span>
+
+    <span class="arrow">
+      ›
+    </span>
 
   </div>
+
 
 </section>
 
 
 <!-- ================= CHAPTERS ================= -->
 
-<section id="chapters" class="screen">
+<section
+  id="chapters"
+  class="screen"
+>
 
-<button class="secondary back" onclick="goHome()">
-  ← Home
-</button>
+
+  <button
+    class="secondary back"
+    onclick="goHome()"
+  >
+    ← Home
+  </button>
+
 
   <div class="card">
 
@@ -215,24 +396,42 @@
 
   </div>
 
-  <div id="chapterList" class="chapter-grid"></div>
+
+  <div
+    id="chapterList"
+    class="chapter-grid"
+  ></div>
+
 
 </section>
 
 
 <!-- ================= CHAPTER ================= -->
 
-<section id="chapter" class="screen">
+<section
+  id="chapter"
+  class="screen"
+>
 
-  <button class="secondary back" onclick="backToChapters()">
+
+  <button
+    class="secondary back"
+    onclick="backToChapters()"
+  >
     ← Chapters
   </button>
 
+
   <div class="card hero">
 
-    <div id="chapterNumber" class="small-label"></div>
+    <div
+      id="chapterNumber"
+      class="small-label"
+    ></div>
+
 
     <h2 id="chapterTitle"></h2>
+
 
     <p>
       Practice questions and track your mastery.
@@ -243,32 +442,69 @@
 
   <div class="stats">
 
-    <div class="stat">
-      <b id="chapterQuestions">0</b>
-      <small>Available</small>
-    </div>
 
     <div class="stat">
-      <b id="chapterAccuracy">—</b>
-      <small>Accuracy</small>
+
+      <b id="chapterQuestions">
+        0
+      </b>
+
+      <small>
+        Available
+      </small>
+
     </div>
 
-    <div class="stat">
-      <b id="chapterTime">—</b>
-      <small>Avg time</small>
-    </div>
 
     <div class="stat">
-      <b id="chapterWrong">0</b>
-      <small>Wrong</small>
+
+      <b id="chapterAccuracy">
+        —
+      </b>
+
+      <small>
+        Accuracy
+      </small>
+
     </div>
+
+
+    <div class="stat">
+
+      <b id="chapterTime">
+        —
+      </b>
+
+      <small>
+        Avg time
+      </small>
+
+    </div>
+
+
+    <div class="stat">
+
+      <b id="chapterWrong">
+        0
+      </b>
+
+      <small>
+        Wrong
+      </small>
+
+    </div>
+
 
   </div>
 
 
   <div class="card mode">
 
-    <label>Practice mode</label>
+
+    <label>
+      Practice mode
+    </label>
+
 
     <select id="practiceMode">
 
@@ -295,15 +531,24 @@
     </select>
 
 
-    <label>Number of questions</label>
+    <label>
+      Number of questions
+    </label>
+
 
     <select id="questionCount">
 
-      <option value="10">10</option>
+      <option value="10">
+        10
+      </option>
 
-      <option value="20">20</option>
+      <option value="20">
+        20
+      </option>
 
-      <option value="50">50</option>
+      <option value="50">
+        50
+      </option>
 
       <option value="all">
         All available
@@ -312,32 +557,55 @@
     </select>
 
 
-    <button class="primary" onclick="startChapterPractice()">
+    <button
+      class="primary"
+      onclick="startChapterPractice()"
+    >
       Start Practice
     </button>
 
+
   </div>
+
 
   <div class="card">
 
-    <b>Status</b>
+    <b>
+      Status
+    </b>
 
-    <p id="chapterStatus" class="note"></p>
+
+    <p
+      id="chapterStatus"
+      class="note"
+    ></p>
 
   </div>
+
 
 </section>
 
 
 <!-- ================= QUIZ ================= -->
 
-<section id="quiz" class="screen">
+<section
+  id="quiz"
+  class="screen"
+>
+
 
   <div class="quiz-header">
 
-    <div id="quizMeta" class="meta"></div>
+    <div
+      id="quizMeta"
+      class="meta"
+    ></div>
 
-    <div id="timer" class="timer">
+
+    <div
+      id="timer"
+      class="timer"
+    >
       00:00
     </div>
 
@@ -346,41 +614,66 @@
 
   <div class="card">
 
-    <div id="quizSource" class="source"></div>
 
-    <div id="quizQuestion" class="question"></div>
+    <div
+      id="quizSource"
+      class="source"
+    ></div>
 
-    <div id="quizOptions"></div>
 
-    <div id="quizFeedback"></div>
+    <div
+      id="quizQuestion"
+      class="question"
+    ></div>
+
+
+    <div
+      id="quizOptions"
+    ></div>
+
+
+    <div
+      id="quizFeedback"
+    ></div>
 
 
     <div class="actions">
 
-      <button class="secondary" onclick="exitQuiz()">
+
+      <button
+        class="secondary"
+        onclick="exitQuiz()"
+      >
         Exit
       </button>
+
 
       <button
         id="nextButton"
         class="primary"
         onclick="nextQuestion()"
-        style="display:none">
-
+        style="display:none"
+      >
         Next
-
       </button>
+
 
     </div>
 
+
   </div>
+
 
 </section>
 
 
 <!-- ================= RESULTS ================= -->
 
-<section id="results" class="screen">
+<section
+  id="results"
+  class="screen"
+>
+
 
   <div class="card hero">
 
@@ -393,53 +686,106 @@
 
   <div class="stats">
 
+
     <div class="stat">
+
       <b id="resultScore"></b>
-      <small>Score</small>
+
+      <small>
+        Score
+      </small>
+
     </div>
 
+
     <div class="stat">
+
       <b id="resultAccuracy"></b>
-      <small>Accuracy</small>
+
+      <small>
+        Accuracy
+      </small>
+
     </div>
 
+
     <div class="stat">
+
       <b id="resultTime"></b>
-      <small>Total time</small>
+
+      <small>
+        Total time
+      </small>
+
     </div>
 
+
     <div class="stat">
+
       <b id="resultAvg"></b>
-      <small>Avg/question</small>
+
+      <small>
+        Avg/question
+      </small>
+
     </div>
+
 
   </div>
 
 
   <div class="card">
 
-    <button class="primary" onclick="redoWrong()">
+
+    <button
+      class="primary"
+      onclick="redoWrong()"
+    >
       Redo Wrong Questions
     </button>
 
-    <br><br>
+
+    <br>
+    <br>
+
 
     <button
       class="secondary full"
-      onclick="showChapter()">
-
+      onclick="showChapter()"
+    >
       Back to Chapter
-
     </button>
+
 
   </div>
 
+
 </section>
+
 
 </main>
 
-<script src="questions/class11/respiration.js"></script>
-<script src="app.js"></script>
+
+<!--
+  IMPORTANT:
+
+  No individual chapter question files are loaded here.
+
+  app.js automatically loads them from:
+
+  questions/class11/
+  questions/class12/
+
+  Therefore new questions can be added to
+  chapter files without modifying this HTML.
+-->
+
+<script
+  type="module"
+  src="app.js"
+></script>
+
 
 </body>
+
 </html>
