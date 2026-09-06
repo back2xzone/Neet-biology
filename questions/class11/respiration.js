@@ -2614,8 +2614,6 @@ export default [
     explanation: "Commercial ethanol can be produced by fermentation of sugarcane molasses."
   },
 
-  export default [
-
   {
     id: "resp-161",
     class: 11,
