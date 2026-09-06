@@ -3547,6 +3547,42 @@ Object.assign(
 
 
 /* =========================================================
+   PUBLIC FUNCTIONS
+   =========================================================
+   app.js is loaded as a module, so functions are not
+   automatically visible to inline onclick handlers in HTML.
+*/
+
+Object.assign(window, {
+
+  show,
+  goHome,
+
+  openClass,
+  backToChapters,
+
+  openChapterPage,
+  showChapter,
+
+  startChapterPractice,
+  startAllWrongPractice,
+  startWrongPractice,
+
+  answerQuestion,
+  nextQuestion,
+  exitQuiz,
+
+  redoWrong,
+
+  openWrongQuestion,
+
+  previousMonth,
+  nextMonth
+
+});
+
+
+/* =========================================================
    INITIALIZE
 ========================================================= */
 
