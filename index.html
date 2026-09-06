@@ -103,7 +103,7 @@
     <div class="stat">
 
       <b id="todayTime">
-        0m
+        0s
       </b>
 
       <small>
@@ -501,7 +501,7 @@
   <div class="card mode">
 
 
-    <label>
+    <label for="practiceMode">
       Practice mode
     </label>
 
@@ -531,7 +531,7 @@
     </select>
 
 
-    <label>
+    <label for="questionCount">
       Number of questions
     </label>
 
@@ -627,14 +627,10 @@
     ></div>
 
 
-    <div
-      id="quizOptions"
-    ></div>
+    <div id="quizOptions"></div>
 
 
-    <div
-      id="quizFeedback"
-    ></div>
+    <div id="quizFeedback"></div>
 
 
     <div class="actions">
@@ -766,23 +762,9 @@
 </main>
 
 
-<!--
-  IMPORTANT:
-
-  No individual chapter question files are loaded here.
-
-  app.js automatically loads them from:
-
-  questions/class11/
-  questions/class12/
-
-  Therefore new questions can be added to
-  chapter files without modifying this HTML.
--->
-
 <script
   type="module"
-  src="app.js"
+  src="./app.js"
 ></script>
 
 
