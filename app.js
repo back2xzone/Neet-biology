@@ -3,7 +3,8 @@
 
    Navigation
    Dynamic Question Bank Loading
-   Practice
+   Chapter Practice
+   Topic-wise Practice
    Timer
    Analytics
    Wrong Questions
@@ -102,6 +103,7 @@ let currentClass = 11;
 let currentChapter = null;
 let currentChapterName = "";
 let currentChapterNumber = "";
+let currentTopic = null;
 
 let quiz = [];
 let quizIndex = 0;
@@ -252,18 +254,6 @@ function findChapter(
 /*
    Convert whatever chapter identifier a question
    uses into the canonical filename.
-
-   This is important because question files may use:
-
-   chapter: "15"
-
-   or:
-
-   chapter: 15
-
-   or:
-
-   chapter: "Blood-circulation.js"
 */
 
 function normalizeChapter(
@@ -309,6 +299,121 @@ function getChapterName(
     : String(
         chapterId ?? ""
       );
+
+}
+
+
+/* =========================================================
+   TOPIC HELPERS
+========================================================= */
+
+
+/*
+   Return the topic name used by a question.
+
+   Questions without a topic are placed into
+   the "General" section.
+*/
+
+function normalizeTopic(
+  topic
+) {
+
+  const value =
+    String(
+      topic || ""
+    )
+    .trim();
+
+
+  return value || "General";
+
+}
+
+
+/*
+   Get all unique topics belonging to a chapter.
+
+   Topic names come directly from q.topic in the
+   question bank.
+
+   Order is preserved according to the first
+   appearance of each topic in the question data.
+*/
+
+function getChapterTopics(
+  cls,
+  chapterId
+) {
+
+  const questions =
+    getChapterQuestions(
+      cls,
+      chapterId
+    );
+
+
+  const topics = [];
+
+  const seen =
+    new Set();
+
+
+  questions.forEach(
+    q => {
+
+      const topic =
+        normalizeTopic(
+          q.topic
+        );
+
+
+      if(
+        !seen.has(topic)
+      ) {
+
+        seen.add(topic);
+
+        topics.push(topic);
+
+      }
+
+    }
+  );
+
+
+  return topics;
+
+}
+
+
+/*
+   Get questions belonging to one topic.
+*/
+
+function getTopicQuestions(
+  cls,
+  chapterId,
+  topic
+) {
+
+  const targetTopic =
+    normalizeTopic(
+      topic
+    );
+
+
+  return getChapterQuestions(
+    cls,
+    chapterId
+  )
+  .filter(
+    q =>
+      normalizeTopic(
+        q.topic
+      ) ===
+      targetTopic
+  );
 
 }
 
@@ -651,6 +756,8 @@ function goHome() {
 
   stopTimer();
 
+  currentTopic = null;
+
   updateDashboard();
   renderCalendar();
   renderWrongQuestions();
@@ -675,6 +782,9 @@ function openClass(cls) {
 
   currentClass =
     Number(cls);
+
+  currentChapter = null;
+  currentTopic = null;
 
 
   const title =
@@ -725,6 +835,8 @@ function openClass(cls) {
 ========================================================= */
 
 function backToChapters() {
+
+  currentTopic = null;
 
   renderChapters();
 
@@ -862,6 +974,197 @@ function renderChapters() {
 
 
 /* =========================================================
+   RENDER TOPICS
+========================================================= */
+
+function renderTopics() {
+
+  const box =
+    document.getElementById(
+      "topicList"
+    );
+
+
+  if(!box) {
+
+    return;
+
+  }
+
+
+  box.innerHTML = "";
+
+
+  if(!currentChapter) {
+
+    return;
+
+  }
+
+
+  const questions =
+    getChapterQuestions(
+      currentClass,
+      currentChapter
+    );
+
+
+  if(!questions.length) {
+
+    return;
+
+  }
+
+
+  const topicData = [];
+
+  const groups =
+    new Map();
+
+
+  /*
+     Preserve first-appearance order while
+     counting questions.
+  */
+
+  questions.forEach(
+    q => {
+
+      const topic =
+        normalizeTopic(
+          q.topic
+        );
+
+
+      if(
+        !groups.has(topic)
+      ) {
+
+        groups.set(
+          topic,
+          0
+        );
+
+        topicData.push(
+          topic
+        );
+
+      }
+
+
+      groups.set(
+        topic,
+        groups.get(topic) + 1
+      );
+
+    }
+  );
+
+
+  topicData.forEach(
+    topic => {
+
+      const count =
+        groups.get(topic) || 0;
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "topic-card";
+
+
+      card.setAttribute(
+        "role",
+        "button"
+      );
+
+
+      card.setAttribute(
+        "tabindex",
+        "0"
+      );
+
+
+      card.innerHTML = `
+
+        <div class="topic-top">
+
+          <div>
+
+            <div class="topic-name">
+              ${escapeHTML(topic)}
+            </div>
+
+          </div>
+
+          <div class="arrow">
+            ›
+          </div>
+
+        </div>
+
+
+        <div class="topic-count">
+
+          ${count}
+          ${count === 1 ? "question" : "questions"}
+
+        </div>
+
+      `;
+
+
+      const openTopic =
+        () => {
+
+          startTopicPractice(
+            topic
+          );
+
+        };
+
+
+      card.addEventListener(
+        "click",
+        openTopic
+      );
+
+
+      card.addEventListener(
+        "keydown",
+        event => {
+
+          if(
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+            event.preventDefault();
+
+            openTopic();
+
+          }
+
+        }
+      );
+
+
+      box.appendChild(
+        card
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
    CHAPTER PAGE
 ========================================================= */
 
@@ -879,6 +1182,9 @@ async function openChapterPage(
 
   currentChapterNumber =
     num;
+
+  currentTopic =
+    null;
 
 
   await loadChapterQuestions(
@@ -1019,6 +1325,16 @@ async function openChapterPage(
   }
 
 
+  /*
+     Populate Practice by Topic.
+
+     Topics are extracted directly from
+     the questions belonging to this chapter.
+  */
+
+  renderTopics();
+
+
   show("chapter");
 
 }
@@ -1055,7 +1371,17 @@ async function showChapter() {
    PRACTICE
 ========================================================= */
 
-async function startChapterPractice() {
+
+/*
+   Start normal chapter practice.
+
+   Optional topic parameter allows the same function
+   to practice one specific topic.
+*/
+
+async function startChapterPractice(
+  topic = null
+) {
 
   if(!currentChapter) {
 
@@ -1078,7 +1404,41 @@ async function startChapterPractice() {
     getChapterQuestions(
       currentClass,
       currentChapter
-    );
+    )
+    .slice();
+
+
+  /*
+     Topic filter.
+  */
+
+  if(topic !== null) {
+
+    const targetTopic =
+      normalizeTopic(
+        topic
+      );
+
+
+    currentTopic =
+      targetTopic;
+
+
+    pool =
+      pool.filter(
+        q =>
+          normalizeTopic(
+            q.topic
+          ) ===
+          targetTopic
+      );
+
+  } else {
+
+    currentTopic =
+      null;
+
+  }
 
 
   const modeElement =
@@ -1092,6 +1452,10 @@ async function startChapterPractice() {
       ? modeElement.value
       : "all";
 
+
+  /*
+     Source filters.
+  */
 
   if(mode === "ncert") {
 
@@ -1148,13 +1512,20 @@ async function startChapterPractice() {
   if(!pool.length) {
 
     alert(
-      "There are no questions in this category yet."
+      topic !== null
+        ? `There are no questions available for "${topic}" in this category yet.`
+        : "There are no questions in this category yet."
     );
 
     return;
 
   }
 
+
+  /*
+     Shuffle a copy so the cached question bank
+     itself is never reordered.
+  */
 
   shuffle(
     pool
@@ -1194,6 +1565,40 @@ async function startChapterPractice() {
   show("quiz");
 
   renderQuestion();
+
+}
+
+
+/*
+   Topic card entry point.
+
+   Topic practice deliberately starts with "All"
+   as the source mode so a previously selected
+   source filter such as "Wrong" does not silently
+   change what the topic card means.
+*/
+
+function startTopicPractice(
+  topic
+) {
+
+  const mode =
+    document.getElementById(
+      "practiceMode"
+    );
+
+
+  if(mode) {
+
+    mode.value =
+      "all";
+
+  }
+
+
+  return startChapterPractice(
+    topic
+  );
 
 }
 
@@ -1241,6 +1646,10 @@ async function startAllWrongPractice() {
         pool.length
       )
     );
+
+
+  currentTopic =
+    null;
 
 
   resetQuizState();
@@ -2080,6 +2489,10 @@ function redoWrong() {
     );
 
 
+  currentTopic =
+    null;
+
+
   resetQuizState();
 
   show("quiz");
@@ -2778,6 +3191,9 @@ async function openWrongQuestion(
 
   currentChapterNumber =
     chapterInfo[0];
+
+  currentTopic =
+    null;
 
 
   await openChapterPage(
@@ -3500,8 +3916,6 @@ function truncateText(
    GLOBAL HTML BRIDGE
 =========================================================
 
-   IMPORTANT:
-
    app.js is loaded as:
 
    <script type="module">
@@ -3525,7 +3939,12 @@ Object.assign(
     openClass,
     backToChapters,
 
+    openChapterPage,
+    showChapter,
+
     startChapterPractice,
+    startTopicPractice,
+
     startAllWrongPractice,
     startWrongPractice,
 
@@ -3535,7 +3954,6 @@ Object.assign(
     exitQuiz,
 
     redoWrong,
-    showChapter,
 
     openWrongQuestion,
 
@@ -3544,42 +3962,6 @@ Object.assign(
 
   }
 );
-
-
-/* =========================================================
-   PUBLIC FUNCTIONS
-   =========================================================
-   app.js is loaded as a module, so functions are not
-   automatically visible to inline onclick handlers in HTML.
-*/
-
-Object.assign(window, {
-
-  show,
-  goHome,
-
-  openClass,
-  backToChapters,
-
-  openChapterPage,
-  showChapter,
-
-  startChapterPractice,
-  startAllWrongPractice,
-  startWrongPractice,
-
-  answerQuestion,
-  nextQuestion,
-  exitQuiz,
-
-  redoWrong,
-
-  openWrongQuestion,
-
-  previousMonth,
-  nextMonth
-
-});
 
 
 /* =========================================================
