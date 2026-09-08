@@ -1686,7 +1686,7 @@ function renderTopics() {
             </span>
 
             <b>
-              ${stats.attempts}
+              ${stats.attempts.length}
             </b>
 
           </div>
