@@ -7,6 +7,7 @@
    Topic-wise Practice
    Timer
    Analytics
+   Topic Strength
    Wrong Questions
    Calendar
 
@@ -90,7 +91,6 @@ const CHAPTERS = {
 ========================================================= */
 
 const questionCache = new Map();
-
 const questionLoadErrors = new Set();
 
 
@@ -210,15 +210,6 @@ function saveState() {
    CHAPTER HELPERS
 ========================================================= */
 
-
-/*
-   Find chapter using either:
-
-   - chapter number
-   - filename
-   - numeric/string equivalent
-*/
-
 function findChapter(
   cls,
   chapterId
@@ -250,11 +241,6 @@ function findChapter(
 
 }
 
-
-/*
-   Convert whatever chapter identifier a question
-   uses into the canonical filename.
-*/
 
 function normalizeChapter(
   cls,
@@ -309,10 +295,19 @@ function getChapterName(
 
 
 /*
-   Return the topic name used by a question.
+   Normalise topic names for comparison.
 
-   Questions without a topic are placed into
-   the "General" section.
+   This prevents accidental duplicates such as:
+
+   "Cell Cycle"
+   "cell cycle"
+   "Cell  Cycle"
+   " Cell Cycle "
+
+   from becoming separate cards.
+
+   The displayed name remains the first clean
+   version encountered in the question bank.
 */
 
 function normalizeTopic(
@@ -323,7 +318,11 @@ function normalizeTopic(
     String(
       topic || ""
     )
-    .trim();
+    .trim()
+    .replace(
+      /\s+/g,
+      " "
+    );
 
 
   return value || "General";
@@ -332,13 +331,26 @@ function normalizeTopic(
 
 
 /*
-   Get all unique topics belonging to a chapter.
+   Internal comparison key.
 
-   Topic names come directly from q.topic in the
-   question bank.
+   Case-insensitive so accidental capitalization
+   differences do not create duplicate topic cards.
+*/
 
-   Order is preserved according to the first
-   appearance of each topic in the question data.
+function getTopicKey(
+  topic
+) {
+
+  return normalizeTopic(
+    topic
+  )
+  .toLowerCase();
+
+}
+
+
+/*
+   Return all unique topics belonging to a chapter.
 */
 
 function getChapterTopics(
@@ -354,9 +366,7 @@ function getChapterTopics(
 
 
   const topics = [];
-
-  const seen =
-    new Set();
+  const seen = new Set();
 
 
   questions.forEach(
@@ -368,11 +378,17 @@ function getChapterTopics(
         );
 
 
+      const key =
+        getTopicKey(
+          topic
+        );
+
+
       if(
-        !seen.has(topic)
+        !seen.has(key)
       ) {
 
-        seen.add(topic);
+        seen.add(key);
 
         topics.push(topic);
 
@@ -397,8 +413,8 @@ function getTopicQuestions(
   topic
 ) {
 
-  const targetTopic =
-    normalizeTopic(
+  const targetKey =
+    getTopicKey(
       topic
     );
 
@@ -409,10 +425,431 @@ function getTopicQuestions(
   )
   .filter(
     q =>
-      normalizeTopic(
+      getTopicKey(
         q.topic
-      ) ===
-      targetTopic
+      ) === targetKey
+  );
+
+}
+
+
+/* =========================================================
+   TOPIC ANALYTICS
+========================================================= */
+
+
+/*
+   Calculate the strength of a topic.
+
+   Accuracy is the primary factor.
+
+   Speed provides a secondary adjustment.
+
+   Speed score:
+
+   <= 30 sec  = 100
+   45 sec     = 90
+   60 sec     = 80
+   90 sec     = 65
+   120 sec    = 50
+   >= 180 sec = 35
+
+   Final strength:
+
+   75% accuracy
+   25% speed
+
+   This deliberately prevents speed from overpowering
+   correctness. A fast person getting questions wrong
+   should not magically become "strong".
+*/
+
+function calculateSpeedScore(
+  avgTime
+) {
+
+  const time =
+    Number(
+      avgTime
+    );
+
+
+  if(
+    !Number.isFinite(time) ||
+    time <= 0
+  ) {
+
+    return null;
+
+  }
+
+
+  if(time <= 30) {
+
+    return 100;
+
+  }
+
+
+  if(time <= 45) {
+
+    return (
+      100 -
+      (
+        (time - 30) /
+        15
+      ) *
+      10
+    );
+
+  }
+
+
+  if(time <= 60) {
+
+    return (
+      90 -
+      (
+        (time - 45) /
+        15
+      ) *
+      10
+    );
+
+  }
+
+
+  if(time <= 90) {
+
+    return (
+      80 -
+      (
+        (time - 60) /
+        30
+      ) *
+      15
+    );
+
+  }
+
+
+  if(time <= 120) {
+
+    return (
+      65 -
+      (
+        (time - 90) /
+        30
+      ) *
+      15
+    );
+
+  }
+
+
+  if(time <= 180) {
+
+    return (
+      50 -
+      (
+        (time - 120) /
+        60
+      ) *
+      15
+    );
+
+  }
+
+
+  return 35;
+
+}
+
+
+/*
+   Calculate a single topic's complete statistics.
+*/
+
+function getTopicStats(
+  cls,
+  chapterId,
+  topic
+) {
+
+  const targetClass =
+    Number(cls);
+
+
+  const targetChapter =
+    normalizeChapter(
+      targetClass,
+      chapterId
+    );
+
+
+  const targetTopic =
+    getTopicKey(
+      topic
+    );
+
+
+  const attempts =
+    state.attempts.filter(
+      attempt => {
+
+        return (
+          Number(attempt.class) ===
+          targetClass &&
+
+          String(
+            normalizeChapter(
+              targetClass,
+              attempt.chapter
+            )
+          ) ===
+          String(
+            targetChapter
+          ) &&
+
+          getTopicKey(
+            attempt.topic
+          ) ===
+          targetTopic
+        );
+
+      }
+    );
+
+
+  if(!attempts.length) {
+
+    return {
+
+      attempts: 0,
+      correct: 0,
+      wrong: 0,
+      accuracy: null,
+      avgTime: null,
+      speedScore: null,
+      strength: null,
+      level: "new",
+      label: "Not attempted"
+
+    };
+
+  }
+
+
+  const correct =
+    attempts.filter(
+      attempt =>
+        attempt.correct
+    ).length;
+
+
+  const wrong =
+    attempts.length -
+    correct;
+
+
+  const totalTime =
+    sumAttemptTime(
+      attempts
+    );
+
+
+  const avgTime =
+    Math.round(
+      totalTime /
+      attempts.length
+    );
+
+
+  const accuracy =
+    Math.round(
+      (
+        correct /
+        attempts.length
+      ) *
+      100
+    );
+
+
+  const speedScore =
+    calculateSpeedScore(
+      avgTime
+    );
+
+
+  /*
+     Accuracy carries 75% weight.
+     Speed carries 25% weight.
+  */
+
+  const strength =
+    Math.round(
+      (
+        accuracy * 0.75
+      ) +
+      (
+        speedScore * 0.25
+      )
+    );
+
+
+  let level =
+    "developing";
+
+
+  let label =
+    "Developing";
+
+
+  if(
+    strength >= 85
+  ) {
+
+    level = "strong";
+    label = "Strong";
+
+  } else if(
+    strength >= 70
+  ) {
+
+    level = "good";
+    label = "Good";
+
+  } else if(
+    strength >= 50
+  ) {
+
+    level = "developing";
+    label = "Developing";
+
+  } else {
+
+    level = "weak";
+    label = "Weak";
+
+  }
+
+
+  return {
+
+    attempts,
+    correct,
+    wrong,
+    accuracy,
+    avgTime,
+    speedScore:
+      Math.round(
+        speedScore
+      ),
+    strength,
+    level,
+    label
+
+  };
+
+}
+
+
+/*
+   Get all topic analytics for one chapter.
+
+   Topics with no attempts are still included because
+   they need to appear as normal "new" topic cards.
+*/
+
+function getChapterTopicStats(
+  cls,
+  chapterId
+) {
+
+  const questions =
+    getChapterQuestions(
+      cls,
+      chapterId
+    );
+
+
+  const topics =
+    new Map();
+
+
+  questions.forEach(
+    q => {
+
+      const displayName =
+        normalizeTopic(
+          q.topic
+        );
+
+
+      const key =
+        getTopicKey(
+          displayName
+        );
+
+
+      if(
+        !topics.has(key)
+      ) {
+
+        topics.set(
+          key,
+          displayName
+        );
+
+      }
+
+    }
+  );
+
+
+  return Array.from(
+    topics.values()
+  )
+  .map(
+    topic => {
+
+      return {
+
+        topic,
+
+        ...getTopicStats(
+          cls,
+          chapterId,
+          topic
+        )
+
+      };
+
+    }
+  );
+
+}
+
+
+/*
+   Get CSS class for a topic strength.
+*/
+
+function getTopicStrengthClass(
+  stats
+) {
+
+  if(
+    stats.level === "new"
+  ) {
+
+    return "topic-new";
+
+  }
+
+
+  return (
+    `topic-${stats.level}`
   );
 
 }
@@ -1011,61 +1448,89 @@ function renderTopics() {
 
   if(!questions.length) {
 
+    box.innerHTML = `
+
+      <div class="topic-empty">
+
+        No questions have been added to this chapter yet.
+
+      </div>
+
+    `;
+
     return;
 
   }
 
 
-  const topicData = [];
-
-  const groups =
-    new Map();
+  const topicStats =
+    getChapterTopicStats(
+      currentClass,
+      currentChapter
+    );
 
 
   /*
-     Preserve first-appearance order while
-     counting questions.
+     Sort topics:
+
+     1. Strongest / measured topics first
+     2. New topics afterwards
+
+     This makes the section useful rather than
+     simply reproducing question-bank order.
   */
 
-  questions.forEach(
-    q => {
-
-      const topic =
-        normalizeTopic(
-          q.topic
-        );
-
+  topicStats.sort(
+    (a, b) => {
 
       if(
-        !groups.has(topic)
+        a.strength === null &&
+        b.strength === null
       ) {
 
-        groups.set(
-          topic,
-          0
-        );
-
-        topicData.push(
-          topic
+        return a.topic.localeCompare(
+          b.topic
         );
 
       }
 
 
-      groups.set(
-        topic,
-        groups.get(topic) + 1
+      if(
+        a.strength === null
+      ) {
+
+        return 1;
+
+      }
+
+
+      if(
+        b.strength === null
+      ) {
+
+        return -1;
+
+      }
+
+
+      return (
+        b.strength -
+        a.strength
       );
 
     }
   );
 
 
-  topicData.forEach(
-    topic => {
+  topicStats.forEach(
+    stats => {
 
       const count =
-        groups.get(topic) || 0;
+        getTopicQuestions(
+          currentClass,
+          currentChapter,
+          stats.topic
+        ).length;
 
 
       const card =
@@ -1075,7 +1540,7 @@ function renderTopics() {
 
 
       card.className =
-        "topic-card";
+        `topic-card ${getTopicStrengthClass(stats)}`;
 
 
       card.setAttribute(
@@ -1090,29 +1555,141 @@ function renderTopics() {
       );
 
 
+      const strengthDisplay =
+        stats.strength === null
+          ? "—"
+          : `${stats.strength}%`;
+
+
+      const accuracyDisplay =
+        stats.accuracy === null
+          ? "Not attempted"
+          : `${stats.accuracy}%`;
+
+
+      const timeDisplay =
+        stats.avgTime === null
+          ? "—"
+          : formatSeconds(
+              stats.avgTime
+            );
+
+
+      const statusText =
+        stats.strength === null
+          ? "Not attempted yet"
+          : stats.label;
+
+
       card.innerHTML = `
 
-        <div class="topic-top">
+        <div class="topic-card-main">
 
-          <div>
+          <div class="topic-heading">
 
-            <div class="topic-name">
-              ${escapeHTML(topic)}
+            <div class="topic-status-dot"></div>
+
+            <div>
+
+              <div class="topic-name">
+                ${escapeHTML(stats.topic)}
+              </div>
+
+              <div class="topic-status">
+                ${escapeHTML(statusText)}
+              </div>
+
             </div>
 
           </div>
 
-          <div class="arrow">
+
+          <div class="topic-arrow">
             ›
           </div>
 
         </div>
 
 
-        <div class="topic-count">
+        <div class="topic-strength-row">
 
-          ${count}
-          ${count === 1 ? "question" : "questions"}
+          <div class="topic-strength">
+
+            <span class="topic-strength-label">
+              Strength
+            </span>
+
+            <strong>
+              ${strengthDisplay}
+            </strong>
+
+          </div>
+
+
+          <div class="topic-progress">
+
+            <div
+              class="topic-progress-fill"
+              style="width:${stats.strength === null ? 0 : stats.strength}%"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="topic-metrics">
+
+          <div class="topic-metric">
+
+            <span>
+              Questions
+            </span>
+
+            <b>
+              ${count}
+            </b>
+
+          </div>
+
+
+          <div class="topic-metric">
+
+            <span>
+              Accuracy
+            </span>
+
+            <b>
+              ${accuracyDisplay}
+            </b>
+
+          </div>
+
+
+          <div class="topic-metric">
+
+            <span>
+              Avg. time
+            </span>
+
+            <b>
+              ${timeDisplay}
+            </b>
+
+          </div>
+
+
+          <div class="topic-metric">
+
+            <span>
+              Attempts
+            </span>
+
+            <b>
+              ${stats.attempts}
+            </b>
+
+          </div>
 
         </div>
 
@@ -1123,7 +1700,7 @@ function renderTopics() {
         () => {
 
           startTopicPractice(
-            topic
+            stats.topic
           );
 
         };
@@ -1325,15 +1902,7 @@ async function openChapterPage(
   }
 
 
-  /*
-     Populate Practice by Topic.
-
-     Topics are extracted directly from
-     the questions belonging to this chapter.
-  */
-
   renderTopics();
-
 
   show("chapter");
 
@@ -1371,14 +1940,6 @@ async function showChapter() {
    PRACTICE
 ========================================================= */
 
-
-/*
-   Start normal chapter practice.
-
-   Optional topic parameter allows the same function
-   to practice one specific topic.
-*/
-
 async function startChapterPractice(
   topic = null
 ) {
@@ -1408,26 +1969,24 @@ async function startChapterPractice(
     .slice();
 
 
-  /*
-     Topic filter.
-  */
-
   if(topic !== null) {
 
     const targetTopic =
-      normalizeTopic(
+      getTopicKey(
         topic
       );
 
 
     currentTopic =
-      targetTopic;
+      normalizeTopic(
+        topic
+      );
 
 
     pool =
       pool.filter(
         q =>
-          normalizeTopic(
+          getTopicKey(
             q.topic
           ) ===
           targetTopic
@@ -1452,10 +2011,6 @@ async function startChapterPractice(
       ? modeElement.value
       : "all";
 
-
-  /*
-     Source filters.
-  */
 
   if(mode === "ncert") {
 
@@ -1522,11 +2077,6 @@ async function startChapterPractice(
   }
 
 
-  /*
-     Shuffle a copy so the cached question bank
-     itself is never reordered.
-  */
-
   shuffle(
     pool
   );
@@ -1573,9 +2123,7 @@ async function startChapterPractice(
    Topic card entry point.
 
    Topic practice deliberately starts with "All"
-   as the source mode so a previously selected
-   source filter such as "Wrong" does not silently
-   change what the topic card means.
+   as the source mode.
 */
 
 function startTopicPractice(
@@ -2073,7 +2621,9 @@ function answerQuestion(
       ),
 
     topic:
-      q.topic || "",
+      normalizeTopic(
+        q.topic
+      ),
 
     source:
       q.source || "",
@@ -2744,7 +3294,7 @@ function sumAttemptTime(
 
 
 /* =========================================================
-   WEAK TOPICS
+   WEAK / TOPIC STRENGTH DASHBOARD
 ========================================================= */
 
 function renderWeakTopics() {
@@ -2762,53 +3312,68 @@ function renderWeakTopics() {
   }
 
 
-  const groups = {};
+  const groups =
+    new Map();
 
 
   state.attempts.forEach(
     attempt => {
 
+      const topic =
+        normalizeTopic(
+          attempt.topic
+        );
+
+
       const key =
         [
-          attempt.class,
-          attempt.chapter,
-          attempt.topic || "General"
+          Number(attempt.class),
+          normalizeChapter(
+            attempt.class,
+            attempt.chapter
+          ),
+          getTopicKey(
+            topic
+          )
         ].join("|");
 
 
-      if(!groups[key]) {
+      if(
+        !groups.has(key)
+      ) {
 
-        groups[key] = {
+        groups.set(
+          key,
+          {
 
-          class:
-            Number(attempt.class),
+            class:
+              Number(attempt.class),
 
-          chapter:
-            attempt.chapter,
+            chapter:
+              attempt.chapter,
 
-          topic:
-            attempt.topic ||
-            "General",
+            topic,
 
-          attempts:
-            0,
+            attempts:
+              0,
 
-          correct:
-            0,
+            correct:
+              0,
 
-          wrong:
-            0,
+            wrong:
+              0,
 
-          totalTime:
-            0
+            totalTime:
+              0
 
-        };
+          }
+        );
 
       }
 
 
       const group =
-        groups[key];
+        groups.get(key);
 
 
       group.attempts++;
@@ -2835,13 +3400,13 @@ function renderWeakTopics() {
 
 
   const data =
-    Object.values(
-      groups
+    Array.from(
+      groups.values()
     )
     .map(
       group => {
 
-        group.accuracy =
+        const accuracy =
           Math.round(
             (
               group.correct /
@@ -2851,55 +3416,118 @@ function renderWeakTopics() {
           );
 
 
-        group.avgTime =
+        const avgTime =
           Math.round(
             group.totalTime /
             group.attempts
           );
 
 
-        group.weakness =
-          (
-            100 -
-            group.accuracy
-          ) +
-          (
-            group.wrong *
-            3
-          ) +
-          (
-            group.avgTime > 60
-              ? 10
-              : 0
+        const speedScore =
+          calculateSpeedScore(
+            avgTime
           );
 
 
-        return group;
+        const strength =
+          Math.round(
+            (
+              accuracy * 0.75
+            ) +
+            (
+              speedScore * 0.25
+            )
+          );
+
+
+        let level =
+          "developing";
+
+
+        let label =
+          "Developing";
+
+
+        if(
+          strength >= 85
+        ) {
+
+          level = "strong";
+          label = "Strong";
+
+        } else if(
+          strength >= 70
+        ) {
+
+          level = "good";
+          label = "Good";
+
+        } else if(
+          strength >= 50
+        ) {
+
+          level = "developing";
+          label = "Developing";
+
+        } else {
+
+          level = "weak";
+          label = "Weak";
+
+        }
+
+
+        return {
+
+          ...group,
+
+          accuracy,
+
+          avgTime,
+
+          speedScore,
+
+          strength,
+
+          level,
+
+          label
+
+        };
 
       }
     )
     .filter(
       group =>
         group.attempts >= 2
-    )
-    .sort(
-      (a, b) =>
-        b.weakness -
-        a.weakness
-    )
-    .slice(
+    );
+
+
+  /*
+     Show the weakest topics first.
+  */
+
+  data.sort(
+    (a, b) =>
+      a.strength -
+      b.strength
+  );
+
+
+  const displayed =
+    data.slice(
       0,
       5
     );
 
 
-  if(!data.length) {
+  if(!displayed.length) {
 
     box.innerHTML = `
 
       <div class="card empty">
 
-        Weak topics will appear here
+        Topic strength will appear here
         after you've attempted questions.
 
       </div>
@@ -2912,40 +3540,61 @@ function renderWeakTopics() {
 
 
   box.innerHTML =
-    data
+    displayed
       .map(
         group => `
 
-          <div class="weak-card">
+          <div class="weak-card topic-strength-${group.level}">
 
             <div class="weak-top">
 
-              <div class="weak-name">
+              <div>
 
-                ${escapeHTML(
-                  group.topic
-                )}
+                <div class="weak-name">
+
+                  ${escapeHTML(
+                    group.topic
+                  )}
+
+                </div>
+
+                <div class="weak-label">
+
+                  ${escapeHTML(
+                    group.label
+                  )}
+
+                </div>
 
               </div>
 
 
               <div class="weak-score">
 
-                ${group.accuracy}%
+                ${group.strength}%
 
               </div>
 
             </div>
 
 
+            <div class="weak-progress">
+
+              <div
+                class="weak-progress-fill"
+                style="width:${group.strength}%"
+              ></div>
+
+            </div>
+
+
             <div class="weak-details">
 
-              ${group.wrong} wrong •
-              ${group.attempts} attempts •
+              ${group.accuracy}% accuracy •
               ${formatSeconds(
                 group.avgTime
-              )}
-              average
+              )} average •
+              ${group.attempts} attempts
 
             </div>
 
@@ -3060,6 +3709,7 @@ function renderWrongQuestions() {
               )}
 
               •
+
               ${escapeHTML(
                 getChapterName(
                   q.class,
@@ -3068,9 +3718,11 @@ function renderWrongQuestions() {
               )}
 
               •
+
               ${escapeHTML(
-                q.topic ||
-                "General"
+                normalizeTopic(
+                  q.topic
+                )
               )}
 
             </div>
@@ -3914,18 +4566,6 @@ function truncateText(
 
 /* =========================================================
    GLOBAL HTML BRIDGE
-=========================================================
-
-   app.js is loaded as:
-
-   <script type="module">
-
-   Module functions are normally NOT global.
-
-   index.html uses onclick="..."
-
-   Therefore expose the required functions
-   explicitly on window.
 ========================================================= */
 
 Object.assign(
