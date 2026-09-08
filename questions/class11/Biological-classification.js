@@ -9390,6 +9390,2009 @@ export default [
     ],
     answer: 2,
     explanation: "Thermoacidophiles thrive in hot, acidic sulphur springs with temperatures up to 80°C and pH as low as 2[span_61](start_span)[span_61](end_span)."
+  },
+  {
+    id: "bc-588",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "NEET PYQ 2022",
+    question: "Which of the following is a correct statement?",
+    options: [
+      "Mycoplasma have DNA, Ribosomes and cell wall",
+      "Cyanobacteria are a group of autotrophic organisms classified under Kingdom Monera",
+      "Bacteria are exclusively heterotrophic organisms",
+      "Slime molds are saprophytic organisms classified under Kingdom Monera"
+    ],
+    answer: 1,
+    explanation: "Cyanobacteria (blue-green algae) are photosynthetic autotrophic prokaryotes classified under Kingdom Monera. Mycoplasmas lack cell walls, bacteria exhibit both autotrophic and heterotrophic nutrition, and slime moulds belong to Kingdom Protista."
+  },
+  {
+    id: "bc-589",
+    class: 11,
+    chapter: "2",
+    topic: "Prions",
+    source: "NEET PYQ 2022",
+    question: "Mad cow disease in cattle and Cr-Jacob disease in humans are due to infection by:",
+    options: [
+      "Prion",
+      "Viroid",
+      "Bacterium",
+      "Virus"
+    ],
+    answer: 0,
+    explanation: "Bovine spongiform encephalopathy (mad cow disease) in cattle and Creutzfeldt-Jakob disease (CJD) in humans are caused by abnormally folded infectious protein particles called prions."
+  },
+  {
+    id: "bc-590",
+    class: 11,
+    chapter: "2",
+    topic: "Mycoplasma",
+    source: "NEET PYQ 2022",
+    question: "Given below are two statements:\nStatement I: Mycoplasmas can pass through less than 1 micron filter size.\nStatement II: Mycoplasma are bacteria with cell wall.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+    options: [
+      "Both Statement I and Statement II are correct",
+      "Both Statement I and Statement II are incorrect",
+      "Statement I is correct but Statement II is incorrect",
+      "Statement I is incorrect but Statement II is correct"
+    ],
+    answer: 2,
+    explanation: "Mycoplasmas are 0.1 to 0.3 µm in size, enabling them to pass through standard bacterial filters (< 1 µm). They completely lack a cell wall, making Statement II false."
+  },
+  {
+    id: "bc-591",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NEET PYQ 2021",
+    question: "Which of the following statements is correct?",
+    options: [
+      "Fusion of two cells is called karyogamy",
+      "Fusion of protoplasms between two motile or non-motile gametes is called plasmogamy",
+      "Organisms that depend on living plants are called saprophytes",
+      "Some of the organisms can fix atmospheric nitrogen in specialized cells called sheath cells"
+    ],
+    answer: 1,
+    explanation: "Plasmogamy is the fusion of protoplasms between two motile or non-motile gametes. Karyogamy is the fusion of two nuclei, organisms living on living hosts are parasites, and cyanobacteria fix nitrogen inside heterocysts."
+  },
+  {
+    id: "bc-592",
+    class: 11,
+    chapter: "2",
+    topic: "Viroids",
+    source: "NEET PYQ 2020",
+    question: "Which of the following is correct about viroids?",
+    options: [
+      "They have RNA with protein coat",
+      "They have free RNA without protein coat",
+      "They have DNA with protein coat",
+      "They have free DNA without protein coat"
+    ],
+    answer: 1,
+    explanation: "Viroids (discovered by T.O. Diener) consist exclusively of low molecular weight, free single-stranded RNA devoid of any protein coat."
+  },
+  {
+    id: "bc-593",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ 2019",
+    question: "Which of the following statements is incorrect?",
+    options: [
+      "Viroids lack a protein coat",
+      "Viruses are obligate parasites",
+      "Infective constituent in viruses is the protein coat",
+      "Prions consist of abnormally folded protein"
+    ],
+    answer: 2,
+    explanation: "The infective constituent in viruses is their genetic material (nucleic acid), whereas the protein coat protects the nucleic acid core."
+  },
+  {
+    id: "bc-594",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NEET PYQ 2019",
+    question: "Which of the following statements is incorrect?",
+    options: [
+      "Yeasts have filamentous bodies with long thread-like hyphae",
+      "Morels and truffles are edible delicacies",
+      "Claviceps is a source of many alkaloids and LSD",
+      "Conidia are produced exogenously and ascospores endogenously"
+    ],
+    answer: 0,
+    explanation: "Yeasts are unicellular, non-filamentous fungi and lack true thread-like hyphal networks."
+  },
+  {
+    id: "bc-595",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "NEET PYQ 2018",
+    question: "Oxygen is not produced during photosynthesis by:",
+    options: [
+      "Green sulphur bacteria",
+      "Nostoc",
+      "Cycas",
+      "Chara"
+    ],
+    answer: 0,
+    explanation: "Green sulphur bacteria perform anoxygenic photosynthesis using hydrogen sulphide (H2S) rather than water as their electron and proton donor, releasing sulphur instead of oxygen."
+  },
+  {
+    id: "bc-596",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "NEET PYQ 2018",
+    question: "Which among the following is not a prokaryote?",
+    options: [
+      "Saccharomyces",
+      "Mycobacterium",
+      "Nostoc",
+      "Oscillatoria"
+    ],
+    answer: 0,
+    explanation: "Saccharomyces (yeast) is a unicellular eukaryotic fungus, whereas Mycobacterium, Nostoc, and Oscillatoria are prokaryotes belonging to Kingdom Monera."
+  },
+  {
+    id: "bc-597",
+    class: 11,
+    chapter: "2",
+    topic: "Basidiomycetes",
+    source: "NEET PYQ 2018",
+    question: "After karyogamy followed by meiosis, spores are produced exogenously in:",
+    options: [
+      "Neurospora",
+      "Alternaria",
+      "Agaricus",
+      "Saccharomyces"
+    ],
+    answer: 2,
+    explanation: "In Basidiomycetes such as Agaricus, karyogamy and meiosis occur inside the basidium to produce four basidiospores exogenously on sterigmata."
+  },
+  {
+    id: "bc-598",
+    class: 11,
+    chapter: "2",
+    topic: "Chrysophytes",
+    source: "NEET PYQ 2018",
+    question: "Which of the following organisms are known as chief producers in the oceans?",
+    options: [
+      "Dinoflagellates",
+      "Diatoms",
+      "Cyanobacteria",
+      "Euglenoids"
+    ],
+    answer: 1,
+    explanation: "Diatoms (chrysophytes) carry out a vast portion of global marine carbon fixation and are recognized as the chief producers in the oceans."
+  },
+  {
+    id: "bc-599",
+    class: 11,
+    chapter: "2",
+    topic: "Protozoans",
+    source: "NEET PYQ 2018",
+    question: "Ciliates differ from all other protozoans in:",
+    options: [
+      "Using flagella for locomotion",
+      "Having a contractile vacuole for removing excess water",
+      "Using pseudopodia for capturing prey",
+      "Having two types of nuclei"
+    ],
+    answer: 3,
+    explanation: "Ciliated protozoans like Paramecium display nuclear dualism, possessing a vegetative polyploid macronucleus and a generative diploid micronucleus."
+  },
+  {
+    id: "bc-600",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ 2017",
+    question: "Which of the following are found in extreme saline conditions?",
+    options: [
+      "Eubacteria",
+      "Cyanobacteria",
+      "Mycobacteria",
+      "Archaebacteria"
+    ],
+    answer: 3,
+    explanation: "Halophilic archaebacteria possess specialized ether-linked branched-chain lipids in their plasma membranes that permit survival in saturated saline environments."
+  },
+  {
+    id: "bc-601",
+    class: 11,
+    chapter: "2",
+    topic: "Viroids",
+    source: "NEET PYQ 2017",
+    question: "Viroids differ from viruses in having:",
+    options: [
+      "DNA molecules with protein coat",
+      "DNA molecules without protein coat",
+      "RNA molecules with protein coat",
+      "RNA molecules without protein coat"
+    ],
+    answer: 3,
+    explanation: "Viroids are naked infectious RNA particles lacking the protective protein coat (capsid) present in all complete virus particles."
+  },
+  {
+    id: "bc-602",
+    class: 11,
+    chapter: "2",
+    topic: "Mycoplasma",
+    source: "NEET PYQ 2017",
+    question: "Which among the following are the smallest living cells, known without a definite cell wall, pathogenic to plants as well as animals and can survive without oxygen?",
+    options: [
+      "Pseudomonas",
+      "Mycoplasma",
+      "Nostoc",
+      "Bacillus"
+    ],
+    answer: 1,
+    explanation: "Mycoplasmas are the smallest living cells known; they completely lack cell walls, are facultative anaerobes, and cause diseases in plants and animals."
+  },
+  {
+    id: "bc-603",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ 2017",
+    question: "DNA replication in bacteria occurs:",
+    options: [
+      "Within nucleolus",
+      "Prior to fission",
+      "Just before transcription",
+      "During S phase"
+    ],
+    answer: 1,
+    explanation: "Bacteria lack a nuclear membrane, nucleolus, and formal eukaryotic cell-cycle phases; circular DNA replication takes place immediately prior to binary fission."
+  },
+  {
+    id: "bc-604",
+    class: 11,
+    chapter: "2",
+    topic: "Viroids",
+    source: "NEET PYQ 2016",
+    question: "Which of the following statements is wrong for viroids?",
+    options: [
+      "They are smaller than viruses",
+      "They cause infections",
+      "Their RNA is of high molecular weight",
+      "They lack a protein coat"
+    ],
+    answer: 2,
+    explanation: "The RNA of viroids is characterized by its low molecular weight, making statement (c) incorrect."
+  },
+  {
+    id: "bc-605",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Protista",
+    source: "NEET PYQ 2016",
+    question: "Chrysophytes, Euglenoids, Dinoflagellates and Slime moulds are included in the kingdom:",
+    options: [
+      "Fungi",
+      "Animalia",
+      "Monera",
+      "Protista"
+    ],
+    answer: 3,
+    explanation: "Whittaker's Kingdom Protista brings together all unicellular eukaryotic photosynthetic and consumer-decomposer groups."
+  },
+  {
+    id: "bc-606",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ 2016",
+    question: "The primitive prokaryotes responsible for the production of biogas from the dung of ruminant animals, include the:",
+    options: [
+      "Methanogens",
+      "Eubacteria",
+      "Halophiles",
+      "Thermoacidophiles"
+    ],
+    answer: 0,
+    explanation: "Methanogenic archaebacteria are obligate anaerobes inhabiting the rumen of cattle that produce methane gas from animal manure."
+  },
+  {
+    id: "bc-607",
+    class: 11,
+    chapter: "2",
+    topic: "Chrysophytes",
+    source: "NEET PYQ 2016",
+    question: "Select the wrong statement:",
+    options: [
+      "The walls of diatoms are easily destructible",
+      "'Diatomaceous earth' is formed by the cell walls of diatoms",
+      "Diatoms are chief producers in the oceans",
+      "Diatoms are microscopic and float passively in water"
+    ],
+    answer: 0,
+    explanation: "Diatom walls are impregnated with silica and form overlapping valves that are indestructible, accumulating over billions of years as diatomaceous earth."
+  },
+  {
+    id: "bc-608",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ 2016",
+    question: "Methanogens belong to:",
+    options: [
+      "Archaebacteria",
+      "Dinoflagellates",
+      "Slime moulds",
+      "Eubacteria"
+    ],
+    answer: 0,
+    explanation: "Methanogens are strictly anaerobic prokaryotes classified under Archaebacteria."
+  },
+  {
+    id: "bc-609",
+    class: 11,
+    chapter: "2",
+    topic: "Deuteromycetes",
+    source: "NEET PYQ 2015",
+    question: "The imperfect fungi which are decomposers of litter and help in mineral cycling belong to:",
+    options: [
+      "Deuteromycetes",
+      "Basidiomycetes",
+      "Phycomycetes",
+      "Ascomycetes"
+    ],
+    answer: 0,
+    explanation: "Deuteromycetes (fungi imperfecti) lack known sexual stages; a large number are decomposers of litter and actively contribute to mineral cycling."
+  },
+  {
+    id: "bc-610",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ 2015",
+    question: "Capsule is advantageous to a bacterium because:",
+    options: [
+      "It protects the bacterium from desiccation",
+      "It provides means of locomotion",
+      "It allows bacterium to hide from host's immune system",
+      "It allows the bacterium to attach to the surface"
+    ],
+    answer: 2,
+    explanation: "A thick polysaccharide capsule prevents phagocytosis by host white blood cells, enabling pathogenic bacteria to evade host immune defenses."
+  },
+  {
+    id: "bc-611",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ (AIPMT 2015)",
+    question: "Which of the following shows coiled RNA strand and capsomeres?",
+    options: [
+      "Poliovirus",
+      "Tobacco mosaic virus",
+      "Measles virus",
+      "Retrovirus"
+    ],
+    answer: 1,
+    explanation: "Tobacco Mosaic Virus (TMV) has a central single-stranded RNA helix surrounded by 2,130 identical capsomeres organized in a helical cylinder."
+  },
+  {
+    id: "bc-612",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ (AIPMT 2015)",
+    question: "Viruses have:",
+    options: [
+      "DNA enclosed in a protein coat",
+      "Prokaryotic nucleus",
+      "Single chromosome",
+      "Both DNA and RNA"
+    ],
+    answer: 0,
+    explanation: "A virus consists of a core of genetic material (such as DNA) enclosed within a protective outer protein coat called the capsid."
+  },
+  {
+    id: "bc-613",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "NEET PYQ (AIPMT 2014)",
+    question: "Five kingdom system of classification suggested by R.H. Whittaker is not based on:",
+    options: [
+      "Presence or absence of a well defined nucleus",
+      "Mode of reproduction",
+      "Mode of nutrition",
+      "Complexity of body organisation"
+    ],
+    answer: 0,
+    explanation: "Whittaker's criteria were cell structure complexity, thallus organization, mode of nutrition, reproduction, and phylogenetic relationships; nuclear envelope presence alone was not an independent criterion."
+  },
+  {
+    id: "bc-614",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ (AIPMT 2014)",
+    question: "Archaebacteria differ from eubacteria in:",
+    options: [
+      "Cell membrane structure",
+      "Mode of nutrition",
+      "Cell shape",
+      "Mode of reproduction"
+    ],
+    answer: 0,
+    explanation: "Archaebacterial cell membranes contain branched hydrocarbon chains attached to glycerol via ether linkages, unlike the unbranched ester-linked fatty acids of eubacteria."
+  },
+  {
+    id: "bc-615",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ (AIPMT 2014)",
+    question: "Which structures perform the function of mitochondria in bacteria?",
+    options: [
+      "Nucleoid",
+      "Ribosomes",
+      "Cell wall",
+      "Mesosomes"
+    ],
+    answer: 3,
+    explanation: "Mesosomes are invaginations of the bacterial plasma membrane bearing respiratory and electron transport enzymes, functionally equivalent to eukaryotic mitochondria."
+  },
+  {
+    id: "bc-616",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "NEET PYQ (AIPMT 2014)",
+    question: "Anoxygenic photosynthesis is characteristic of:",
+    options: [
+      "Rhodospirillum",
+      "Spirogyra",
+      "Chlamydomonas",
+      "Ulva"
+    ],
+    answer: 0,
+    explanation: "Rhodospirillum is a purple non-sulphur bacterium that performs anoxygenic photosynthesis without water oxidation or oxygen generation."
+  },
+  {
+    id: "bc-617",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "NEET PYQ (AIPMT 2012)",
+    question: "The most abundant prokaryotes helpful to humans in making curd from milk and in production of antibiotics are the ones categorised as:",
+    options: [
+      "Cyanobacteria",
+      "Archaebacteria",
+      "Chemosynthetic autotrophs",
+      "Heterotrophic bacteria"
+    ],
+    answer: 3,
+    explanation: "Heterotrophic bacteria are the most abundant prokaryotes; they include lactic acid bacteria (curd making) and streptomycetes (antibiotic synthesis)."
+  },
+  {
+    id: "bc-618",
+    class: 11,
+    chapter: "2",
+    topic: "Mycoplasma",
+    source: "NEET PYQ (AIIMS 2019)",
+    question: "Which of the following organisms completely lack a cell wall and are the smallest living cells that can survive without oxygen?",
+    options: [
+      "Mycoplasma",
+      "Euglena",
+      "Slime moulds",
+      "Nostoc"
+    ],
+    answer: 0,
+    explanation: "Mycoplasmas lack cell walls entirely, have cell sizes ranging from 0.1 to 0.3 µm, and are facultative anaerobes capable of surviving in the absence of oxygen."
+  },
+  {
+    id: "bc-619",
+    class: 11,
+    chapter: "2",
+    topic: "Lichens",
+    source: "NEET PYQ (AIIMS 2018)",
+    question: "Assertion: Lichens do not grow in polluted areas having high SO2.\nReason: Lichens secrete lichen acids that absorb pollutants.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 2,
+    explanation: "The assertion is true because sulfur dioxide breaks down the chlorophyll of the phycobiont and disrupts membrane integrity. The reason is false because lichens lack mechanisms to absorb and detoxify SO2."
+  },
+  {
+    id: "bc-620",
+    class: 11,
+    chapter: "2",
+    topic: "Mycoplasma",
+    source: "NEET PYQ (AIIMS 2017)",
+    question: "Assertion: Mycoplasma are insensitive to penicillin.\nReason: Penicillin acts on cell wall synthesis and Mycoplasma lack cell wall.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Penicillin blocks peptidoglycan cross-linking in bacterial cell walls. Because Mycoplasma completely lack cell walls, they are naturally insensitive to beta-lactam antibiotics."
+  },
+  {
+    id: "bc-621",
+    class: 11,
+    chapter: "2",
+    topic: "Protozoans",
+    source: "NEET PYQ (AIIMS 2015)",
+    question: "Which among the following is an example of an amoeboid protozoan?",
+    options: [
+      "Entamoeba",
+      "Paramecium",
+      "Trypanosoma",
+      "Plasmodium"
+    ],
+    answer: 0,
+    explanation: "Entamoeba histolytica is an endoparasitic amoeboid protozoan that moves and feeds using pseudopodia."
+  },
+  {
+    id: "bc-622",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ (AIIMS 2014)",
+    question: "Which one of the following statements is true about viruses?",
+    options: [
+      "They possess their own metabolic system",
+      "They contain either DNA or RNA",
+      "They are facultative parasites",
+      "They are easily killed by antibiotics"
+    ],
+    answer: 1,
+    explanation: "Viruses contain either DNA or RNA as their genetic material, never both in the same virion."
+  },
+  {
+    id: "bc-623",
+    class: 11,
+    chapter: "2",
+    topic: "Prions",
+    source: "NEET PYQ (AIIMS 2011)",
+    question: "Bovine spongiform encephalopathy (mad cow disease) is caused by:",
+    options: [
+      "Prion",
+      "Virus",
+      "Viroid",
+      "Bacterium"
+    ],
+    answer: 0,
+    explanation: "BSE is a fatal neurodegenerative disorder of cattle caused by infectious prions (PrPSc)."
+  },
+  {
+    id: "bc-624",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "NEET PYQ (AIIMS 2010)",
+    question: "In cyanobacteria, nitrogen fixation occurs in specialized thick-walled cells known as:",
+    options: [
+      "Heterocysts",
+      "Akinetes",
+      "Hormogonia",
+      "Aplanospores"
+    ],
+    answer: 0,
+    explanation: "Heterocysts are pale, thick-walled cells that lack photosystem II (creating an oxygen-free environment) to protect the nitrogenase enzyme during nitrogen fixation."
+  },
+  {
+    id: "bc-625",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "NEET PYQ 2023",
+    question: "Match List I with List II:\nList I: (A) Prions, (B) Viroids, (C) Viruses, (D) Lichens\nList II:\nI. Free infectious RNA without protein coat\nII. Abnormally folded infectious protein\nIII. Nucleoprotein entity\nIV. Symbiotic association of algae and fungi\nChoose the correct answer from the options given below:",
+    options: [
+      "A-II, B-I, C-III, D-IV",
+      "A-I, B-II, C-III, D-IV",
+      "A-III, B-I, C-IV, D-II",
+      "A-II, B-IV, C-I, D-III"
+    ],
+    answer: 0,
+    explanation: "Prions consist of abnormally folded infectious proteins (A-II). Viroids consist of free low molecular weight RNA without a protein coat (B-I). Viruses are nucleoproteins composed of nucleic acid and a capsid (C-III). Lichens are symbiotic associations between algae and fungi (D-IV)."
+  },
+  {
+    id: "bc-626",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Protista",
+    source: "NEET PYQ 2023",
+    question: "In Whittaker's Five Kingdom Classification, which kingdom includes unicellular eukaryotic organisms such as Amoeba and Paramecium?",
+    options: [
+      "Monera",
+      "Protista",
+      "Fungi",
+      "Animalia"
+    ],
+    answer: 1,
+    explanation: "Whittaker placed all unicellular eukaryotic organisms, including Amoeba and Paramecium (earlier grouped under Animalia due to lack of cell walls), into Kingdom Protista."
+  },
+  {
+    id: "bc-627",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Protista",
+    source: "NEET PYQ 2022",
+    question: "Which of the following statements is not correct regarding members of Kingdom Protista?",
+    options: [
+      "Boundaries of this kingdom are not well-defined",
+      "Most of them are primarily terrestrial",
+      "Being eukaryotes, protistan cell body contains a well-defined nucleus",
+      "Some have flagella or cilia"
+    ],
+    answer: 1,
+    explanation: "Members of Kingdom Protista are primarily aquatic, not terrestrial. The other statements accurately describe their eukaryotic organization and boundaries."
+  },
+  {
+    id: "bc-628",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "NEET PYQ 2021",
+    question: "Which of the following groups of organisms are not included in Whittaker's Five Kingdom Classification?",
+    options: [
+      "Viruses, Viroids and Lichens",
+      "Archaebacteria and Eubacteria",
+      "Dinoflagellates and Chrysophytes",
+      "Slime moulds and Protozoans"
+    ],
+    answer: 0,
+    explanation: "Acellular entities like viruses and viroids, as well as composite symbiotic organisms like lichens, were not accommodated in Whittaker's five-kingdom system."
+  },
+  {
+    id: "bc-629",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NEET PYQ 2020",
+    question: "Match List-I with List-II regarding fungal associations and nutrition:\nList-I: (A) Saprophyte, (B) Parasite, (C) Lichens, (D) Mycorrhiza\nList-II:\nI. Living on living plants or animals\nII. Decomposes dead organic matter\nIII. Symbiosis of fungi with plant roots\nIV. Symbiosis of algae and fungi\nChoose the correct option:",
+    options: [
+      "A-II, B-I, C-IV, D-III",
+      "A-I, B-II, C-III, D-IV",
+      "A-III, B-IV, C-I, D-II",
+      "A-II, B-III, C-I, D-IV"
+    ],
+    answer: 0,
+    explanation: "Saprophytes decompose dead organic substrate (A-II). Parasites obtain food from living plant or animal tissues (B-I). Lichens represent mutualism between algae and fungi (C-IV). Mycorrhizae are symbiotic partnerships between fungi and plant roots (D-III)."
+  },
+  {
+    id: "bc-630",
+    class: 11,
+    chapter: "2",
+    topic: "Ascomycetes",
+    source: "NEET PYQ 2019",
+    question: "Which of the following statements is incorrect regarding the class Ascomycetes?",
+    options: [
+      "Conidia are produced exogenously on conidiophores",
+      "Ascospores are produced endogenously in sac-like asci",
+      "Mycelium is coenocytic and aseptate",
+      "Neurospora is used extensively in biochemical and genetic work"
+    ],
+    answer: 2,
+    explanation: "In Ascomycetes, the mycelium is branched and septate. Aseptate and coenocytic mycelium is characteristic of class Phycomycetes."
+  },
+  {
+    id: "bc-631",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "NEET PYQ 2018",
+    question: "Select the wrong statement:",
+    options: [
+      "Cell wall is present in members of Fungi and Plantae",
+      "Mushrooms belong to Basidiomycetes",
+      "Pseudopodia are locomotory and feeding structures in Sporozoans",
+      "Mitochondria are the powerhouse of the cell in all kingdoms except Monera"
+    ],
+    answer: 2,
+    explanation: "Sporozoans (e.g., Plasmodium) are endoparasites that lack any specialized locomotory structures like pseudopodia, cilia, or flagella. Pseudopodia are found in amoeboid protozoans."
+  },
+  {
+    id: "bc-632",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "NEET PYQ (AIPMT 2015)",
+    question: "True nucleus is absent in:",
+    options: [
+      "Anabaena",
+      "Mucor",
+      "Vaucheria",
+      "Volvox"
+    ],
+    answer: 0,
+    explanation: "Anabaena is a prokaryotic cyanobacterium (Kingdom Monera) and therefore lacks an organized, membrane-bound true nucleus."
+  },
+  {
+    id: "bc-633",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ (AIPMT 2015)",
+    question: "The structures that help some bacteria to attach to rocks and/or host tissues are:",
+    options: [
+      "Fimbriae",
+      "Mesosomes",
+      "Holdfast",
+      "Rhizoids"
+    ],
+    answer: 0,
+    explanation: "Fimbriae are small, bristle-like proteinaceous fibers sprouting from bacterial cell surfaces that function specifically for attachment to solid substrata and host tissues."
+  },
+  {
+    id: "bc-634",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ (AIPMT 2015)",
+    question: "Select the wrong statement:",
+    options: [
+      "The term 'contagium vivum fluidum' was coined by M.W. Beijerinek",
+      "Mosaic disease in tobacco and AIDS in human being are caused by viruses",
+      "The viroids were discovered by D.J. Ivanowsky",
+      "W.M. Stanley showed that viruses could be crystallized"
+    ],
+    answer: 2,
+    explanation: "Viroids were discovered by T.O. Diener in 1971. D.J. Ivanowsky (1892) recognized the causal microbes of tobacco mosaic disease."
+  },
+  {
+    id: "bc-635",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ (AIPMT 2014)",
+    question: "Which of the following shows the highest nutritional diversity?",
+    options: [
+      "Fungi",
+      "Animalia",
+      "Monera",
+      "Plantae"
+    ],
+    answer: 2,
+    explanation: "Bacteria (Kingdom Monera) exhibit the most extensive metabolic diversity: some are autotrophic (photoautotrophs and chemoautotrophs), while the vast majority are heterotrophic (saprophytes, parasites, and symbionts)."
+  },
+  {
+    id: "bc-636",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ (AIPMT 2012)",
+    question: "Which statement is wrong for viruses?",
+    options: [
+      "All are parasites",
+      "All of them have helical symmetry",
+      "They have ability to synthesize nucleic acids and proteins",
+      "Antibiotics have no effect on them"
+    ],
+    answer: 1,
+    explanation: "Viruses exhibit diverse morphological symmetries including helical (e.g., TMV), icosahedral/polyhedral (e.g., Adenovirus), and complex (e.g., T-even bacteriophages), not only helical symmetry."
+  },
+  {
+    id: "bc-637",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "NEET PYQ (AIPMT 2012)",
+    question: "The cyanobacteria are also referred to as:",
+    options: [
+      "Blue green algae",
+      "Protists",
+      "Golden algae",
+      "Slime moulds"
+    ],
+    answer: 0,
+    explanation: "Cyanobacteria are Gram-positive photosynthetic prokaryotes traditionally and commonly referred to as blue-green algae (BGA)."
+  },
+  {
+    id: "bc-638",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ (AIPMT 2011)",
+    question: "Organisms called Methanogens are most abundant in a:",
+    options: [
+      "Cattle yard",
+      "Polluted stream",
+      "Hot spring",
+      "Sulphur rock"
+    ],
+    answer: 0,
+    explanation: "Methanogens are obligate anaerobic archaebacteria abundant in cattle yards and ruminant digestive tracts where they produce methane gas."
+  },
+  {
+    id: "bc-639",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ (AIPMT 2011)",
+    question: "Which one of the following organisms is not an eukaryote?",
+    options: [
+      "Euglena",
+      "Anabaena",
+      "Spirogyra",
+      "Agaricus"
+    ],
+    answer: 1,
+    explanation: "Anabaena is a cyanobacterium belonging to Kingdom Monera (prokaryotes). Euglena is a protist, Spirogyra is an alga, and Agaricus is a fungus, all of which are eukaryotes."
+  },
+  {
+    id: "bc-640",
+    class: 11,
+    chapter: "2",
+    topic: "Basidiomycetes",
+    source: "NEET PYQ (AIPMT 2010)",
+    question: "Black (stem) rust of wheat is caused by:",
+    options: [
+      "Ustilago nuda",
+      "Puccinia graminis",
+      "Xanthomonas oryzae",
+      "Alternaria solani"
+    ],
+    answer: 1,
+    explanation: "Puccinia graminis tritici is a heteroecious macrocyclic basidiomycete fungus that causes black stem rust of wheat."
+  },
+  {
+    id: "bc-641",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "NEET PYQ (AIPMT 2009)",
+    question: "Which one of the following is a symbiotic nitrogen fixer?",
+    options: [
+      "Azotobacter",
+      "Frankia",
+      "Azolla",
+      "Glomus"
+    ],
+    answer: 1,
+    explanation: "Frankia is a filamentous actinomycete that fixes nitrogen symbiotically in the root nodules of non-leguminous plants like Alnus and Casuarina."
+  },
+  {
+    id: "bc-642",
+    class: 11,
+    chapter: "2",
+    topic: "Slime Moulds",
+    source: "NEET PYQ (AIPMT 2007)",
+    question: "Which one of the following is a slime mould?",
+    options: [
+      "Physarum",
+      "Thiobacillus",
+      "Anabaena",
+      "Rhizopus"
+    ],
+    answer: 0,
+    explanation: "Physarum is an acellular slime mould belonging to the division Myxomycota under Kingdom Protista."
+  },
+  {
+    id: "bc-643",
+    class: 11,
+    chapter: "2",
+    topic: "Lichens",
+    source: "NEET PYQ (AIIMS 2018)",
+    question: "Assertion: Lichens are sensitive to SO2 pollution.\nReason: Lichens lack stomata and cuticle and cannot filter absorbed gases.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Lichens lack a protective waxy cuticle and stomata; they absorb gases and dissolved solutes directly across their entire thallus surface, rendering their phycobionts highly susceptible to toxic sulfur dioxide (SO2) accumulation."
+  },
+  {
+    id: "bc-644",
+    class: 11,
+    chapter: "2",
+    topic: "Basidiomycetes",
+    source: "NEET PYQ (AIIMS 2017)",
+    question: "Which of the following fungal classes includes members that form fairy rings?",
+    options: [
+      "Basidiomycetes",
+      "Ascomycetes",
+      "Phycomycetes",
+      "Deuteromycetes"
+    ],
+    answer: 0,
+    explanation: "Fairy rings are produced by mushrooms belonging to Basidiomycetes (e.g., Marasmius oreades), where subterranean mycelium grows radially outward and produces fruiting basidiocarps at the periphery."
+  },
+  {
+    id: "bc-645",
+    class: 11,
+    chapter: "2",
+    topic: "Dinoflagellates",
+    source: "NEET PYQ (AIIMS 2016)",
+    question: "Which of the following statement is true regarding Dinoflagellates?",
+    options: [
+      "They are mostly marine and photosynthetic",
+      "They have two flagella lying in identical longitudinal planes",
+      "They completely lack cell walls",
+      "They are exclusively non-motile"
+    ],
+    answer: 0,
+    explanation: "Dinoflagellates are mostly marine and photosynthetic organisms. They possess stiff cellulosic wall plates and two heterodont flagella (one longitudinal and one transverse)."
+  },
+  {
+    id: "bc-646",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ (AIIMS 2015)",
+    question: "Membranous infoldings of the cell membrane that assist in bacterial cell respiration and replication are known as:",
+    options: [
+      "Mesosomes",
+      "Pili",
+      "Plasmids",
+      "Centrosomes"
+    ],
+    answer: 0,
+    explanation: "Mesosomes are convoluted extensions of the bacterial plasma membrane that house respiratory enzyme complexes and assist in DNA replication and septal cell wall distribution."
+  },
+  {
+    id: "bc-647",
+    class: 11,
+    chapter: "2",
+    topic: "Ascomycetes",
+    source: "NEET PYQ (AIIMS 2014)",
+    question: "Neurospora, which is used extensively as a genetic tool, belongs to:",
+    options: [
+      "Ascomycetes",
+      "Basidiomycetes",
+      "Phycomycetes",
+      "Deuteromycetes"
+    ],
+    answer: 0,
+    explanation: "Neurospora crassa (the red bread mould) belongs to class Ascomycetes and is widely used in biochemical and genetic research ('Drosophila of the plant kingdom')."
+  },
+  {
+    id: "bc-648",
+    class: 11,
+    chapter: "2",
+    topic: "Prions",
+    source: "NEET PYQ (AIIMS 2013)",
+    question: "Which one of the following is an acellular infectious particle composed solely of protein?",
+    options: [
+      "Prion",
+      "Viroid",
+      "Phage",
+      "Capsomere"
+    ],
+    answer: 0,
+    explanation: "Prions are small, infectious, abnormally folded proteinaceous particles that completely lack nucleic acids."
+  },
+  {
+    id: "bc-649",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NEET PYQ (AIPMT 2005)",
+    question: "Viruses that infect bacteria are usually:",
+    options: [
+      "Double stranded DNA viruses",
+      "Single stranded DNA viruses",
+      "Double stranded RNA viruses",
+      "Single stranded RNA viruses"
+    ],
+    answer: 0,
+    explanation: "Bacterial viruses (bacteriophages) usually possess double-stranded DNA (dsDNA) as their genetic material."
+  },
+  {
+    id: "bc-650",
+    class: 11,
+    chapter: "2",
+    topic: "Dinoflagellates",
+    source: "NEET PYQ (AIPMT 2004)",
+    question: "Which of the following environmental conditions are responsible for causing red tide in oceans?",
+    options: [
+      "Rapid multiplication of dinoflagellates",
+      "Excessive growth of blue-green algae",
+      "Proliferation of brown algae",
+      "Accumulation of diatomaceous earth"
+    ],
+    answer: 0,
+    explanation: "Red tides are caused by blooms resulting from the rapid multiplication of red dinoflagellates such as Gonyaulax."
+  },
+  {
+    id: "bc-651",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "NEET PYQ 2013",
+    question: "Chromatophores take part in:",
+    options: [
+      "Movement",
+      "Respiration",
+      "Photosynthesis",
+      "Growth"
+    ],
+    answer: 2,
+    explanation: "Chromatophores are internal membrane-bound pigment-bearing structures found in photosynthetic prokaryotes such as cyanobacteria and purple bacteria that carry out photosynthesis."
+  },
+  {
+    id: "bc-652",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ 2013",
+    question: "Which of the following are likely to be present in deep sea water?",
+    options: [
+      "Blue-green algae",
+      "Saprophytic fungi",
+      "Archaebacteria",
+      "Eubacteria"
+    ],
+    answer: 2,
+    explanation: "Archaebacteria (such as barophilic and thermoacidophilic methanogens) inhabit hydrothermal vents and abyssal zones under extreme hydrostatic pressure and temperature."
+  },
+  {
+    id: "bc-653",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "NEET PYQ 2013",
+    question: "Specialized cells for fixing atmospheric nitrogen in Nostoc are:",
+    options: [
+      "Heterocysts",
+      "Akinetes",
+      "Hormogonia",
+      "Nodules"
+    ],
+    answer: 0,
+    explanation: "Heterocysts are specialized thick-walled, pale cells in filamentous cyanobacteria (like Nostoc and Anabaena) that provide an anaerobic internal microenvironment for nitrogenase activity."
+  },
+  {
+    id: "bc-654",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "AIPMT PYQ 1998",
+    question: "A few organisms are known to grow and multiply at temperatures of 100-105°C. They belong to:",
+    options: [
+      "Thermophilic subaerial fungi",
+      "Marine archaebacteria",
+      "Thermophilic sulphur bacteria",
+      "Hot spring blue-green algae"
+    ],
+    answer: 1,
+    explanation: "Hyperthermophilic marine archaebacteria (such as Pyrolobus and Thermococcus) thrive near deep-sea submarine hydrothermal vents at temperatures exceeding 100°C."
+  },
+  {
+    id: "bc-655",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "AIPMT PYQ 2007",
+    question: "In the light of modern classification, bacteria, blue-green algae and fungi with cell wall are placed together in earlier systems. What common character unified them in earlier plant classification?",
+    options: [
+      "Presence of cell wall",
+      "Autotrophic nutrition",
+      "Eukaryotic cellular structure",
+      "Presence of chlorophyll"
+    ],
+    answer: 0,
+    explanation: "The Linnaean two-kingdom system grouped bacteria, blue-green algae, fungi, mosses, ferns, gymnosperms, and angiosperms under Kingdom Plantae solely because they all possessed a cell wall."
+  },
+  {
+    id: "bc-656",
+    class: 11,
+    chapter: "2",
+    topic: "Protozoans",
+    source: "AIPMT PYQ 2002",
+    question: "In Amoeba and Paramecium, the importance of contractile vacuole is:",
+    options: [
+      "Locomotion",
+      "Digestion of food",
+      "Osmoregulation",
+      "Reproduction"
+    ],
+    answer: 2,
+    explanation: "In freshwater protozoans like Amoeba and Paramecium, the contractile vacuole continuously collects and expels excess hypoosmotic water entering the cell, maintaining osmotic balance (osmoregulation)."
+  },
+  {
+    id: "bc-657",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "AIPMT PYQ 2003",
+    question: "Tobacco mosaic virus (TMV) genes are:",
+    options: [
+      "Double stranded RNA",
+      "Single stranded RNA",
+      "Polyribonucleotides with DNA",
+      "Proteinaceous"
+    ],
+    answer: 1,
+    explanation: "Tobacco mosaic virus (TMV) is composed of a helical protein capsid surrounding a single-stranded ribonucleic acid (ssRNA) molecule."
+  },
+  {
+    id: "bc-658",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIPMT PYQ 2002",
+    question: "Organisms which obtain energy by the oxidation of reduced inorganic compounds are called:",
+    options: [
+      "Photoautotrophs",
+      "Chemoautotrophs",
+      "Saprophytes",
+      "Heterotrophs"
+    ],
+    answer: 1,
+    explanation: "Chemoautotrophs (chemosynthetic autotrophic bacteria) derive energy by oxidizing reduced inorganic substrates such as ammonia, nitrites, hydrogen sulphide, or ferrous iron to synthesize ATP."
+  },
+  {
+    id: "bc-659",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIPMT PYQ 1997",
+    question: "The hereditary material present in the bacterium Escherichia coli is:",
+    options: [
+      "Single-stranded DNA",
+      "Double-stranded DNA",
+      "DNA and histones",
+      "Single-stranded RNA"
+    ],
+    answer: 1,
+    explanation: "The genomic DNA in Escherichia coli is a single, covalently closed circular double-stranded DNA molecule that lacks basic histone proteins."
+  },
+  {
+    id: "bc-660",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "AIPMT PYQ 1990",
+    question: "Absorptive heterotrophic nutrition is exhibited by:",
+    options: [
+      "Algae",
+      "Fungi",
+      "Bryophytes",
+      "Pteridophytes"
+    ],
+    answer: 1,
+    explanation: "Fungi secrete digestive enzymes onto their organic substrate and absorb the solubilized nutrients directly through their cell walls and plasma membranes (osmotrophic/absorptive heterotrophy)."
+  },
+  {
+    id: "bc-661",
+    class: 11,
+    chapter: "2",
+    topic: "Lichens",
+    source: "AIPMT PYQ 1996",
+    question: "Which one of the following statement about lichens is wrong?",
+    options: [
+      "These have symbiotic relationship between algae and fungi",
+      "Some species are food for reindeer",
+      "These grow very rapidly (2 cm per day)",
+      "These are sensitive to SO2 pollution"
+    ],
+    answer: 2,
+    explanation: "Lichens grow extremely slowly (typically a few millimeters per year), not rapidly at 2 cm per day."
+  },
+  {
+    id: "bc-662",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIPMT PYQ 1993",
+    question: "Genophore or bacterial genome is made of:",
+    options: [
+      "Histones and non-histones",
+      "RNA and histones",
+      "A single double-stranded DNA",
+      "A single-stranded DNA"
+    ],
+    answer: 2,
+    explanation: "The bacterial nucleoid (genophore) consists of a single double-stranded, circular DNA molecule organized into loop domains by non-histone polyamines and nucleoid-associated proteins."
+  },
+  {
+    id: "bc-663",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIIMS PYQ 2003",
+    question: "Which of the following is free living anaerobic bacterium capable of fixing nitrogen?",
+    options: [
+      "Rhizobium",
+      "Streptococcus",
+      "Azotobacter",
+      "Clostridium"
+    ],
+    answer: 3,
+    explanation: "Clostridium pasteurianum is an obligate anaerobic, free-living, saprophytic soil bacterium capable of atmospheric nitrogen fixation."
+  },
+  {
+    id: "bc-664",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "AIIMS PYQ 2006",
+    question: "In fungi, reserve food material is usually stored in the form of:",
+    options: [
+      "Starch",
+      "Glycogen and oil",
+      "Sucrose",
+      "Protein granules only"
+    ],
+    answer: 1,
+    explanation: "Fungi lack plastids and do not synthesize starch; excess carbohydrates and lipids are stored as glycogen and oil droplets."
+  },
+  {
+    id: "bc-665",
+    class: 11,
+    chapter: "2",
+    topic: "Deuteromycetes",
+    source: "AIIMS PYQ 2005",
+    question: "Which of the following classes of fungi lacks a known sexual stage?",
+    options: [
+      "Phycomycetes",
+      "Ascomycetes",
+      "Basidiomycetes",
+      "Deuteromycetes"
+    ],
+    answer: 3,
+    explanation: "Deuteromycetes are known as 'fungi imperfecti' because they lack a known sexual (teleomorphic) stage in their life cycle."
+  },
+  {
+    id: "bc-666",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIIMS PYQ 2001",
+    question: "Bacterial flagella are chemically composed of:",
+    options: [
+      "Tubulin",
+      "Flagellin",
+      "Actin",
+      "Pilin"
+    ],
+    answer: 1,
+    explanation: "Bacterial flagellar filaments are polymers of globular protein subunits called flagellin, organized in a helical cylinder without the 9+2 microtubular pattern of eukaryotic cilia."
+  },
+  {
+    id: "bc-667",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIIMS PYQ 2004",
+    question: "Barophilic prokaryotes are those which:",
+    options: [
+      "Grow and multiply in very deep marine sediments under high hydrostatic pressure",
+      "Grow slowly in alkaline frozen lakes",
+      "Occur in high salt concentrations",
+      "Grow in acidic hot sulphur springs"
+    ],
+    answer: 0,
+    explanation: "Barophiles (piezophiles) are organisms that require or grow optimally under high hydrostatic pressures found in deep marine ocean trenches."
+  },
+  {
+    id: "bc-668",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIIMS PYQ 2007",
+    question: "The pathogen responsible for citrus canker disease belongs to which group of organisms?",
+    options: [
+      "Virus",
+      "Fungus",
+      "Bacterium",
+      "Protozoan"
+    ],
+    answer: 2,
+    explanation: "Citrus canker is caused by Xanthomonas axonopodis pv. citri (Xanthomonas citri), which is a Gram-negative rod-shaped bacterium."
+  },
+  {
+    id: "bc-669",
+    class: 11,
+    chapter: "2",
+    topic: "Viroids",
+    source: "AIIMS PYQ 2008",
+    question: "Which of the following organisms causes potato spindle tuber disease?",
+    options: [
+      "Virus",
+      "Viroid",
+      "Bacterium",
+      "Fungus"
+    ],
+    answer: 1,
+    explanation: "Potato spindle tuber disease is caused by the potato spindle tuber viroid (PSTVd), a circular naked single-stranded RNA pathogen."
+  },
+  {
+    id: "bc-670",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "AIIMS PYQ 2009",
+    question: "Which of the following possess characteristics of both living and non-living entities?",
+    options: [
+      "Bacteria",
+      "Viruses",
+      "Algae",
+      "Fungi"
+    ],
+    answer: 1,
+    explanation: "Viruses act as non-living crystalline particles with no independent metabolic machinery outside cells, but behave as living entities capable of replication and mutation inside host cells."
+  },
+  {
+    id: "bc-671",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NEET PYQ 2020",
+    question: "Match the following organisms with their respective categories:\n(A) Halophiles - I. Hot springs\n(B) Thermoacidophiles - II. Aquatic environments\n(C) Methanogens - III. Guts of ruminants\n(D) Cyanobacteria - IV. Salty areas\nSelect the correct option:",
+    options: [
+      "A-IV, B-I, C-III, D-II",
+      "A-I, B-II, C-III, D-IV",
+      "A-III, B-IV, C-II, D-I",
+      "A-II, B-IV, C-III, D-I"
+    ],
+    answer: 0,
+    explanation: "Halophiles inhabit hypersaline waters (A-IV). Thermoacidophiles occur in hot acidic springs (B-I). Methanogens are found in the rumen of cattle and marshy areas (C-III). Cyanobacteria are oxygenic phototrophs common in aquatic environments (D-II)."
+  },
+  {
+    id: "bc-672",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NEET PYQ 2019",
+    question: "Plasmogamy is the fusion of:",
+    options: [
+      "Two haploid cells including their nuclei",
+      "Two vegetative or somatic cells leading to dikaryon",
+      "Two motile or non-motile gametic protoplasms",
+      "Sperm with egg nucleus"
+    ],
+    answer: 2,
+    explanation: "Plasmogamy represents the first stage of sexual reproduction in fungi, defined as the fusion of protoplasms between two motile or non-motile gametes without immediate nuclear fusion."
+  },
+  {
+    id: "bc-673",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "NEET PYQ 2017",
+    question: "Which of the following statement is correct regarding Kingdom Monera?",
+    options: [
+      "Most bacteria are autotrophic",
+      "All monerans are photosynthetic",
+      "Bacteria are the sole members of Kingdom Monera",
+      "Monerans possess membrane-bound organelle such as chloroplast"
+    ],
+    answer: 2,
+    explanation: "Bacteria are the sole members of Kingdom Monera. The vast majority of bacteria are heterotrophs, and prokaryotes completely lack membrane-bound organelles."
+  },
+  {
+    id: "bc-674",
+    class: 11,
+    chapter: "2",
+    topic: "Euglenoids",
+    source: "NEET PYQ 2016",
+    question: "Which of the following is an incorrect statement regarding Euglenoids?",
+    options: [
+      "They are mostly fresh water organisms found in stagnant water",
+      "Instead of a cell wall, they have a protein rich layer called pellicle",
+      "They have two equal flagella at the anterior end",
+      "They are mixotrophic in their nutritional habit"
+    ],
+    answer: 2,
+    explanation: "Euglenoids possess two unequal flagella—one short and one long—arising from the anterior invagination (gullet/reservoir)."
+  },
+  {
+    id: "bc-675",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Protista",
+    source: "AIPMT PYQ 1999",
+    question: "In five kingdom classification, which single kingdom accommodates both photosynthetic and non-photosynthetic unicellular organisms?",
+    options: [
+      "Monera",
+      "Protista",
+      "Plantae",
+      "Fungi"
+    ],
+    answer: 1,
+    explanation: "Kingdom Protista includes photosynthetic unicellular eukaryotes (e.g., diatoms, dinoflagellates, euglenoids) as well as non-photosynthetic unicellular forms (e.g., protozoans and slime moulds)."
+  },
+  {
+    id: "bc-676",
+    class: 11,
+    chapter: "2",
+    topic: "Mycoplasma",
+    source: "NEET PYQ 2015",
+    question: "Cell wall is absent in:",
+    options: [
+      "Mycoplasma",
+      "Nostoc",
+      "Aspergillus",
+      "Funaria"
+    ],
+    answer: 0,
+    explanation: "Mycoplasmas are wall-less prokaryotes. Nostoc has a peptidoglycan-based bacterial cell wall, Aspergillus has a chitinous fungal cell wall, and Funaria has a cellulosic plant cell wall."
+  },
+  {
+    id: "bc-677",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIPMT PYQ 2011",
+    question: "In eubacteria, a cellular component that resembles an eukaryotic cell is:",
+    options: [
+      "Plasma membrane",
+      "Nucleus",
+      "Ribosomes",
+      "Cell wall"
+    ],
+    answer: 0,
+    explanation: "The plasma membrane of eubacteria is composed of a phospholipid bilayer with embedded proteins, closely resembling the basic structural unit of eukaryotic cell membranes."
+  },
+  {
+    id: "bc-678",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIPMT PYQ 2012",
+    question: "Maximum nutritional diversity is found in the group:",
+    options: [
+      "Monera",
+      "Plantae",
+      "Fungi",
+      "Animalia"
+    ],
+    answer: 0,
+    explanation: "Kingdom Monera displays the greatest metabolic and nutritional diversity: members can be photoautotrophic, chemoautotrophic, saprophytic, parasitic, or symbiotic."
+  },
+  {
+    id: "bc-679",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "AIPMT PYQ 2000",
+    question: "What is true for cyanobacteria?",
+    options: [
+      "Oxygenic with nitrogenase",
+      "Oxygenic without nitrogenase",
+      "Non-oxygenic with nitrogenase",
+      "Non-oxygenic without nitrogenase"
+    ],
+    answer: 0,
+    explanation: "Cyanobacteria perform oxygenic photosynthesis using chlorophyll-a and water, and many species possess the nitrogenase enzyme complex to fix atmospheric nitrogen."
+  },
+  {
+    id: "bc-680",
+    class: 11,
+    chapter: "2",
+    topic: "Lichens",
+    source: "AIPMT PYQ 2004",
+    question: "Lichens are a well-known combination of an alga and a fungus where the fungus has:",
+    options: [
+      "A saprophytic relationship with the alga",
+      "An epiphytic relationship with the alga",
+      "A parasitic relationship with the alga",
+      "A symbiotic relationship with the alga"
+    ],
+    answer: 3,
+    explanation: "In a lichen, the fungus and alga share a mutualistic (symbiotic) association where the alga supplies organic food and the fungus provides shelter, water, and mineral absorption."
+  },
+  {
+    id: "bc-681",
+    class: 11,
+    chapter: "2",
+    topic: "Ascomycetes",
+    source: "AIPMT PYQ 2006",
+    question: "Which of the following is used extensively in biochemical and genetic work?",
+    options: [
+      "Neurospora",
+      "Mucor",
+      "Rhizopus",
+      "Aspergillus"
+    ],
+    answer: 0,
+    explanation: "Neurospora crassa (an ascomycete fungus) is widely utilized in biochemical genetics and one-gene-one-enzyme experimental research."
+  },
+  {
+    id: "bc-682",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIPMT PYQ 2008",
+    question: "Which of the following is a free-living, nitrogen-fixing aerobic bacterium?",
+    options: [
+      "Azotobacter",
+      "Rhizobium",
+      "Clostridium",
+      "Rhodospirillum"
+    ],
+    answer: 0,
+    explanation: "Azotobacter is a free-living, aerobic soil bacterium capable of fixing atmospheric dinitrogen independently of plant roots."
+  },
+  {
+    id: "bc-683",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIPMT PYQ 1999",
+    question: "Photosynthetic bacteria have pigments located in:",
+    options: [
+      "Chromatophores",
+      "Chloroplasts",
+      "Leucoplasts",
+      "Chromoplasts"
+    ],
+    answer: 0,
+    explanation: "Photosynthetic prokaryotes lack double-membrane chloroplasts; their photosynthetic pigments are held in internal membranous extensions termed chromatophores or thylakoid lamellae."
+  },
+  {
+    id: "bc-684",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "AIPMT PYQ 2001",
+    question: "Which of the following statements is not true for retroviruses?",
+    options: [
+      "DNA is not present at any stage in the life cycle of retroviruses",
+      "Retroviruses carry the gene for RNA-dependent DNA polymerase",
+      "The genetic material in mature retroviruses is RNA",
+      "Retroviruses are causative agents for certain kinds of cancer in man"
+    ],
+    answer: 0,
+    explanation: "Retroviruses form a complementary double-stranded DNA provirus intermediate via reverse transcriptase; hence DNA is present during their life cycle."
+  },
+  {
+    id: "bc-685",
+    class: 11,
+    chapter: "2",
+    topic: "Deuteromycetes",
+    source: "AIPMT PYQ 1995",
+    question: "Deuteromycetes are called imperfect fungi because:",
+    options: [
+      "They lack sexual reproduction",
+      "They reproduce only vegetatively by fragmentation",
+      "They have aseptate and coenocytic mycelium",
+      "They cannot decompose organic litter"
+    ],
+    answer: 0,
+    explanation: "Deuteromycetes are termed fungi imperfecti because only their asexual or vegetative phases are known, while sexual stages are absent or undiscovered."
+  },
+  {
+    id: "bc-686",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIPMT PYQ 1994",
+    question: "The chief component of the bacterial cell wall is:",
+    options: [
+      "Peptidoglycan",
+      "Cellulose",
+      "Chitin",
+      "Pectin"
+    ],
+    answer: 0,
+    explanation: "Bacterial cell walls consist primarily of peptidoglycan (murein), composed of alternating NAG and NAM glycan strands cross-linked by short peptide chains."
+  },
+  {
+    id: "bc-687",
+    class: 11,
+    chapter: "2",
+    topic: "Ascomycetes",
+    source: "AIPMT PYQ 1992",
+    question: "Yeast is an important source of:",
+    options: [
+      "Riboflavin",
+      "Vitamin C",
+      "Protein only",
+      "Chlorophyll"
+    ],
+    answer: 0,
+    explanation: "Yeast (Saccharomyces cerevisiae) is rich in B-complex vitamins, especially riboflavin (vitamin B2), and is widely used for nutritional and industrial supplements."
+  },
+  {
+    id: "bc-688",
+    class: 11,
+    chapter: "2",
+    topic: "Ascomycetes",
+    source: "AIPMT PYQ 1991",
+    question: "Claviceps purpurea is the causal organism of:",
+    options: [
+      "Ergot of rye",
+      "Smut of barley",
+      "Rust of wheat",
+      "Powdery mildew of pea"
+    ],
+    answer: 0,
+    explanation: "Claviceps purpurea is an ascomycete parasite that replaces the grain of rye with dark, sclerotial resting bodies causing ergot disease."
+  },
+  {
+    id: "bc-689",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "AIIMS PYQ 2018",
+    question: "Assertion: Methanogens are present in the gut of several ruminant animals.\nReason: They are responsible for the production of methane (biogas) from the dung of these animals.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 1,
+    explanation: "Both statements are correct biological facts: methanogens inhabit the anaerobic rumen of cattle and are the agents generating methane from cattle dung, but production from dung is not the cause of their presence in the gut."
+  },
+  {
+    id: "bc-690",
+    class: 11,
+    chapter: "2",
+    topic: "Viroids",
+    source: "AIIMS PYQ 2017",
+    question: "Assertion: Viroids are different from viruses.\nReason: Viroids are smaller in size and completely lack a protein coat.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Viroids differ from viruses because they are sub-viral entities composed solely of naked, short single-stranded circular RNA without an enclosing protein capsid."
+  },
+  {
+    id: "bc-691",
+    class: 11,
+    chapter: "2",
+    topic: "Lichens",
+    source: "AIIMS PYQ 2016",
+    question: "Assertion: Lichens do not grow in industrial cities.\nReason: Lichens are extremely sensitive to sulphur dioxide pollution.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Lichens absorb water and air non-selectively over their entire surface and lack stomata; high sulphur dioxide concentrations in industrial cities degrade their algal chlorophyll, preventing their survival."
+  },
+  {
+    id: "bc-692",
+    class: 11,
+    chapter: "2",
+    topic: "Euglenoids",
+    source: "AIIMS PYQ 2015",
+    question: "Assertion: Euglena behaves as a mixotroph.\nReason: In the presence of sunlight it is photosynthetic, and in the absence of sunlight it predates on smaller organisms.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Euglenoids possess photosynthetic pigments identical to higher plants in the light, but switch to holozoic or saprotrophic nutrition when deprived of light, satisfying the definition of mixotrophy."
+  },
+  {
+    id: "bc-693",
+    class: 11,
+    chapter: "2",
+    topic: "Cyanobacteria",
+    source: "AIIMS PYQ 2014",
+    question: "Assertion: Heterocysts are specialized cells present in cyanobacteria like Nostoc.\nReason: Heterocysts provide anaerobic conditions necessary for the nitrogenase enzyme to fix nitrogen.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "The nitrogenase enzyme is irreversibly inactivated by oxygen; heterocysts lack oxygen-evolving photosystem II and possess thick walls to maintain the low-oxygen internal environment required for nitrogen fixation."
+  },
+  {
+    id: "bc-694",
+    class: 11,
+    chapter: "2",
+    topic: "Slime Moulds",
+    source: "AIIMS PYQ 2013",
+    question: "Assertion: Slime moulds are saprophytic protists.\nReason: The body moves along decaying twigs and leaves engulfing organic material.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Slime moulds are classified as saprophytic protists precisely because their vegetative plasmodial mass creeps over decaying forest litter and debris, ingesting bacteria, spores, and decomposing organic matter."
+  },
+  {
+    id: "bc-695",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "AIIMS PYQ 2012",
+    question: "Assertion: Archaebacteria can survive under extreme harsh environmental conditions.\nReason: They have a different cell wall structure lacking peptidoglycan and branched chain lipids in their cell membranes.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "The survival of archaebacteria in extreme habitats (halophilic, thermoacidophilic, methanogenic) is enabled by their unique ether-linked branched lipid monolayers and distinct non-cellulosic pseudomurein/protein cell walls."
+  },
+  {
+    id: "bc-696",
+    class: 11,
+    chapter: "2",
+    topic: "Protozoans",
+    source: "AIIMS PYQ 2010",
+    question: "In Amoeba, excretion of ammonia primarily occurs through:",
+    options: [
+      "Plasma membrane by simple diffusion",
+      "Uropygium",
+      "Contractile vacuole only",
+      "Endoplasm"
+    ],
+    answer: 0,
+    explanation: "Although the contractile vacuole expels minor amounts of dissolved metabolic waste during osmoregulation, the majority of ammonia in Amoeba is excreted directly across the general plasma membrane by simple diffusion."
+  },
+  {
+    id: "bc-697",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "AIIMS PYQ 2008",
+    question: "Assertion: Viruses are obligate intracellular parasites.\nReason: Outside living host cells, viruses exist as inert crystalline nucleoprotein particles.",
+    options: [
+      "Both Assertion and Reason are true and Reason is the correct explanation of Assertion",
+      "Both Assertion and Reason are true but Reason is not the correct explanation of Assertion",
+      "Assertion is true but Reason is false",
+      "Both Assertion and Reason are false"
+    ],
+    answer: 0,
+    explanation: "Viruses lack enzymes for energy generation and protein synthesis; hence they are inert outside host cells and must invade living cells to replicate."
+  },
+  {
+    id: "bc-698",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Monera",
+    source: "AIIMS PYQ 2005",
+    question: "Which organelle is found in both prokaryotic and eukaryotic cells?",
+    options: [
+      "Ribosome",
+      "Mitochondria",
+      "Endoplasmic reticulum",
+      "Golgi apparatus"
+    ],
+    answer: 0,
+    explanation: "Ribosomes are non-membrane-bound ribonucleoprotein organelles present in all living cells (70S in prokaryotes and 80S in eukaryotic cytoplasm)."
+  },
+  {
+    id: "bc-699",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIIMS PYQ 2004",
+    question: "Which of the following bacterium is used in the commercial production of vinegar (acetic acid)?",
+    options: [
+      "Acetobacter aceti",
+      "Clostridium butylicum",
+      "Lactobacillus bulgaricus",
+      "Streptococcus lactis"
+    ],
+    answer: 0,
+    explanation: "Acetobacter aceti is an aerobic eubacterium that oxidizes ethyl alcohol into acetic acid during commercial vinegar production."
+  },
+  {
+    id: "bc-700",
+    class: 11,
+    chapter: "2",
+    topic: "Eubacteria",
+    source: "AIIMS PYQ 2002",
+    question: "Which of the following bacteria performs anoxygenic photosynthesis using hydrogen sulphide as an electron donor?",
+    options: [
+      "Chlorobium",
+      "Nostoc",
+      "Chroococcus",
+      "Oscillatoria"
+    ],
+    answer: 0,
+    explanation: "Chlorobium (green sulphur bacterium) carries out anoxygenic photosynthesis using H2S as a reducing agent, depositing elemental sulphur globules rather than evolving oxygen."
+  },
+  {
+    id: "bc-701",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Protista",
+    source: "NCERT Exemplar",
+    question: "All eukaryotic unicellular organisms belong to",
+    options: [
+      "Monera",
+      "Protista",
+      "Fungi",
+      "Bacteria"
+    ],
+    answer: 1,
+    explanation: "In Whittaker's five-kingdom classification, all unicellular eukaryotic organisms are placed together in Kingdom Protista. Monera includes unicellular prokaryotes, whereas Fungi, Plantae, and Animalia are primarily multicellular."
+  },
+  {
+    id: "bc-702",
+    class: 11,
+    chapter: "2",
+    topic: "Five Kingdom Classification",
+    source: "NCERT Exemplar",
+    question: "The five-kingdom classification was proposed by",
+    options: [
+      "R.H. Whittaker",
+      "C. Linnaeus",
+      "A. Roxberg",
+      "Virchow"
+    ],
+    answer: 0,
+    explanation: "The five-kingdom classification system (Monera, Protista, Fungi, Plantae, Animalia) was proposed by Robert H. Whittaker in 1969 based on cell structure, body organisation, nutrition, reproduction, and phylogenetic relationships."
+  },
+  {
+    id: "bc-703",
+    class: 11,
+    chapter: "2",
+    topic: "Archaebacteria",
+    source: "NCERT Exemplar",
+    question: "Organisms living in salty areas are called as",
+    options: [
+      "Methanogens",
+      "Halophiles",
+      "Heliophytes",
+      "Thermoacidophiles"
+    ],
+    answer: 1,
+    explanation: "Archaebacteria capable of living in hypersaline environments (such as the Dead Sea and salt pans) are known as halophiles. Methanogens live in marshy areas/ruminant guts, and thermoacidophiles live in hot acidic sulphur springs."
+  },
+  {
+    id: "bc-704",
+    class: 11,
+    chapter: "2",
+    topic: "Slime Moulds",
+    source: "NCERT Exemplar",
+    question: "Naked cytoplasm, multinucleated and saprophytic are the characteristics of",
+    options: [
+      "Monera",
+      "Protista",
+      "Fungi",
+      "Slime molds"
+    ],
+    answer: 3,
+    explanation: "Slime moulds are saprophytic protists whose vegetative body is a wall-less, multinucleate mass of protoplasm called a plasmodium. They lack cell walls during their vegetative phase."
+  },
+  {
+    id: "bc-705",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NCERT Exemplar",
+    question: "An association between roots of higher plants and fungi is called",
+    options: [
+      "Lichen",
+      "Fern",
+      "Mycorrhiza",
+      "BGA"
+    ],
+    answer: 2,
+    explanation: "Mycorrhiza is a mutualistic symbiotic association between fungal hyphae and the roots of higher plants (gymnosperms and angiosperms), aiding in water and mineral absorption (especially phosphorus)."
+  },
+  {
+    id: "bc-706",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NCERT Exemplar",
+    question: "A dikaryon is formed when",
+    options: [
+      "Meiosis is arrested",
+      "The two haploid cells do not fuse immediately",
+      "Cytoplasm does not fuse",
+      "None of the above"
+    ],
+    answer: 1,
+    explanation: "In higher fungi (Ascomycetes and Basidiomycetes), plasmogamy is not immediately followed by karyogamy. The intervening dikaryotic condition (n + n), where two compatible haploid nuclei coexist within a cell, forms a dikaryon."
+  },
+  {
+    id: "bc-707",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NCERT Exemplar",
+    question: "Contagium vivum fluidum was proposed by",
+    options: [
+      "D.J. Ivanowsky",
+      "M.W. Beijerinck",
+      "Stanley",
+      "Robert Hook"
+    ],
+    answer: 1,
+    explanation: "M.W. Beijerinck (1898) demonstrated that the filtered sap of mosaic-infected tobacco plants was infectious to healthy tobacco plants and named this filtrate 'Contagium vivum fluidum' (contagious living fluid)."
+  },
+  {
+    id: "bc-708",
+    class: 11,
+    chapter: "2",
+    topic: "Lichens",
+    source: "NCERT Exemplar",
+    question: "Associations between Mycobiont and Phycobiont are found in",
+    options: [
+      "Mycorrhiza",
+      "Root",
+      "Lichens",
+      "BGA"
+    ],
+    answer: 2,
+    explanation: "Lichens are composite symbiotic organisms consisting of an algal or cyanobacterial partner (phycobiont) and a fungal partner (mycobiont)."
+  },
+  {
+    id: "bc-709",
+    class: 11,
+    chapter: "2",
+    topic: "Viroids",
+    source: "NCERT Exemplar",
+    question: "Difference between Virus and Viroid is",
+    options: [
+      "Absence of protein coat in viroid but present in virus",
+      "Presence of low molecular weight RNA in virus but absent in viroid",
+      "Both (a) and (b)",
+      "None of the above"
+    ],
+    answer: 0,
+    explanation: "Viroids consist strictly of naked, free single-stranded circular RNA and completely lack the protective protein coat (capsid) found in viruses."
+  },
+  {
+    id: "bc-710",
+    class: 11,
+    chapter: "2",
+    topic: "Kingdom Fungi",
+    source: "NCERT Exemplar",
+    question: "With respect to fungal sexual cycle, choose the correct sequence of events",
+    options: [
+      "Karyogamy, Plasmogamy and Meiosis",
+      "Meiosis, Plasmogamy and Karyogamy",
+      "Plasmogamy, Karyogamy and Meiosis",
+      "Meiosis, Karyogamy and Plasmogamy"
+    ],
+    answer: 2,
+    explanation: "The sexual cycle of fungi proceeds through three sequential phases: Plasmogamy (fusion of gametic protoplasts) -> Karyogamy (fusion of two haploid nuclei) -> Meiosis in the zygote yielding haploid sexual spores."
+  },
+  {
+    id: "bc-711",
+    class: 11,
+    chapter: "2",
+    topic: "Viruses",
+    source: "NCERT Exemplar",
+    question: "Viruses are non-cellular organisms but replicate themselves once they infect the host cell. To which of the following kingdom do viruses belong to?",
+    options: [
+      "Monera",
+      "Protista",
+      "Fungi",
+      "None of the above"
+    ],
+    answer: 3,
+    explanation: "Viruses are acellular nucleoprotein particles that exhibit no independent cellular organisation or metabolism outside living hosts; therefore, they were omitted from Whittaker's five kingdoms."
+  },
+  {
+    id: "bc-712",
+    class: 11,
+    chapter: "2",
+    topic: "Phycomycetes",
+    source: "NCERT Exemplar",
+    question: "Members of phycomycetes are found in:\n(i) Aquatic habitats\n(ii) On decaying wood\n(iii) Moist and damp places\n(iv) As obligate parasites on plants\nChoose from the following options:",
+    options: [
+      "None of the above",
+      "(i) and (iv)",
+      "(ii) and (iii)",
+      "All of the above"
+    ],
+    answer: 3,
+    explanation: "Phycomycetes inhabit aquatic habitats, grow on decaying wood, thrive in moist and damp terrestrial areas, and occur as obligate parasites on plants (e.g., Albugo, Phytophthora)."
   }
 ];
+
+
+
 
