@@ -4092,31 +4092,49 @@ function renderCalendar() {
     }
 
 
-    if(count >= 1) {
+    if(count >= 1 && count <= 10) {
 
-      div.classList.add(
-        "active-1"
-      );
+  div.classList.add(
+    "active-1"
+  );
 
-    }
-
-
-    if(count >= 20) {
-
-      div.classList.add(
-        "active-2"
-      );
-
-    }
+}
 
 
-    if(count >= 50) {
+if(count >= 11 && count <= 25) {
 
-      div.classList.add(
-        "active-3"
-      );
+  div.classList.add(
+    "active-2"
+  );
 
-    }
+}
+
+
+if(count >= 26 && count <= 50) {
+
+  div.classList.add(
+    "active-3"
+  );
+
+}
+
+
+if(count >= 51 && count <= 75) {
+
+  div.classList.add(
+    "active-4"
+  );
+
+}
+
+
+if(count >= 76) {
+
+  div.classList.add(
+    "active-5"
+  );
+
+}
 
 
     div.innerHTML = `
