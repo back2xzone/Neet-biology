@@ -1622,28 +1622,63 @@ select:focus{
 }
 
 .day.today{
-  border:2px solid #3b82f6;
-  background:#edf5ff;
+    border:2px solid #3b82f6;
 }
 
+/* 0 questions */
+.day.active-0{
+    background:#f3f6fa;
+    color:#111827;
+    border-color:#dbe3ee;
+}
+
+/* 1–10 questions */
 .day.active-1{
-  background:#dbeafe;
-  border-color:#b9d3f8;
+    background:#bfdbfe;
+    color:#111827;
+    border-color:#93c5fd;
 }
 
+/* 11–25 questions */
 .day.active-2{
-  background:#93c5fd;
-  border-color:#72aef1;
+    background:#60a5fa;
+    color:white;
+    border-color:#3b82f6;
 }
 
+/* 26–50 questions */
 .day.active-3{
-  background:#3b82f6;
-  color:white;
-  border-color:#3b82f6;
+    background:#1976d2;
+    color:white;
+    border-color:#1565c0;
 }
 
-.day.active-3 .day-count{
-  color:white;
+/* 51–75 questions */
+.day.active-4{
+    background:#22a06b;
+    color:white;
+    border-color:#168653;
+}
+
+/* 76+ questions */
+.day.active-5{
+    background:#087443;
+    color:white;
+    border-color:#056238;
+}
+
+
+/* Question count text */
+.day .day-count{
+    font-weight:600;
+    color:#475569;
+}
+
+.day.active-2 .day-count,
+.day.active-3 .day-count,
+.day.active-4 .day-count,
+.day.active-5 .day-count{
+    color:white;
 }
 
 
