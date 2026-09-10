@@ -4467,15 +4467,16 @@ function normalizeSource(
 
 
   if(
-    value === "neet pyq" ||
-    value === "neet pyqs" ||
-    value === "pyq" ||
-    value.startsWith("neet pyq ")
-  ) {
-
-    return "neet pyq";
-
-  }
+  value === "neet pyq" ||
+  value === "neet pyqs" ||
+  value === "pyq" ||
+  value.startsWith("neet pyq ") ||
+  /^neet\s+\d{4}/.test(value) ||
+  /^aipmt\s+\d{4}/.test(value) ||
+  /^aiims\s+\d{4}/.test(value)
+) {
+  return "neet pyq";
+}
 
 
   return value;
