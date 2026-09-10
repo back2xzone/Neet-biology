@@ -1,4 +1,4 @@
-const breathingAndExchangeOfGasesQuestions = [
+export default[
   {
     "id": "class11_ch14_001",
     "class": 11,
@@ -3619,7 +3619,1449 @@ const breathingAndExchangeOfGasesQuestions = [
     ],
     "answer": 1,
     "explanation": "Frogs use cutaneous respiration (gas exchange across vascularised moist skin) both in water and on land as an accessory respiratory mechanism."
+  },
+  {
+    "id": "pyq_ch14_001",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 1989",
+    "exam": "AIPMT",
+    "year": 1989,
+    "questionType": "normal",
+    "question": "Carbon dioxide is transported via blood to lungs mostly:",
+    "options": [
+      "In combination with haemoglobin",
+      "As carbamino-haemoglobin",
+      "In dissolved state in blood plasma",
+      "As bicarbonate ions"
+    ],
+    "answer": 3,
+    "explanation": "About 70% of carbon dioxide is transported in blood plasma as bicarbonate ions ($HCO_3^-$), catalysed by the enzyme carbonic anhydrase."
+  },
+  {
+    "id": "pyq_ch14_002",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 1990",
+    "exam": "AIPMT",
+    "year": 1990,
+    "questionType": "normal",
+    "question": "Carbonic anhydrase is found in high concentration in:",
+    "options": [
+      "Leucocytes",
+      "Blood plasma",
+      "Erythrocytes",
+      "Thrombocytes"
+    ],
+    "answer": 2,
+    "explanation": "RBCs (erythrocytes) contain very high concentrations of carbonic anhydrase, whereas only minute quantities are present in blood plasma."
+  },
+  {
+    "id": "pyq_ch14_003",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "AIPMT 1991",
+    "exam": "AIPMT",
+    "year": 1991,
+    "questionType": "normal",
+    "question": "The exchange of gases in the alveoli of the lungs takes place by:",
+    "options": [
+      "Simple diffusion",
+      "Osmosis",
+      "Active transport",
+      "Passive transport"
+    ],
+    "answer": 0,
+    "explanation": "Gas exchange across the respiratory membrane in alveoli occurs entirely by simple passive diffusion down partial pressure gradients."
+  },
+  {
+    "id": "pyq_ch14_004",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIPMT 1992",
+    "exam": "AIPMT",
+    "year": 1992,
+    "questionType": "normal",
+    "question": "When $CO_2$ concentration in blood increases, breathing becomes:",
+    "options": [
+      "Shallower and slow",
+      "There is no effect on breathing",
+      "Slow and deep",
+      "Faster and deeper"
+    ],
+    "answer": 3,
+    "explanation": "Elevated arterial $pCO_2$ (hypercapnia) and decreased pH stimulate central and peripheral chemoreceptors to make ventilation faster and deeper."
+  },
+  {
+    "id": "pyq_ch14_005",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "AIPMT 1993",
+    "exam": "AIPMT",
+    "year": 1993,
+    "questionType": "normal",
+    "question": "In alveolar air, the partial pressure of $O_2$ ($pO_2$) and $CO_2$ ($pCO_2$) are respectively:",
+    "options": [
+      "$104\\text{ mm Hg}$ and $40\\text{ mm Hg}$",
+      "$40\\text{ mm Hg}$ and $45\\text{ mm Hg}$",
+      "$95\\text{ mm Hg}$ and $40\\text{ mm Hg}$",
+      "$159\\text{ mm Hg}$ and $0.3\\text{ mm Hg}$"
+    ],
+    "answer": 0,
+    "explanation": "According to NCERT partial pressure data, alveolar air has a $pO_2$ of $104\\text{ mm Hg}$ and a $pCO_2$ of $40\\text{ mm Hg}$."
+  },
+  {
+    "id": "pyq_ch14_006",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Human Respiratory System",
+    "source": "AIPMT 1994",
+    "exam": "AIPMT",
+    "year": 1994,
+    "questionType": "normal",
+    "question": "At which thoracic vertebra does the trachea divide into right and left primary bronchi?",
+    "options": [
+      "4th thoracic vertebra",
+      "5th thoracic vertebra",
+      "6th thoracic vertebra",
+      "9th thoracic vertebra"
+    ],
+    "answer": 1,
+    "explanation": "The human trachea extends through the neck into the mid-thoracic cavity and bifurcates at the level of the 5th thoracic vertebra ($T_5$)."
+  },
+  {
+    "id": "pyq_ch14_007",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIIMS 1994",
+    "exam": "AIIMS",
+    "year": 1994,
+    "questionType": "normal",
+    "question": "The pneumotaxic centre that can moderate the functions of the respiratory rhythm centre is situated in:",
+    "options": [
+      "Pons region of brain",
+      "Medulla oblongata",
+      "Cerebellum",
+      "Diencephalon"
+    ],
+    "answer": 0,
+    "explanation": "The pneumotaxic centre is situated in the pons varolii and signals the medullary rhythm centre to shorten inspiration duration."
+  },
+  {
+    "id": "pyq_ch14_008",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Human Respiratory System",
+    "source": "AIPMT 1995",
+    "exam": "AIPMT",
+    "year": 1995,
+    "questionType": "normal",
+    "question": "Vocal cords are present inside which structure of the respiratory system?",
+    "options": [
+      "Pharynx",
+      "Larynx",
+      "Glottis",
+      "Bronchial tube"
+    ],
+    "answer": 1,
+    "explanation": "Vocal cords are mucosal folds positioned within the larynx (sound box), producing voice through vibration during expiration."
+  },
+  {
+    "id": "pyq_ch14_009",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIPMT 1996",
+    "exam": "AIPMT",
+    "year": 1996,
+    "questionType": "normal",
+    "question": "The ventilation movements of the lungs in mammals are primarily governed by:",
+    "options": [
+      "Muscular walls of lungs",
+      "Diaphragm and intercostal muscles",
+      "Trachea and bronchi",
+      "Abdominal muscles alone"
+    ],
+    "answer": 1,
+    "explanation": "Mammalian breathing movements rely on coordinated contraction and relaxation of the phrenic diaphragm and intercostal muscles."
+  },
+  {
+    "id": "pyq_ch14_010",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIPMT 1997",
+    "exam": "AIPMT",
+    "year": 1997,
+    "questionType": "normal",
+    "question": "Tidal volume in a normal healthy human adult is approximately:",
+    "options": [
+      "$500\\text{ mL}$",
+      "$1000\\text{ mL}$",
+      "$1200\\text{ mL}$",
+      "$2500\\text{ mL}$"
+    ],
+    "answer": 0,
+    "explanation": "Tidal volume (TV) is the volume of air inspired or expired per normal quiet breath and equals approximately $500\\text{ mL}$."
+  },
+  {
+    "id": "pyq_ch14_011",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIIMS 1997",
+    "exam": "AIIMS",
+    "year": 1997,
+    "questionType": "normal",
+    "question": "Under resting conditions, the maximum volume of air a person can exhale after a maximum inhalation is defined as:",
+    "options": [
+      "Residual volume",
+      "Expiratory reserve volume",
+      "Vital capacity",
+      "Inspiratory capacity"
+    ],
+    "answer": 2,
+    "explanation": "Vital capacity (VC) represents the maximum volume of air that can be expired following maximal forced inspiration ($VC = ERV + TV + IRV$)."
+  },
+  {
+    "id": "pyq_ch14_012",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "AIPMT 1998",
+    "exam": "AIPMT",
+    "year": 1998,
+    "questionType": "normal",
+    "question": "Exchange of gases between alveolar air and pulmonary capillary blood is a purely physical process governed by:",
+    "options": [
+      "Active transport",
+      "Simple diffusion down pressure gradients",
+      "Osmosis",
+      "Endocytosis"
+    ],
+    "answer": 1,
+    "explanation": "Gaseous exchange across the alveolar-capillary membrane occurs down partial pressure gradients via simple physical diffusion."
+  },
+  {
+    "id": "pyq_ch14_013",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIPMT 1999",
+    "exam": "AIPMT",
+    "year": 1999,
+    "questionType": "normal",
+    "question": "The primary respiratory centres which control the inspiration and expiration rhythm are located in:",
+    "options": [
+      "Spinal cord",
+      "Diencephalon",
+      "Cerebellum",
+      "Medulla oblongata"
+    ],
+    "answer": 3,
+    "explanation": "The primary respiratory rhythm centre is located in the medulla oblongata of the brainstem."
+  },
+  {
+    "id": "pyq_ch14_014",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2000",
+    "exam": "AIPMT",
+    "year": 2000,
+    "questionType": "normal",
+    "question": "Although a large amount of $CO_2$ is transported in blood, blood does not become markedly acidic because:",
+    "options": [
+      "$CO_2$ is continuously absorbed by WBCs",
+      "$CO_2$ transport involves blood buffers like bicarbonates and haemoglobin",
+      "$CO_2$ combines with water to form neutral compounds",
+      "$CO_2$ is immediately exhaled without entering blood"
+    ],
+    "answer": 1,
+    "explanation": "Haemoglobin functions as a proton buffer by binding $H^+$ ions, and bicarbonate ions act as a powerful buffer system in plasma."
+  },
+  {
+    "id": "pyq_ch14_015",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Respiratory Organs",
+    "source": "AIPMT 2001",
+    "exam": "AIPMT",
+    "year": 2001,
+    "questionType": "normal",
+    "question": "Skin serves as an accessory respiratory organ in which of the following animals?",
+    "options": [
+      "Lizard",
+      "Rabbit",
+      "Frog",
+      "Human"
+    ],
+    "answer": 2,
+    "explanation": "Amphibians like frogs utilize cutaneous respiration across their moist, well-vascularised skin as an accessory gas exchange surface."
+  },
+  {
+    "id": "pyq_ch14_016",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2001",
+    "exam": "AIIMS",
+    "year": 2001,
+    "questionType": "normal",
+    "question": "Oxyhaemoglobin dissociates to unload oxygen into tissue cells primarily because:",
+    "options": [
+      "$pO_2$ is high and $pCO_2$ is low in tissues",
+      "$pO_2$ is low and $pCO_2$ is high in tissues",
+      "$pO_2$ is low and $pCO_2$ is low in tissues",
+      "$pO_2$ is high and $pCO_2$ is high in tissues"
+    ],
+    "answer": 1,
+    "explanation": "Low $pO_2$ and high $pCO_2$ (along with high $H^+$ and temperature) decrease haemoglobin's affinity for $O_2$, promoting unloading."
+  },
+  {
+    "id": "pyq_ch14_017",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Human Respiratory System",
+    "source": "AIPMT 2002",
+    "exam": "AIPMT",
+    "year": 2002,
+    "questionType": "normal",
+    "question": "Presence of roughly 300 million alveoli in human lungs is physiologically advantageous because it:",
+    "options": [
+      "Increases the elasticity of lung tissue",
+      "Provides an immense surface area for gaseous diffusion",
+      "Acts as an airtight reservoir for oxygen storage",
+      "Protects alveolar capillaries from pressure changes"
+    ],
+    "answer": 1,
+    "explanation": "The enormous number of alveoli provides approximately $70\\text{–}100\\text{ m}^2$ of surface area to maximize diffusion of respiratory gases."
+  },
+  {
+    "id": "pyq_ch14_018",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2003",
+    "exam": "AIPMT",
+    "year": 2003,
+    "questionType": "normal",
+    "question": "The major fraction (nearly 70%) of carbon dioxide is transported from tissues to lungs in the form of:",
+    "options": [
+      "Dissolved gas in plasma",
+      "Carbamino-haemoglobin",
+      "Bicarbonate ions in plasma and RBCs",
+      "Carbonic acid"
+    ],
+    "answer": 2,
+    "explanation": "Around 70% of $CO_2$ is transported as bicarbonate ions ($HCO_3^-$), while 20–25% is carried as carbamino-haemoglobin and 7% in dissolved form."
+  },
+  {
+    "id": "pyq_ch14_019",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2003",
+    "exam": "AIIMS",
+    "year": 2003,
+    "questionType": "normal",
+    "question": "The oxygen-haemoglobin dissociation curve is:",
+    "options": [
+      "Hyperbolic",
+      "Sigmoid",
+      "Linear",
+      "Parabolic"
+    ],
+    "answer": 1,
+    "explanation": "The curve is sigmoid (S-shaped) because of positive cooperativity among the four subunits of the haemoglobin tetramer."
+  },
+  {
+    "id": "pyq_ch14_020",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIPMT 2004",
+    "exam": "AIPMT",
+    "year": 2004,
+    "questionType": "normal",
+    "question": "Breathing rate increases significantly when:",
+    "options": [
+      "Oxygen content in arterial blood decreases slightly",
+      "Carbon dioxide content in arterial blood increases",
+      "Oxygen content in venous blood increases",
+      "Nitrogen content in blood rises"
+    ],
+    "answer": 1,
+    "explanation": "Under normal physiological conditions, arterial $CO_2$ and $H^+$ levels are the primary regulators of respiratory ventilation rate."
+  },
+  {
+    "id": "pyq_ch14_021",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2004",
+    "exam": "AIPMT",
+    "year": 2004,
+    "questionType": "normal",
+    "question": "Blood analysis of a patient reveals an unusually high quantity of carboxyhaemoglobin. Which conclusion is most likely to be correct?",
+    "options": [
+      "The patient has inhaled air with high carbon dioxide",
+      "The patient has inhaled air containing carbon monoxide",
+      "The patient has inhaled air with high sulfur dioxide",
+      "The patient has inhaled chloroform vapors"
+    ],
+    "answer": 1,
+    "explanation": "Carbon monoxide binds haemoglobin with 200–250 times greater affinity than oxygen, forming stable carboxyhaemoglobin."
+  },
+  {
+    "id": "pyq_ch14_022",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2004",
+    "exam": "AIIMS",
+    "year": 2004,
+    "questionType": "normal",
+    "question": "The enzyme carbonic anhydrase, which catalyses the reversible hydration of carbon dioxide, is found abundantly in:",
+    "options": [
+      "Blood platelets",
+      "Erythrocytes (RBCs)",
+      "Blood plasma",
+      "Leucocytes"
+    ],
+    "answer": 1,
+    "explanation": "Erythrocytes contain massive quantities of the zinc-metalloenzyme carbonic anhydrase, facilitating rapid conversion of $CO_2$ to carbonic acid."
+  },
+  {
+    "id": "pyq_ch14_023",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2005",
+    "exam": "AIPMT",
+    "year": 2005,
+    "questionType": "correct-incorrect",
+    "question": "Which of the following statements is correct regarding the transport of respiratory gases?",
+    "options": [
+      "About 20-25% of $CO_2$ is transported by RBCs as carbamino-haemoglobin",
+      "About 97% of $O_2$ is transported dissolved in blood plasma",
+      "About 70% of $CO_2$ is transported as dissolved gas in plasma",
+      "RBCs do not participate in carbon dioxide transport"
+    ],
+    "answer": 0,
+    "explanation": "NCERT specifies that 20–25% of $CO_2$ is transported by RBCs as carbamino-haemoglobin, 70% as bicarbonate, and 7% in dissolved plasma."
+  },
+  {
+    "id": "pyq_ch14_024",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "AIPMT 2005",
+    "exam": "AIPMT",
+    "year": 2005,
+    "questionType": "normal",
+    "question": "The diffusion membrane that separates alveolar air from blood in capillaries is made up of:",
+    "options": [
+      "Two layers: squamous epithelium and endothelial wall",
+      "Three layers: thin squamous epithelium of alveoli, capillary endothelium, and intervening basement substance",
+      "One thick layer of ciliated columnar cells",
+      "Four layers including visceral and parietal pleura"
+    ],
+    "answer": 1,
+    "explanation": "The diffusion barrier comprises three layers: squamous alveolar epithelium, capillary endothelium, and the thin basement substance between them."
+  },
+  {
+    "id": "pyq_ch14_025",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Respiratory Organs",
+    "source": "AIPMT 2006",
+    "exam": "AIPMT",
+    "year": 2006,
+    "questionType": "correct-incorrect",
+    "question": "Which one of the following statements is incorrect?",
+    "options": [
+      "In insects, circulating body fluids serve to distribute oxygen to tissues",
+      "The residual air in lungs slightly decreases the efficiency of respiration in mammals",
+      "The presence of non-respiratory air sacs increases the efficiency of respiration in birds",
+      "The principle of countercurrent flow facilitates efficient respiration in gills of fishes"
+    ],
+    "answer": 0,
+    "explanation": "Insects distribute oxygen directly to cells through a branching tracheal tracheal system; their haemolymph does not transport respiratory oxygen."
+  },
+  {
+    "id": "pyq_ch14_026",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2006",
+    "exam": "AIPMT",
+    "year": 2006,
+    "questionType": "normal",
+    "question": "The majority of carbon dioxide produced by body cells is transported to the lungs:",
+    "options": [
+      "Attached to haemoglobin",
+      "Dissolved in the blood",
+      "As bicarbonates",
+      "As carbonates"
+    ],
+    "answer": 2,
+    "explanation": "Approximately 70% of carbon dioxide is transported from peripheral tissues to the lungs as bicarbonate ions."
+  },
+  {
+    "id": "pyq_ch14_027",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2006",
+    "exam": "AIIMS",
+    "year": 2006,
+    "questionType": "normal",
+    "question": "During chloride shift (Hamburger phenomenon), chloride ions move:",
+    "options": [
+      "From RBCs into plasma to balance $Na^+$ ions",
+      "From plasma into RBCs to balance the efflux of $HCO_3^-$ ions",
+      "From interstitial fluid into capillaries",
+      "From alveolar air into erythrocytes"
+    ],
+    "answer": 1,
+    "explanation": "To maintain electrochemical neutrality when $HCO_3^-$ diffuses out of RBCs, $Cl^-$ moves into erythrocytes from plasma."
+  },
+  {
+    "id": "pyq_ch14_028",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "AIPMT 2007",
+    "exam": "AIPMT",
+    "year": 2007,
+    "questionType": "normal",
+    "question": "Increased asthmatic attacks in certain seasons are closely related to:",
+    "options": [
+      "Low environmental temperature",
+      "Inhalation of seasonal airborne pollens",
+      "High humidity and hot environment",
+      "Eating foods preserved in tin cans"
+    ],
+    "answer": 1,
+    "explanation": "Asthma is an allergic condition where inhaling seasonal airborne allergens like pollens triggers histamine release from mast cells and bronchospasm."
+  },
+  {
+    "id": "pyq_ch14_029",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIPMT 2008",
+    "exam": "AIPMT",
+    "year": 2008,
+    "questionType": "normal",
+    "question": "What is vital capacity of our lungs?",
+    "options": [
+      "Inspiratory reserve volume plus tidal volume",
+      "Total lung capacity minus expiratory reserve volume",
+      "Inspiratory reserve volume plus expiratory reserve volume",
+      "Total lung capacity minus residual volume"
+    ],
+    "answer": 3,
+    "explanation": "Total lung capacity is $TLC = VC + RV$. Therefore, Vital Capacity equals Total Lung Capacity minus Residual Volume ($VC = TLC - RV$)."
+  },
+  {
+    "id": "pyq_ch14_030",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2008",
+    "exam": "AIPMT",
+    "year": 2008,
+    "questionType": "normal",
+    "question": "The haemoglobin of a human foetus:",
+    "options": [
+      "Has a higher affinity for oxygen than that of an adult",
+      "Has a lower affinity for oxygen than that of an adult",
+      "Has the same affinity for oxygen as that of an adult",
+      "Contains only two polypeptide chains instead of four"
+    ],
+    "answer": 0,
+    "explanation": "Foetal haemoglobin (HbF) contains two $\\alpha$ and two $\\gamma$ chains, having higher affinity for $O_2$ than adult HbA to extract oxygen across the placenta."
+  },
+  {
+    "id": "pyq_ch14_031",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2008",
+    "exam": "AIIMS",
+    "year": 2008,
+    "questionType": "normal",
+    "question": "Hamburger's phenomenon is also referred to as:",
+    "options": [
+      "Bicarbonate shift",
+      "Chloride shift",
+      "Sodium-potassium exchange",
+      "Hydrogen shift"
+    ],
+    "answer": 1,
+    "explanation": "Hartog Jakob Hamburger discovered the inward movement of chloride ions into erythrocytes during carbon dioxide transport, termed chloride shift."
+  },
+  {
+    "id": "pyq_ch14_032",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIPMT 2010",
+    "exam": "AIPMT",
+    "year": 2010,
+    "questionType": "matching",
+    "question": "Listed below are four respiratory capacities (I-IV) and four respiratory volumes: I. Residual volume, II. Vital capacity, III. Inspiratory reserve volume, IV. Inspiratory capacity. Jumbled values: 1200 mL, 4600 mL, 3000 mL, 3500 mL. Which of the following is the correct matching of two capacities and volumes?",
+    "options": [
+      "II = 3000 mL, III = 4600 mL",
+      "III = 1200 mL, IV = 3000 mL",
+      "IV = 3500 mL, I = 1200 mL",
+      "I = 4600 mL, II = 3500 mL"
+    ],
+    "answer": 2,
+    "explanation": "Residual volume is ~1200 mL, Vital capacity is ~4600 mL, Inspiratory reserve volume is ~3000 mL, and Inspiratory capacity ($TV+IRV$) is ~3500 mL."
+  },
+  {
+    "id": "pyq_ch14_033",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIPMT 2011 (Mains)",
+    "exam": "AIPMT",
+    "year": 2011,
+    "questionType": "normal",
+    "question": "Which one of the following is a possibility for most of us in regard to breathing, by making a conscious effort?",
+    "options": [
+      "One can breathe out air totally without oxygen",
+      "One can breathe out air through Eustachian tubes by closing both nose and mouth",
+      "One can consciously breathe in and breathe out by moving the diaphragm alone, without moving the ribs at all",
+      "The lungs can be made fully empty by forcefully breathing out all air from them"
+    ],
+    "answer": 2,
+    "explanation": "Diaphragmatic (abdominal) breathing can be performed consciously without moving the thoracic rib cage."
+  },
+  {
+    "id": "pyq_ch14_034",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Human Respiratory System",
+    "source": "AIPMT 2011 (Prelims)",
+    "exam": "AIPMT",
+    "year": 2011,
+    "questionType": "normal",
+    "question": "Two friends are eating together on a dining table. One of them suddenly starts coughing while swallowing some food. This coughing would have been due to improper movement of:",
+    "options": [
+      "Diaphragm",
+      "Neck",
+      "Tongue",
+      "Epiglottis"
+    ],
+    "answer": 3,
+    "explanation": "The epiglottis covers the glottis during deglutition. Incomplete closure allows food particles to enter the larynx, triggering a protective cough reflex."
+  },
+  {
+    "id": "pyq_ch14_035",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2011 (Prelims)",
+    "exam": "AIPMT",
+    "year": 2011,
+    "questionType": "normal",
+    "question": "Bulk of carbon dioxide ($CO_2$) released from body tissues into the blood is present as:",
+    "options": [
+      "Bicarbonate in blood plasma and RBCs",
+      "Free $CO_2$ in blood plasma",
+      "$70\\%$ carbamino-haemoglobin and $30\\%$ bicarbonate",
+      "Carbamino-haemoglobin in RBCs"
+    ],
+    "answer": 0,
+    "explanation": "Nearly 70% of carbon dioxide travels as bicarbonate ($HCO_3^-$) generated inside RBCs and dissolved in plasma."
+  },
+  {
+    "id": "pyq_ch14_036",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2011",
+    "exam": "AIIMS",
+    "year": 2011,
+    "questionType": "assertion-reason",
+    "question": "Given below are Assertion (A) and Reason (R):\nAssertion (A): A drop in temperature shifts the oxygen-haemoglobin dissociation curve to the left.\nReason (R): Lower temperature increases the affinity of haemoglobin for oxygen.\nChoose the correct option:",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "Both (A) and (R) are false"
+    ],
+    "answer": 0,
+    "explanation": "Low temperature stabilizes oxyhaemoglobin, shifting the dissociation curve to the left due to increased binding affinity for $O_2$."
+  },
+  {
+    "id": "pyq_ch14_037",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2012 (Prelims)",
+    "exam": "AIPMT",
+    "year": 2012,
+    "questionType": "normal",
+    "question": "A large proportion of oxygen is left unused in the human blood even after its uptake by the body tissues. This $O_2$:",
+    "options": [
+      "Acts as a reserve during muscular exercise",
+      "Raises the $pCO_2$ of blood to $75\\text{ mm Hg}$",
+      "Is enough to keep oxyhaemoglobin fully saturated",
+      "Helps in releasing more $O_2$ to the epithelial tissues"
+    ],
+    "answer": 0,
+    "explanation": "Resting venous blood remains roughly 75% saturated with oxygen, serving as a functional reserve tapped during strenuous physical activity."
+  },
+  {
+    "id": "pyq_ch14_038",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2012 (Mains)",
+    "exam": "AIPMT",
+    "year": 2012,
+    "questionType": "normal",
+    "question": "People who have migrated from the plains to an area adjoining Rohtang Pass (altitude > 3500 m) about six months back:",
+    "options": [
+      "Have more RBCs and their haemoglobin has a lower binding affinity to $O_2$",
+      "Are not physically fit to play games like football",
+      "Suffer continuously from altitude sickness with symptoms like nausea and fatigue",
+      "Have the usual RBC count but their haemoglobin has very high binding affinity to $O_2$"
+    ],
+    "answer": 0,
+    "explanation": "Acclimatisation to high altitude results in polycythaemia (increased RBC count) and elevated 2,3-BPG which decreases Hb affinity, aiding $O_2$ unloading."
+  },
+  {
+    "id": "pyq_ch14_039",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIIMS 2012",
+    "exam": "AIIMS",
+    "year": 2012,
+    "questionType": "normal",
+    "question": "The maximum volume of air a person can breathe in after a forced expiration is:",
+    "options": [
+      "Total lung capacity",
+      "Vital capacity",
+      "Inspiratory capacity",
+      "Expiratory capacity"
+    ],
+    "answer": 1,
+    "explanation": "Vital capacity includes the expiratory reserve volume, tidal volume, and inspiratory reserve volume ($VC = ERV + TV + IRV$)."
+  },
+  {
+    "id": "pyq_ch14_040",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "NEET 2013",
+    "exam": "NEET",
+    "year": 2013,
+    "questionType": "normal",
+    "question": "In the human pulmonary and systemic circulation of gases, which vessel carries oxygenated blood from the lungs to the heart?",
+    "options": [
+      "Pulmonary vein",
+      "Pulmonary artery",
+      "Systemic vein",
+      "Hepatic portal vein"
+    ],
+    "answer": 0,
+    "explanation": "Pulmonary veins carry oxygen-rich blood ($pO_2 = 95\\text{ mm Hg}$) from alveolar capillaries into the left atrium."
+  },
+  {
+    "id": "pyq_ch14_041",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "AIIMS 2013",
+    "exam": "AIIMS",
+    "year": 2013,
+    "questionType": "normal",
+    "question": "Emphysema is a chronic respiratory disorder characterized by:",
+    "options": [
+      "Spasm in smooth muscles of bronchioles",
+      "Permanent destruction and damage of alveolar walls",
+      "Excessive production of mucus in bronchi",
+      "Bacterial infection of tracheal lining"
+    ],
+    "answer": 1,
+    "explanation": "In emphysema, alveolar septa are destroyed, significantly decreasing the available surface area for respiratory gas exchange."
+  },
+  {
+    "id": "pyq_ch14_042",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2014",
+    "exam": "AIPMT",
+    "year": 2014,
+    "questionType": "normal",
+    "question": "Approximately seventy percent ($70\\%$) of carbon dioxide absorbed by the blood will be transported to the lungs:",
+    "options": [
+      "As bicarbonate ions",
+      "As carbamino-haemoglobin",
+      "In the form of dissolved gas in plasma",
+      "Combined with blood plasma proteins"
+    ],
+    "answer": 0,
+    "explanation": "70% of $CO_2$ is converted by carbonic anhydrase into bicarbonate ions ($HCO_3^-$) in erythrocytes and transported in plasma."
+  },
+  {
+    "id": "pyq_ch14_043",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIPMT 2014",
+    "exam": "AIPMT",
+    "year": 2014,
+    "questionType": "normal",
+    "question": "When you hold your breath, which of the following gas changes in blood would first lead to the urge to breathe?",
+    "options": [
+      "Falling $O_2$ concentration",
+      "Rising $CO_2$ concentration",
+      "Falling $CO_2$ concentration",
+      "Rising $CO_2$ and falling $O_2$ concentration"
+    ],
+    "answer": 1,
+    "explanation": "Rising $pCO_2$ and consequent $H^+$ formation stimulate the central chemoreceptors in the medulla, triggering the irresistible urge to breathe."
+  },
+  {
+    "id": "pyq_ch14_044",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIIMS 2014",
+    "exam": "AIIMS",
+    "year": 2014,
+    "questionType": "normal",
+    "question": "The primary respiratory rhythm centre in humans is situated in:",
+    "options": [
+      "Medulla oblongata",
+      "Pons Varolii",
+      "Cerebral cortex",
+      "Hypothalamus"
+    ],
+    "answer": 0,
+    "explanation": "A specialized centre present in the medulla region of the brain called the respiratory rhythm centre is primarily responsible for regulation."
+  },
+  {
+    "id": "pyq_ch14_045",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "AIPMT 2015",
+    "exam": "AIPMT",
+    "year": 2015,
+    "questionType": "normal",
+    "question": "Name the pulmonary disease in which alveolar surface area involved in gas exchange is drastically reduced due to damage in the alveolar walls:",
+    "options": [
+      "Pleurisy",
+      "Pneumonia",
+      "Emphysema",
+      "Asthma"
+    ],
+    "answer": 2,
+    "explanation": "Emphysema is a chronic disease where alveolar walls break down, leading to loss of elasticity and drastically reduced respiratory surface area."
+  },
+  {
+    "id": "pyq_ch14_046",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIPMT 2015 (Re-exam)",
+    "exam": "AIPMT",
+    "year": 2015,
+    "questionType": "normal",
+    "question": "Which one of the following factors facilitates the binding of oxygen with haemoglobin in alveoli?",
+    "options": [
+      "Low $pO_2$",
+      "High $pCO_2$",
+      "Lower temperature and low $H^+$ concentration",
+      "High $H^+$ concentration"
+    ],
+    "answer": 2,
+    "explanation": "In the alveoli, high $pO_2$, low $pCO_2$, low $H^+$ concentration (alkaline pH), and low temperature all favour oxyhaemoglobin formation."
+  },
+  {
+    "id": "pyq_ch14_047",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIIMS 2015",
+    "exam": "AIIMS",
+    "year": 2015,
+    "questionType": "normal",
+    "question": "When the concentration of carbon dioxide in the blood increases, the breathing rate:",
+    "options": [
+      "Decreases",
+      "Increases",
+      "Remains unchanged",
+      "Stops completely"
+    ],
+    "answer": 1,
+    "explanation": "Chemoreceptors detect hypercapnia and trigger the respiratory rhythm centre to increase ventilation rate and depth."
+  },
+  {
+    "id": "pyq_ch14_048",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "NEET 2016 Phase 1",
+    "exam": "NEET",
+    "year": 2016,
+    "questionType": "normal",
+    "question": "Name the chronic respiratory disorder caused mainly by cigarette smoking:",
+    "options": [
+      "Asthma",
+      "Respiratory acidosis",
+      "Respiratory alkalosis",
+      "Emphysema"
+    ],
+    "answer": 3,
+    "explanation": "Cigarette smoking is the major cause of emphysema, where chronic irritation destroys the alveolar septa."
+  },
+  {
+    "id": "pyq_ch14_049",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "NEET 2016 Phase 1",
+    "exam": "NEET",
+    "year": 2016,
+    "questionType": "normal",
+    "question": "Asthma may be attributed to:",
+    "options": [
+      "Inflammation of the trachea",
+      "Accumulation of fluid in the lungs",
+      "Bacterial infection of the lungs",
+      "Allergic reaction of the mast cells in the lungs"
+    ],
+    "answer": 3,
+    "explanation": "Asthma is characterized by an allergic response involving mast-cell degranulation, inflammation of bronchi/bronchioles, and wheezing."
+  },
+  {
+    "id": "pyq_ch14_050",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2016 Phase 2",
+    "exam": "NEET",
+    "year": 2016,
+    "questionType": "normal",
+    "question": "Reduction in pH of blood will:",
+    "options": [
+      "Decrease the affinity of haemoglobin with oxygen",
+      "Release bicarbonate ions by the liver",
+      "Reduce the rate of heartbeat",
+      "Reduce the blood supply to the brain"
+    ],
+    "answer": 0,
+    "explanation": "A decrease in blood pH (higher $H^+$ concentration) shifts the oxyhaemoglobin curve to the right, decreasing Hb affinity for oxygen (Bohr effect)."
+  },
+  {
+    "id": "pyq_ch14_051",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "NEET 2016 Phase 2",
+    "exam": "NEET",
+    "year": 2016,
+    "questionType": "normal",
+    "question": "The partial pressure of oxygen in the alveoli of the lungs is:",
+    "options": [
+      "More than that in the blood",
+      "Less than that in the blood",
+      "Less than that of carbon dioxide",
+      "Equal to that in the blood"
+    ],
+    "answer": 0,
+    "explanation": "Alveolar $pO_2$ ($104\\text{ mm Hg}$) is higher than that in pulmonary capillary deoxygenated blood ($40\\text{ mm Hg}$), facilitating oxygen diffusion."
+  },
+  {
+    "id": "pyq_ch14_052",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "AIIMS 2016",
+    "exam": "AIIMS",
+    "year": 2016,
+    "questionType": "assertion-reason",
+    "question": "Given below are Assertion (A) and Reason (R):\nAssertion (A): In human beings, inspiration occurs when intra-pulmonary pressure is less than atmospheric pressure.\nReason (R): Contraction of diaphragm and external intercostal muscles causes an increase in thoracic volume.\nChoose the correct option:",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "Both (A) and (R) are false"
+    ],
+    "answer": 0,
+    "explanation": "Expansion of thoracic volume by diaphragmatic and intercostal contraction reduces intrapulmonary pressure below atmospheric levels, drawing air into lungs."
+  },
+  {
+    "id": "pyq_ch14_053",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2017",
+    "exam": "NEET",
+    "year": 2017,
+    "questionType": "normal",
+    "question": "Lungs are made up of air-filled sacs, the alveoli. They do not collapse even after forceful expiration, because of:",
+    "options": [
+      "Inspiratory Reserve Volume (IRV)",
+      "Tidal Volume (TV)",
+      "Expiratory Reserve Volume (ERV)",
+      "Residual Volume (RV)"
+    ],
+    "answer": 3,
+    "explanation": "Residual volume ($1100\\text{–}1200\\text{ mL}$) permanently remains inside the lungs even after maximal expiration, preventing alveolar collapse."
+  },
+  {
+    "id": "pyq_ch14_054",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2017",
+    "exam": "AIIMS",
+    "year": 2017,
+    "questionType": "normal",
+    "question": "Which metalloenzyme contains zinc and is crucial for catalyzing the conversion of $CO_2$ to $HCO_3^-$ in erythrocytes?",
+    "options": [
+      "Carboxypeptidase",
+      "Carbonic anhydrase",
+      "Succinate dehydrogenase",
+      "Nitrate reductase"
+    ],
+    "answer": 1,
+    "explanation": "Carbonic anhydrase is a zinc-containing metalloenzyme that accelerates the reversible hydration of $CO_2$ over a million-fold."
+  },
+  {
+    "id": "pyq_ch14_055",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "NEET 2018",
+    "exam": "NEET",
+    "year": 2018,
+    "questionType": "normal",
+    "question": "Which of the following options correctly represents the lung conditions in asthma and emphysema, respectively?",
+    "options": [
+      "Inflammation of bronchioles; Decreased respiratory surface",
+      "Increased number of bronchioles; Increased respiratory surface",
+      "Increased respiratory surface; Inflammation of bronchioles",
+      "Decreased respiratory surface; Inflammation of bronchioles"
+    ],
+    "answer": 0,
+    "explanation": "Asthma involves inflammation of bronchi and bronchioles, whereas emphysema causes breakdown of alveolar walls and reduced respiratory surface."
+  },
+  {
+    "id": "pyq_ch14_056",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2018",
+    "exam": "NEET",
+    "year": 2018,
+    "questionType": "matching",
+    "question": "Match the items given in Column I with those in Column II and select the correct option:\nColumn I:\nA. Tidal volume\nB. Inspiratory reserve volume\nC. Expiratory reserve volume\nD. Residual volume\nColumn II:\n(i) 2500-3000 mL\n(ii) 1100-1200 mL\n(iii) 500-550 mL\n(iv) 1000-1100 mL",
+    "options": [
+      "A-(iii), B-(ii), C-(i), D-(iv)",
+      "A-(iii), B-(i), C-(iv), D-(ii)",
+      "A-(i), B-(iv), C-(ii), D-(iii)",
+      "A-(iv), B-(iii), C-(ii), D-(i)"
+    ],
+    "answer": 1,
+    "explanation": "Tidal volume is 500-550 mL, Inspiratory reserve volume is 2500-3000 mL, Expiratory reserve volume is 1000-1100 mL, and Residual volume is 1100-1200 mL."
+  },
+  {
+    "id": "pyq_ch14_057",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "AIIMS 2018",
+    "exam": "AIIMS",
+    "year": 2018,
+    "questionType": "assertion-reason",
+    "question": "Given below are Assertion (A) and Reason (R):\nAssertion (A): Emphysema is a chronic disorder in which alveolar walls are damaged resulting in decreased respiratory surface area.\nReason (R): One of the major causes of emphysema is cigarette smoking.\nChoose the correct option:",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "Both (A) and (R) are false"
+    ],
+    "answer": 0,
+    "explanation": "Cigarette smoke contains toxins that recruit neutrophils and inactivate alpha-1 antitrypsin, causing enzymatic breakdown of alveolar walls."
+  },
+  {
+    "id": "pyq_ch14_058",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2019",
+    "exam": "NEET",
+    "year": 2019,
+    "questionType": "normal",
+    "question": "Tidal Volume and Expiratory Reserve Volume of an athlete are $500\\text{ mL}$ and $1000\\text{ mL}$ respectively. What will be his Expiratory Capacity if the residual volume is $1200\\text{ mL}$?",
+    "options": [
+      "$1500\\text{ mL}$",
+      "$1700\\text{ mL}$",
+      "$2200\\text{ mL}$",
+      "$2700\\text{ mL}$"
+    ],
+    "answer": 0,
+    "explanation": "Expiratory Capacity ($EC$) is the total volume of air a person can expire after a normal inspiration: $EC = TV + ERV = 500 + 1000 = 1500\\text{ mL}$."
+  },
+  {
+    "id": "pyq_ch14_059",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "NEET 2019",
+    "exam": "NEET",
+    "year": 2019,
+    "questionType": "normal",
+    "question": "Due to increasing air-borne allergens and pollutants, many people in urban areas are suffering from respiratory disorder that cause wheezing due to:",
+    "options": [
+      "Reduction in the secretion of surfactants by pneumocytes",
+      "Benign growth on mucous lining of nasal cavity",
+      "Inflammation of bronchi and bronchioles",
+      "Proliferation of fibrous tissues and damage of the alveolar walls"
+    ],
+    "answer": 2,
+    "explanation": "Wheezing is a whistling sound produced during breathing caused by the narrowing and inflammation of bronchi and bronchioles in asthma."
+  },
+  {
+    "id": "pyq_ch14_060",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2019 (Odisha)",
+    "exam": "NEET",
+    "year": 2019,
+    "questionType": "normal",
+    "question": "Select the favorable conditions for the formation of oxyhaemoglobin at the alveoli:",
+    "options": [
+      "High $pO_2$, low $pCO_2$, less $H^+$, lower temperature",
+      "Low $pO_2$, high $pCO_2$, more $H^+$, higher temperature",
+      "High $pO_2$, high $pCO_2$, less $H^+$, higher temperature",
+      "Low $pO_2$, low $pCO_2$, more $H^+$, higher temperature"
+    ],
+    "answer": 0,
+    "explanation": "Alveolar conditions of elevated $pO_2$, low $pCO_2$, alkaline pH (low $H^+$), and cooler temperature strongly favour $O_2$ association with Hb."
+  },
+  {
+    "id": "pyq_ch14_061",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "AIIMS 2019",
+    "exam": "AIIMS",
+    "year": 2019,
+    "questionType": "normal",
+    "question": "Under normal physiological conditions, every $100\\text{ mL}$ of oxygenated arterial blood delivers approximately how much oxygen to the tissues?",
+    "options": [
+      "$10\\text{ mL}$",
+      "$4\\text{ mL}$",
+      "$5\\text{ mL}$",
+      "$20\\text{ mL}$"
+    ],
+    "answer": 2,
+    "explanation": "Out of $\\approx 20\\text{ mL}$ total oxygen carried by $100\\text{ mL}$ arterial blood, roughly $5\\text{ mL}$ is delivered to resting tissues (25% utilization)."
+  },
+  {
+    "id": "pyq_ch14_062",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "AIIMS 2019",
+    "exam": "AIIMS",
+    "year": 2019,
+    "questionType": "assertion-reason",
+    "question": "Given below are Assertion (A) and Reason (R):\nAssertion (A): The respiratory rhythm centre located in the medulla oblongata is primarily responsible for regulating respiratory rhythm.\nReason (R): Pneumotaxic centre in the pons Varolii can moderate the functions of the rhythm centre by reducing the duration of inspiration.\nChoose the correct option:",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "Both (A) and (R) are false"
+    ],
+    "answer": 0,
+    "explanation": "The medullary rhythm centre sets the basic rhythmic breathing pace, while the pontine pneumotaxic centre delivers inhibitory switches to control depth and rate."
+  },
+  {
+    "id": "pyq_ch14_063",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2020",
+    "exam": "NEET",
+    "year": 2020,
+    "questionType": "correct-incorrect",
+    "question": "Identify the wrong statement with reference to the transport of oxygen:",
+    "options": [
+      "Binding of oxygen with haemoglobin is mainly related to partial pressure of $O_2$",
+      "Partial pressure of $CO_2$ can interfere with $O_2$ binding with haemoglobin",
+      "Higher $H^+$ conc. in alveoli favours the formation of oxyhaemoglobin",
+      "Low $pCO_2$ in alveoli favours the formation of oxyhaemoglobin"
+    ],
+    "answer": 2,
+    "explanation": "Higher $H^+$ concentration favours dissociation of oxyhaemoglobin, not its formation. Alveoli have low $H^+$ (alkaline pH)."
+  },
+  {
+    "id": "pyq_ch14_064",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2020",
+    "exam": "NEET",
+    "year": 2020,
+    "questionType": "statement",
+    "question": "Select the correct events that occur during inspiration:\n(a) Contraction of diaphragm\n(b) Contraction of external inter-costal muscles\n(c) Pulmonary volume decreases\n(d) Intra-pulmonary pressure increases",
+    "options": [
+      "(a) and (b)",
+      "(c) and (d)",
+      "(a), (b) and (d)",
+      "only (d)"
+    ],
+    "answer": 0,
+    "explanation": "Inspiration is active: contraction of diaphragm and external intercostal muscles increases thoracic volume, which lowers intrapulmonary pressure."
+  },
+  {
+    "id": "pyq_ch14_065",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Disorders of Respiratory System",
+    "source": "NEET 2020 (Covid Special)",
+    "exam": "NEET",
+    "year": 2020,
+    "questionType": "normal",
+    "question": "Which of the following is NOT an occupational respiratory disorder?",
+    "options": [
+      "Silicosis",
+      "Asbestosis",
+      "Botulism",
+      "Siderosis"
+    ],
+    "answer": 2,
+    "explanation": "Botulism is a neuroparalytic foodborne illness caused by Clostridium botulinum exotoxin, whereas the others are mineral dust occupational disorders."
+  },
+  {
+    "id": "pyq_ch14_066",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2021",
+    "exam": "NEET",
+    "year": 2021,
+    "questionType": "normal",
+    "question": "Select the favourable conditions required for the formation of oxyhaemoglobin at the alveoli:",
+    "options": [
+      "High $pO_2$, low $pCO_2$, less $H^+$, lower temperature",
+      "Low $pO_2$, low $pCO_2$, more $H^+$, higher temperature",
+      "High $pO_2$, low $pCO_2$, more $H^+$, higher temperature",
+      "Low $pO_2$, high $pCO_2$, more $H^+$, higher temperature"
+    ],
+    "answer": 0,
+    "explanation": "High oxygen tension ($104\\text{ mm Hg}$), low carbon dioxide ($40\\text{ mm Hg}$), low proton concentration, and cooler temp favour Hb saturation."
+  },
+  {
+    "id": "pyq_ch14_067",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Exchange of Gases",
+    "source": "NEET 2021",
+    "exam": "NEET",
+    "year": 2021,
+    "questionType": "normal",
+    "question": "Partial pressures (in $\\text{mm Hg}$) of oxygen ($O_2$) and carbon dioxide ($CO_2$) at alveoli (the site of diffusion) are:",
+    "options": [
+      "$pO_2 = 104$ and $pCO_2 = 40$",
+      "$pO_2 = 159$ and $pCO_2 = 0.3$",
+      "$pO_2 = 40$ and $pCO_2 = 45$",
+      "$pO_2 = 95$ and $pCO_2 = 40$"
+    ],
+    "answer": 0,
+    "explanation": "NCERT Table 17.1 lists alveolar partial pressures as $pO_2 = 104\\text{ mm Hg}$ and $pCO_2 = 40\\text{ mm Hg}$."
+  },
+  {
+    "id": "pyq_ch14_068",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2022",
+    "exam": "NEET",
+    "year": 2022,
+    "questionType": "normal",
+    "question": "Under normal physiological conditions in human being, every $100\\text{ mL}$ of oxygenated blood can deliver _________ $\\text{mL}$ of $O_2$ to the tissues:",
+    "options": [
+      "$10\\text{ mL}$",
+      "$2\\text{ mL}$",
+      "$5\\text{ mL}$",
+      "$4\\text{ mL}$"
+    ],
+    "answer": 2,
+    "explanation": "Every $100\\text{ mL}$ of oxygenated blood delivers approximately $5\\text{ mL}$ of $O_2$ to metabolically active tissues."
+  },
+  {
+    "id": "pyq_ch14_069",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Regulation of Respiration",
+    "source": "NEET 2022",
+    "exam": "NEET",
+    "year": 2022,
+    "questionType": "normal",
+    "question": "In the regulation of respiration, a chemosensitive area adjacent to the rhythm centre in the medulla region of the brain is highly sensitive to:",
+    "options": [
+      "$CO_2$ and $H^+$ ions",
+      "$O_2$ and $H^+$ ions",
+      "$CO_2$ and $O_2$ levels",
+      "$HCO_3^-$ ions"
+    ],
+    "answer": 0,
+    "explanation": "The central chemosensitive area of the medulla is extremely sensitive to elevated concentrations of carbon dioxide and hydrogen ions."
+  },
+  {
+    "id": "pyq_ch14_070",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Human Respiratory System",
+    "source": "NEET 2022",
+    "exam": "NEET",
+    "year": 2022,
+    "questionType": "correct-incorrect",
+    "question": "Which of the following is not a function of the conducting part of the respiratory system?",
+    "options": [
+      "Provides surface for diffusion of $O_2$ and $CO_2$",
+      "It clears inhaled air from foreign particles",
+      "Inhaled air is humidified",
+      "Temperature of inhaled air is brought to body temperature"
+    ],
+    "answer": 0,
+    "explanation": "Diffusion of $O_2$ and $CO_2$ occurs across the exchange part (alveoli and their ducts), not across the conducting zone."
+  },
+  {
+    "id": "pyq_ch14_071",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2023",
+    "exam": "NEET",
+    "year": 2023,
+    "questionType": "normal",
+    "question": "Vital capacity of lung is:",
+    "options": [
+      "$IRV + ERV + TV$",
+      "$IRV + ERV$",
+      "$IRV + ERV + TV + RV$",
+      "$IRV + ERV + TV - RV$"
+    ],
+    "answer": 0,
+    "explanation": "Vital capacity is the maximum volume of air a person can breathe in after forced expiration: $VC = IRV + ERV + TV$."
+  },
+  {
+    "id": "pyq_ch14_072",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2023 (Manipur)",
+    "exam": "NEET",
+    "year": 2023,
+    "questionType": "statement",
+    "question": "Select the correct sequence of steps in Respiration:\n(A) Diffusion of gases ($O_2$ and $CO_2$) across alveolar membrane\n(B) Diffusion of $O_2$ and $CO_2$ between blood and tissues\n(C) Transport of gases by the blood\n(D) Pulmonary ventilation by which atmospheric air is drawn in and $CO_2$ rich alveolar air is released out\n(E) Utilisation of $O_2$ by the cells for catabolic reactions and resultant release of $CO_2$",
+    "options": [
+      "(D) $\\rightarrow$ (A) $\\rightarrow$ (C) $\\rightarrow$ (B) $\\rightarrow$ (E)",
+      "(C) $\\rightarrow$ (B) $\\rightarrow$ (A) $\\rightarrow$ (E) $\\rightarrow$ (D)",
+      "(B) $\\rightarrow$ (C) $\\rightarrow$ (E) $\\rightarrow$ (D) $\\rightarrow$ (A)",
+      "(A) $\\rightarrow$ (C) $\\rightarrow$ (B) $\\rightarrow$ (E) $\\rightarrow$ (D)"
+    ],
+    "answer": 0,
+    "explanation": "The chronological sequence in respiration is ventilation (D) $\\rightarrow$ alveolar diffusion (A) $\\rightarrow$ transport (C) $\\rightarrow$ tissue exchange (B) $\\rightarrow$ cellular oxidation (E)."
+  },
+  {
+    "id": "pyq_ch14_073",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2024",
+    "exam": "NEET",
+    "year": 2024,
+    "questionType": "matching",
+    "question": "Match List I with List II:\nList I:\nA. Expiratory capacity\nB. Functional residual capacity\nC. Vital capacity\nD. Inspiratory capacity\nList II:\nI. Expiratory reserve volume + Tidal volume + Inspiratory reserve volume\nII. Tidal volume + Expiratory reserve volume\nIII. Tidal volume + Inspiratory reserve volume\nIV. Expiratory reserve volume + Residual volume\nChoose the correct answer from the options given below:",
+    "options": [
+      "A-II, B-IV, C-I, D-III",
+      "A-III, B-II, C-IV, D-I",
+      "A-II, B-I, C-IV, D-III",
+      "A-I, B-III, C-II, D-IV"
+    ],
+    "answer": 0,
+    "explanation": "Expiratory capacity = TV + ERV (II); Functional residual capacity = ERV + RV (IV); Vital capacity = ERV + TV + IRV (I); Inspiratory capacity = TV + IRV (III)."
+  },
+  {
+    "id": "pyq_ch14_074",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2024",
+    "exam": "NEET",
+    "year": 2024,
+    "questionType": "normal",
+    "question": "Which of the following factors are favourable for the formation of oxyhaemoglobin in alveoli?",
+    "options": [
+      "High $pO_2$ and Lesser $H^+$ concentration",
+      "Low $pCO_2$ and High $H^+$ concentration",
+      "Low $pCO_2$ and High temperature",
+      "High $pO_2$ and High $pCO_2$"
+    ],
+    "answer": 0,
+    "explanation": "High oxygen partial pressure ($pO_2$) and lower $H^+$ concentration (alkaline environment) promote oxygen binding with haemoglobin."
+  },
+  {
+    "id": "pyq_ch14_075",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Mechanism of Breathing",
+    "source": "NEET 2024 (Re-exam)",
+    "exam": "NEET",
+    "year": 2024,
+    "questionType": "matching",
+    "question": "Match List-I with List-II:\nList-I:\n(A) Residual Volume\n(B) Vital Capacity\n(C) Expiratory Capacity\n(D) Tidal Volume\nList-II:\n(I) Maximum volume of air that can be breathed in after forced expiration\n(II) Volume of air inspired or expired during normal respiration\n(III) Volume of air remaining in lungs after forcible expiration\n(IV) Total volume of air expired after normal inspiration\nChoose the correct option:",
+    "options": [
+      "(A)-IV, (B)-III, (C)-II, (D)-I",
+      "(A)-II, (B)-IV, (C)-I, (D)-III",
+      "(A)-III, (B)-I, (C)-IV, (D)-II",
+      "(A)-I, (B)-II, (C)-III, (D)-IV"
+    ],
+    "answer": 2,
+    "explanation": "Residual volume is volume remaining after forced expiration (III); Vital capacity is maximal air inspired after forced expiration (I); Expiratory capacity is air expired after normal inspiration (IV); Tidal volume is air ventilated normally (II)."
+  },
+  {
+    "id": "pyq_ch14_076",
+    "class": 11,
+    "chapter": "14",
+    "topic": "Transport of Gases",
+    "source": "NEET 2024 (Re-exam)",
+    "exam": "NEET",
+    "year": 2024,
+    "questionType": "assertion-reason",
+    "question": "Given below are two statements:\nAssertion (A): During the transportation of gases, about 20-25 percent of $CO_2$ is carried by Haemoglobin as carbamino-haemoglobin.\nReason (R): This binding is related to high $pCO_2$ and low $pO_2$ in tissues.\nIn the light of the above statements, choose the correct answer:",
+    "options": [
+      "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "(A) is true but (R) is false",
+      "(A) is false but (R) is true"
+    ],
+    "answer": 0,
+    "explanation": "20–25% of $CO_2$ binds with amine groups of haemoglobin. This binding is facilitated by tissue conditions characterized by high $pCO_2$ and low $pO_2$."
   }
 ];
-
-export default breathingAndExchangeOfGasesQuestions;
