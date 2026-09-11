@@ -5982,6 +5982,390 @@ explanation: "The cranium is the skeletal vault composed of cranial flat bones j
     ],
     answer: 2,
     explanation: "The pia mater is the delicate, highly vascular innermost connective tissue meninx that adheres intimately to the surface of the brain and spinal cord, following all their sulci and gyri."
+  },
+  {
+    id: "ncc-ex-001",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Chemicals which are released at the synaptic junction are called:",
+    options: [
+      "Hormones",
+      "Neurotransmitters",
+      "Cerebrospinal fluid",
+      "Lymph"
+    ],
+    answer: 1,
+    explanation: "At chemical synapses, depolarization of the presynaptic axon terminal triggers the calcium-dependent exocytosis of synaptic vesicles, releasing chemical signalling molecules termed neurotransmitters (e.g., acetylcholine) into the synaptic cleft to bind specific postsynaptic receptors."
+  },
+  {
+    id: "ncc-ex-002",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Potential difference across the resting membrane is negatively charged. This is due to the differential distribution of the following ions:",
+    options: [
+      "$\\text{Na}^+$ and $\\text{K}^+$ ions",
+      "$\\text{CO}_3^{2-}$ and $\\text{Cl}^-$ ions",
+      "$\\text{Ca}^{2+}$ and $\\text{Mg}^{2+}$ ions",
+      "$\\text{Ca}^{4+}$ and $\\text{Cl}^-$ ions"
+    ],
+    answer: 0,
+    explanation: "The negative resting membrane potential (approximately $-70\\text{ mV}$) is primarily generated and maintained by the asymmetric transmembrane distribution of $\\text{Na}^+$ and $\\text{K}^+$ ions, high resting axolemmal permeability to $\\text{K}^+$, and impermeability to intracellular macromolecular polyanionic proteins."
+  },
+  {
+    id: "ncc-ex-003",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Resting membrane potential is maintained by:",
+    options: [
+      "Hormones",
+      "Neurotransmitters",
+      "Ion pumps",
+      "None of the above"
+    ],
+    answer: 2,
+    explanation: "The resting membrane potential is actively maintained by electrogenic ion pumps, specifically the $\\text{Na}^+/\\text{K}^+$-ATPase pump, which actively extrudes $3\\text{ Na}^+$ outwards into the extracellular space while importing $2\\text{ K}^+$ into the axoplasm per ATP hydrolyzed."
+  },
+  {
+    id: "ncc-ex-004",
+    class: 11,
+    chapter: "18",
+    topic: "Human Neural System",
+    source: "NCERT Exemplar",
+    question: "The function of our visceral organs is controlled by:",
+    options: [
+      "Sympathetic and somatic neural system",
+      "Sympathetic and parasympathetic neural system",
+      "Central and somatic nervous system",
+      "None of the above"
+    ],
+    answer: 1,
+    explanation: "Visceral organs and involuntary smooth/cardiac muscles are regulated by the autonomic neural system (ANS), which consists of two functionally antagonistic divisions: the sympathetic neural system (fight-or-flight) and the parasympathetic neural system (rest-and-digest)."
+  },
+  {
+    id: "ncc-ex-005",
+    class: 11,
+    chapter: "18",
+    topic: "Reflex Action and Reflex Arc",
+    source: "NCERT Exemplar",
+    question: "Which of the following is not involved in the knee-jerk reflex?",
+    options: [
+      "Muscle spindle",
+      "Motor neuron",
+      "Brain",
+      "Interneurons"
+    ],
+    answer: 2,
+    explanation: "The knee-jerk (patellar) reflex is a somatic stretch reflex integrated directly at the level of the spinal cord (lumbar segments L2-L4). The brain is not involved in the execution of this reflex arc, although it may receive concurrent ascending sensory feedback."
+  },
+  {
+    id: "ncc-ex-006",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "An area in the brain which is associated with strong emotions is:",
+    options: [
+      "Cerebral cortex",
+      "Cerebellum",
+      "Limbic system",
+      "Medulla"
+    ],
+    answer: 2,
+    explanation: "The limbic system (comprising the amygdala, hippocampus, and cingulate gyrus), working in close functional association with the hypothalamus, is primarily responsible for mediating emotional reactions such as excitement, pleasure, rage, and fear."
+  },
+  {
+    id: "ncc-ex-007",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Rearrange the following components of a neuron in the correct sequential order of electrical impulse transmission:\n(I) Synaptic knob\n(II) Dendrites\n(III) Cell body (cyton)\n(IV) Axon terminal\n(V) Axon\nChoose the correct option:",
+    options: [
+      "(II) -> (III) -> (V) -> (IV) -> (I)",
+      "(I) -> (II) -> (III) -> (V) -> (IV)",
+      "(II) -> (V) -> (III) -> (IV) -> (I)",
+      "(III) -> (II) -> (V) -> (I) -> (IV)"
+    ],
+    answer: 0,
+    explanation: "According to the directional flow of electrical signals across a neuron, dendritic processes detect inputs -> transmit graded electrotonic potentials to the cell body (cyton) -> action potential propagates down the axon -> reaches the arborized axon terminals -> ends at the neurotransmitter-packed synaptic knobs."
+  },
+  {
+    id: "ncc-ex-008",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "During the resting state of an axonal membrane, the electrical polarity (positive on outer surface, negative on inner surface) is maintained primarily because:",
+    options: [
+      "The membrane is impermeable to $\\text{K}^+$ and highly permeable to $\\text{Na}^+$",
+      "The membrane is comparatively more permeable to $\\text{K}^+$ than $\\text{Na}^+$, and actively expels $3\\text{ Na}^+$ for every $2\\text{ K}^+$ imported",
+      "Negative macromolecular proteins diffuse freely outward into the extracellular fluid",
+      "Voltage-gated $\\text{Na}^+$ channels remain permanently open at resting potential"
+    ],
+    answer: 1,
+    explanation: "In an unexcited resting axon, resting $\\text{K}^+$ leak channels provide significantly higher permeability to $\\text{K}^+$ than to $\\text{Na}^+$. Active $\\text{Na}^+/\\text{K}^+$-ATPase pumps transport $3\\text{ Na}^+$ outwards for every $2\\text{ K}^+$ inwards, leaving trapped intracellular non-diffusible polyanionic proteins to establish internal negativity."
+  },
+  {
+    id: "ncc-ex-009",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "The human brain is physically protected from mechanical shocks and external trauma by which combination of structures?",
+    options: [
+      "Bony cranium, cranial meninges (dura mater, arachnoid, pia mater), and cerebrospinal fluid (CSF)",
+      "Vertebral column, endolymph, and pericardium",
+      "Visceral peritoneum, ependyma, and pleura",
+      "Neural arches, Schwann sheath, and perilymph"
+    ],
+    answer: 0,
+    explanation: "The human encephalon is protected externally by the rigid skeletal vault of the skull (cranium), cushioned beneath by three cranial meninges (outer fibrous dura mater, middle web-like arachnoid mater, inner vascular pia mater), and suspended in shock-absorbing cerebrospinal fluid (CSF) in the subarachnoid space."
+  },
+  {
+    id: "ncc-ex-010",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "Emotional reactions like aggressive behaviour, rage, fear, excitement, and restlessness are regulated in the brain by the coordinated activity of the:",
+    options: [
+      "Cerebellum and pons Varolii",
+      "Limbic system and hypothalamus",
+      "Medulla oblongata and corpora quadrigemina",
+      "Corpus callosum and spinal cord"
+    ],
+    answer: 1,
+    explanation: "The limbic system (comprising the amygdala, hippocampus, and cingulate cortex), functioning in close reciprocal connection with the autonomic and neuroendocrine centres of the hypothalamus, governs emotional behaviors, aggression, rage, pleasure, and motivational drives."
+  },
+  {
+    id: "ncc-ex-011",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "In the human central nervous system, grey matter and white matter represent, respectively:",
+    options: [
+      "Myelinated axon tracts; unmyelinated neuronal cell bodies and dendrites",
+      "Dense fibrous dura mater; delicate vascular pia mater",
+      "Unmyelinated neuronal cell bodies, dendrites, and synapses; myelinated axon fibre tracts",
+      "Cerebrospinal fluid compartments; neuroglia without neurons"
+    ],
+    answer: 2,
+    explanation: "Grey matter derives its greyish coloration from the high packing density of non-myelinated neuronal cell bodies (perikarya), dendrites, and synaptic neuropil. White matter appears opaque and white due to the high lipid content of the multi-layered myelin sheaths insulating axon tracts."
+  },
+  {
+    id: "ncc-ex-012",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "The primary hunger and feeding centres that regulate appetite and food intake in the human brain are localized within the:",
+    options: [
+      "Hypothalamus",
+      "Cerebellum",
+      "Medulla oblongata",
+      "Thalamus"
+    ],
+    answer: 0,
+    explanation: "The hypothalamus contains central homeostatic appetite nuclei: the lateral hypothalamic area functions as the feeding/hunger centre, while the ventromedial hypothalamic nucleus functions as the satiety centre."
+  },
+  {
+    id: "ncc-ex-013",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Match List-I with List-II based on NCERT Exemplar definitions:\nList-I:\n(A) Resting potential\n(B) Nerve impulse\n(C) Synaptic cleft\n(D) Neurotransmitters\n\nList-II:\n(I) Chemicals involved in the transmission of impulses at synapses\n(II) Gap between the presynaptic and postsynaptic neurons\n(III) Electrical potential difference across the resting neural membrane\n(IV) An electrical wave-like response of a neuron to a stimulation\n\nChoose the correct answer from the options given below:",
+    options: [
+      "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+      "(A)-(I), (B)-(III), (C)-(IV), (D)-(II)",
+      "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)"
+    ],
+    answer: 0,
+    explanation: "Resting potential corresponds to the electrical potential difference across the unexcited axonal membrane (A-III). A nerve impulse is an electrical wave-like action potential generated in response to threshold stimulation (B-IV). The synaptic cleft is the fluid-filled gap separating pre- and postsynaptic membranes (C-II). Neurotransmitters are chemical ligands released at synapses (D-I)."
+  },
+  {
+    id: "ncc-ex-014",
+    class: 11,
+    chapter: "18",
+    topic: "Human Neural System",
+    source: "NCERT Exemplar",
+    question: "Which of the following flowcharts correctly depicts the structural and functional divisions of the human neural system?",
+    options: [
+      "Human Neural System -> CNS (Brain + Spinal cord) and PNS (Somatic system + Autonomic system [Sympathetic + Parasympathetic])",
+      "Human Neural System -> CNS (Somatic system + Autonomic system) and PNS (Brain + Spinal cord)",
+      "Human Neural System -> ANS (Brain + Spinal cord) and CNS (Sympathetic + Parasympathetic)",
+      "Human Neural System -> PNS (Brain + Cranial nerves) and CNS (Spinal cord + Spinal nerves)"
+    ],
+    answer: 0,
+    explanation: "The human neural system is divided anatomically into the Central Neural System (CNS: brain and spinal cord) and Peripheral Neural System (PNS). The PNS is further subdivided into the Somatic Neural System (relaying impulses to skeletal muscles) and Autonomic Neural System (ANS), which branches into Sympathetic and Parasympathetic divisions."
+  },
+  {
+    id: "ncc-ex-015",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Select the incorrect statement when comparing electrical synapses and chemical synapses:",
+    options: [
+      "Pre- and postsynaptic neuronal membranes are in extremely close proximity at electrical synapses",
+      "Impulse transmission across an electrical synapse is faster than across a chemical synapse",
+      "Chemical transmission utilizes neurotransmitters stored within synaptic vesicles",
+      "Electrical synapses are abundant and represent the predominant type of synapse in the human body"
+    ],
+    answer: 3,
+    explanation: "Statement 4 is incorrect because electrical synapses are exceedingly rare in the human nervous system. Chemical synapses, where signals cross a synaptic cleft via chemical neurotransmitters, are the predominant synaptic mechanism in humans."
+  },
+  {
+    id: "ncc-ex-016",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "If a person receives a severe traumatic blow to the back of the neck, life-threatening collapse can immediately occur primarily due to damage to the:",
+    options: [
+      "Medulla oblongata, which controls respiration and cardiovascular reflexes",
+      "Prefrontal motor cortex",
+      "Olfactory bulbs",
+      "Optic chiasma"
+    ],
+    answer: 0,
+    explanation: "The medulla oblongata lies at the posterior base of the brainstem, transitioning into the spinal cord near the back of the neck. It contains vital autonomic reflex centres controlling respiratory rhythm, cardiovascular tone, and vasomotor activity; acute trauma here can cause immediate respiratory or cardiac arrest."
+  },
+  {
+    id: "ncc-ex-017",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Impulse conduction across a chemical synapse is strictly unidirectional because:",
+    options: [
+      "Neurotransmitters are released exclusively by presynaptic axon terminals and receptor sites are present on the postsynaptic membrane",
+      "The axon terminal is always thicker than the receiving dendritic spine",
+      "Myelin sheaths prevent retro-propagation across the synaptic gap",
+      "Action potentials can only travel towards the cell body in all neurons"
+    ],
+    answer: 0,
+    explanation: "Unidirectional transmission across a chemical synapse is guaranteed because synaptic vesicles containing neurotransmitters are localized exclusively in the presynaptic terminal knobs, while the specific ligand-gated receptors are embedded in the postsynaptic membrane."
+  },
+  {
+    id: "ncc-ex-018",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "Match the following structural classes of neurons with their characteristic locations in the body:\n(A) Unipolar neuron\n(B) Bipolar neuron\n(C) Multipolar neuron\n\n(I) Cerebral cortex\n(II) Embryonic stage\n(III) Olfactory epithelium and retina\n\nChoose the correct option:",
+    options: [
+      "(A)-(II), (B)-(III), (C)-(I)",
+      "(A)-(I), (B)-(II), (C)-(III)",
+      "(A)-(III), (B)-(I), (C)-(II)",
+      "(A)-(II), (B)-(I), (C)-(III)"
+    ],
+    answer: 0,
+    explanation: "Based on the number of processes extending from the soma, unipolar neurons (one axon only) are found in the embryonic stage (A-II); bipolar neurons (one axon, one dendrite) occur in the retina and olfactory epithelium (B-III); multipolar neurons (one axon, two or more dendrites) predominate in the cerebral cortex (C-I)."
+  },
+  {
+    id: "ncc-ex-019",
+    class: 11,
+    chapter: "18",
+    topic: "Neuron as Structural and Functional Unit of Neural System",
+    source: "NCERT Exemplar",
+    question: "High-speed saltatory conduction of nerve impulses is a distinctive feature of myelinated nerve fibres because:",
+    options: [
+      "The myelin sheath is discontinuous, forcing depolarizing ionic currents to leap between adjacent nodes of Ranvier",
+      "Voltage-gated $\\text{Na}^+$ channels are uniformly distributed throughout the internodal segments",
+      "Axoplasm offers no resistance to electrical charge conduction",
+      "Schwann cells continuously generate spontaneous action potentials"
+    ],
+    answer: 0,
+    explanation: "Myelin sheaths act as high-resistance electrical insulators along the axon internodes. Depolarizing action potentials can only be regenerated at the uninsulated nodes of Ranvier where voltage-gated ion channels are clustered, causing the impulse to leap (saltate) from node to node at velocities much higher than in unmyelinated axons."
+  },
+  {
+    id: "ncc-ex-020",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "Which of the following anatomical features correctly characterizes the mammalian midbrain?",
+    options: [
+      "A narrow longitudinal canal named cerebral aqueduct passes through it, and its dorsal portion consists of four collicular swellings called corpora quadrigemina",
+      "It houses the respiratory rhythm generator and cardiovascular reflex centres",
+      "It consists of two lateral hemispheres connected by the corpus callosum",
+      "It forms the floor of the diencephalon and directly secretes hypothalamic releasing hormones"
+    ],
+    answer: 0,
+    explanation: "The midbrain (mesencephalon) is traversed longitudinally by a narrow conduit called the cerebral aqueduct (aqueduct of Sylvius) and bears four rounded lobes on its dorsal surface known as the corpora quadrigemina (superior and inferior colliculi)."
+  },
+  {
+    id: "ncc-ex-021",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "The cerebellum of the human brain is structurally characterized by a highly convoluted surface primarily to:",
+    options: [
+      "Provide additional surface area to accommodate a large number of coordinating neurons",
+      "Facilitate rapid circulation of venous blood through the cranium",
+      "Store concentrated reserves of glucose and glycogen",
+      "Secrete cerebrospinal fluid into the lateral ventricles"
+    ],
+    answer: 0,
+    explanation: "NCERT states that the cerebellum has an intricately convoluted surface in order to provide the additional space required to house the vast number of neurons necessary for precise voluntary motor coordination, posture, and equilibrium."
+  },
+  {
+    id: "ncc-ex-022",
+    class: 11,
+    chapter: "18",
+    topic: "Reflex Action and Reflex Arc",
+    source: "NCERT Exemplar",
+    question: "In a basic somatic spinal reflex arc, the chronological sequence of action potential transmission is:",
+    options: [
+      "Sensory receptor -> Afferent neuron -> Interneuron in spinal cord -> Efferent neuron -> Effector muscle",
+      "Effector muscle -> Efferent neuron -> Spinal cord -> Afferent neuron -> Receptor",
+      "Sensory receptor -> Efferent neuron -> Cerebral cortex -> Afferent neuron -> Effector",
+      "Afferent neuron -> Sensory receptor -> Motor endplate -> Efferent neuron"
+    ],
+    answer: 0,
+    explanation: "A complete somatic reflex pathway follows a precise chronological route: sensory receptors detect the stimulus -> afferent (sensory) neuron transmits impulses into the dorsal horn of the spinal cord -> synaptic relay via interneurons in spinal grey matter -> efferent (motor) neuron exits via ventral root -> stimulates effector muscle."
+  },
+  {
+    id: "ncc-ex-023",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "The brainstem, which forms the vital conduit connecting the forebrain with the spinal cord, is composed anatomically of:",
+    options: [
+      "Midbrain, pons, and medulla oblongata",
+      "Cerebrum, thalamus, and hypothalamus",
+      "Pons, cerebellum, and spinal cord",
+      "Forebrain, midbrain, and hindbrain"
+    ],
+    answer: 0,
+    explanation: "The brainstem comprises three contiguous structures: the midbrain, pons, and medulla oblongata. It regulates essential autonomic life-support functions and connects higher cerebral centres with the spinal cord."
+  },
+  {
+    id: "ncc-ex-024",
+    class: 11,
+    chapter: "18",
+    topic: "Central Neural System",
+    source: "NCERT Exemplar",
+    question: "The corpus callosum in the human brain is anatomically defined as:",
+    options: [
+      "A prominent arched commissural tract of myelinated nerve fibres that bridges the left and right cerebral hemispheres",
+      "A vascular capillary plexus that secretes cerebrospinal fluid into the third ventricle",
+      "A paired group of four rounded colliculi located on the dorsal surface of the midbrain",
+      "A deep endocrine nucleus within the diencephalon regulating circadian rhythms"
+    ],
+    answer: 0,
+    explanation: "The corpus callosum is a thick C-shaped transverse commissural band of myelinated white matter nerve fibres connecting homologous neocortical areas of the left and right cerebral hemispheres, ensuring bilateral interhemispheric communication."
   }
 ];
   
