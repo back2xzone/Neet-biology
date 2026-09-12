@@ -10272,6 +10272,230 @@ export default [
     ],
     answer: 0,
     explanation: "The pubic symphysis is an amphiarthrodial cartilaginous joint in which the two pubic bones are united by a fibrocartilaginous disc."
+  },
+  {
+    id: "lm-ex-001",
+    class: 11,
+    chapter: "17",
+    topic: "Muscle",
+    source: "NCERT Exemplar",
+    question: "Match List I with List II and mark the correct option:\nList I:\n(A) Fast muscle fibres\n(B) Slow muscle fibres\n(C) Actin filament\n(D) Sarcomere\nList II:\n(I) Myoglobin\n(II) Lactic acid\n(III) Contractile unit\n(IV) I-band\nChoose the correct answer from the options given below:",
+    options: [
+      "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)"
+    ],
+    answer: 2,
+    explanation: "Fast muscle fibres have low myoglobin, few mitochondria, and undergo anaerobic glycolysis with rapid accumulation of lactic acid. Slow muscle fibres contain high levels of myoglobin for aerobic ATP generation. Actin filaments form the isotropic (I) band. A sarcomere is the basic functional contractile unit of a myofibril bounded between two successive Z-lines."
+  },
+  {
+    id: "lm-ex-002",
+    class: 11,
+    chapter: "17",
+    topic: "Skeletal System",
+    source: "NCERT Exemplar",
+    question: "Ribs are attached to:",
+    options: [
+      "Scapula",
+      "Sternum",
+      "Clavicle",
+      "Ilium"
+    ],
+    answer: 1,
+    explanation: "In the human thoracic cage, true ribs (the first seven pairs) are attached dorsally to the thoracic vertebrae and ventrally directly to the sternum with the help of hyaline costal cartilage."
+  },
+  {
+    id: "lm-ex-003",
+    class: 11,
+    chapter: "17",
+    topic: "Joints",
+    source: "NCERT Exemplar",
+    question: "What is the type of movable joint present between the atlas and axis?",
+    options: [
+      "Pivot joint",
+      "Saddle joint",
+      "Hinge joint",
+      "Gliding joint"
+    ],
+    answer: 0,
+    explanation: "The atlanto-axial joint between the first cervical vertebra (atlas) and the odontoid process of the second cervical vertebra (axis) is a synovial pivot joint that allows rotatory movement of the head."
+  },
+  {
+    id: "lm-ex-004",
+    class: 11,
+    chapter: "17",
+    topic: "Muscle",
+    source: "NCERT Exemplar",
+    question: "ATPase of the muscle is located in:",
+    options: [
+      "Actinin",
+      "Troponin",
+      "Myosin",
+      "Actin"
+    ],
+    answer: 2,
+    explanation: "The globular head of each heavy meromyosin (HMM) subunit of a myosin molecule functions as an active ATPase enzyme. It binds and hydrolyzes ATP to drive cross-bridge cycling during muscle contraction."
+  },
+  {
+    id: "lm-ex-005",
+    class: 11,
+    chapter: "17",
+    topic: "Skeletal System",
+    source: "NCERT Exemplar",
+    question: "Intervertebral disc is found in the vertebral column of:",
+    options: [
+      "Birds",
+      "Reptiles",
+      "Mammals",
+      "Amphibians"
+    ],
+    answer: 2,
+    explanation: "Intervertebral discs composed of fibrocartilage (annulus fibrosus) enclosing a central soft nucleus pulposus are characteristic of the mammalian vertebral column, serving to absorb mechanical shocks and provide flexibility."
+  },
+  {
+    id: "lm-ex-006",
+    class: 11,
+    chapter: "17",
+    topic: "Skeletal System",
+    source: "NCERT Exemplar",
+    question: "Which one of the following is showing the correct sequential order of vertebrae in the vertebral column of human beings?",
+    options: [
+      "Cervical -> Lumbar -> Thoracic -> Sacral -> Coccygeal",
+      "Cervical -> Thoracic -> Sacral -> Lumbar -> Coccygeal",
+      "Cervical -> Sacral -> Thoracic -> Lumbar -> Coccygeal",
+      "Cervical -> Thoracic -> Lumbar -> Sacral -> Coccygeal"
+    ],
+    answer: 3,
+    explanation: "From superior to inferior, the 26 vertebrae of the human adult vertebral column are arranged in the order: Cervical (7), Thoracic (12), Lumbar (5), Sacral (1, fused from 5), and Coccygeal (1, fused from 4)."
+  },
+  {
+    id: "lm-ex-007",
+    class: 11,
+    chapter: "17",
+    topic: "Joints",
+    source: "NCERT Exemplar",
+    question: "Which one of the following pairs is incorrect?",
+    options: [
+      "Hinge joint - Between humerus and pectoral girdle",
+      "Pivot joint - Between atlas and axis",
+      "Gliding joint - Between the carpals",
+      "Saddle joint - Between carpal and metacarpal of thumb"
+    ],
+    answer: 0,
+    explanation: "The articulation between the head of the humerus and the glenoid cavity of the pectoral girdle is a synovial ball and socket joint, not a hinge joint."
+  },
+  {
+    id: "lm-ex-008",
+    class: 11,
+    chapter: "17",
+    topic: "Joints",
+    source: "NCERT Exemplar",
+    question: "Knee joint and elbow joints are examples of:",
+    options: [
+      "Saddle joint",
+      "Ball and socket joint",
+      "Pivot joint",
+      "Hinge joint"
+    ],
+    answer: 3,
+    explanation: "Both the knee joint and elbow joint allow angular motion primarily along a single plane (flexion and extension), classifying them as synovial hinge joints."
+  },
+  {
+    id: "lm-ex-009",
+    class: 11,
+    chapter: "17",
+    topic: "Types of Movement",
+    source: "NCERT Exemplar",
+    question: "Macrophages and leucocytes exhibit:",
+    options: [
+      "Ciliary movement",
+      "Flagellar movement",
+      "Amoeboid movement",
+      "Gliding movement"
+    ],
+    answer: 2,
+    explanation: "Specialized cells in the human body such as macrophages and leucocytes in the blood exhibit amoeboid movement, which is effected by pseudopodia produced by cytoplasmic streaming and actin microfilaments."
+  },
+  {
+    id: "lm-ex-010",
+    class: 11,
+    chapter: "17",
+    topic: "Disorders of Muscular and Skeletal System",
+    source: "NCERT Exemplar",
+    question: "Which one of the following is NOT a disorder of bone?",
+    options: [
+      "Arthritis",
+      "Osteoporosis",
+      "Rickets",
+      "Atherosclerosis"
+    ],
+    answer: 3,
+    explanation: "Atherosclerosis is a disorder of the cardiovascular system characterized by arterial lumen narrowing due to plaque deposition. Arthritis, osteoporosis, and rickets are disorders of bones and joints."
+  },
+  {
+    id: "lm-ex-011",
+    class: 11,
+    chapter: "17",
+    topic: "Muscle",
+    source: "NCERT Exemplar",
+    question: "Which one of the following statements is incorrect?",
+    options: [
+      "Heart muscles are striated and involuntary.",
+      "The muscles of hands and legs are striated and voluntary.",
+      "The muscles located in the inner walls of alimentary canal are striated and involuntary.",
+      "Muscles located in the reproductive tracts are unstriated and involuntary."
+    ],
+    answer: 2,
+    explanation: "Visceral muscles located in the inner walls of hollow internal organs such as the alimentary canal are smooth (unstriated) and involuntary, not striated."
+  },
+  {
+    id: "lm-ex-012",
+    class: 11,
+    chapter: "17",
+    topic: "Skeletal System",
+    source: "NCERT Exemplar",
+    question: "Which one of the following statements is true?",
+    options: [
+      "Head of humerus bone articulates with acetabulum of pectoral girdle.",
+      "Head of humerus bone articulates with the glenoid cavity of pectoral girdle.",
+      "Head of humerus bone articulates with acetabulum of pelvic girdle.",
+      "Head of humerus bone articulates with a glenoid cavity of pelvic girdle."
+    ],
+    answer: 1,
+    explanation: "The rounded head of the humerus articulates with the glenoid cavity of the scapula in the pectoral girdle to form the shoulder joint. The acetabulum is an articular socket of the pelvic girdle for the head of the femur."
+  },
+  {
+    id: "lm-ex-013",
+    class: 11,
+    chapter: "17",
+    topic: "Muscle",
+    source: "NCERT Exemplar",
+    question: "Muscles with characteristic striations and involuntary are:",
+    options: [
+      "Muscles in the wall of alimentary canal",
+      "Muscles of the heart",
+      "Muscles assisting locomotion",
+      "Muscles of the eyelids"
+    ],
+    answer: 1,
+    explanation: "Cardiac muscles display transverse striations along with intercalated discs and are physiologically involuntary, regulated intrinsically and by the autonomic nervous system."
+  },
+  {
+    id: "lm-ex-014",
+    class: 11,
+    chapter: "17",
+    topic: "Skeletal System",
+    source: "NCERT Exemplar",
+    question: "Match List I with List II and mark the correct option:\nList I:\n(A) Sternum\n(B) Glenoid cavity\n(C) Freely movable joint\n(D) Cartilaginous joint\nList II:\n(I) Synovial fluid\n(II) Vertebrae\n(III) Pectoral girdle\n(IV) Flat bones\nChoose the correct answer from the options given below:",
+    options: [
+      "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+      "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "(A)-(IV), (B)-(I), (C)-(II), (D)-(IV)"
+    ],
+    answer: 1,
+    explanation: "The sternum is a flat bone situated along the ventral thoracic midline. The glenoid cavity is an articular feature of the pectoral girdle (scapula). Freely movable joints are synovial joints characterized by a synovial cavity containing synovial fluid. Cartilaginous joints connect adjacent vertebrae in the vertebral column."
   }
 ];
 
