@@ -4925,7 +4925,7 @@ export default [
       "Asteraceae"
     ],
     answer: 1,
-    explanation: "An epicalyx ($\\text{Epi}_{3-8}$), monadelphous androecium with indefinite stamens ($A_{(\\infty)}$), and pentacarpellary superior ovary ($\underline{G}_{(5)}$) define the family Malvaceae."
+    explanation: "An epicalyx ($\\text{Epi}_{3-8}$), monadelphous androecium with indefinite stamens ($A_{(\\infty)}$), and pentacarpellary superior ovary ($\\underline{G}_{(5)}$) define the family Malvaceae."
   },
   {
     id: "mfp-309",
@@ -6697,7 +6697,7 @@ export default [
     options: [
       "They secrete extracellular enzymes directly onto dead organic matter to absorb digested organic solutes, frequently aided by mycorrhizae",
       "They possess high chlorophyll content and fix atmospheric nitrogen independently",
-      "They absorb nutrients through haustoria that penetrate into living vascular cambium",
+      "They absorb nutrients through haustoria that penetrate into living vascular cambium"
       "They rely completely on insectivorous bladder leaf traps"
     ],
     answer: 0,
@@ -7991,7 +7991,7 @@ export default [
     source: "NCERT",
     question: "Identify the floral formula notations corresponding to statements I, II, and III:\nI. Bisexual flower\nII. Actinomorphic (radial symmetry)\nIII. Zygomorphic (bilateral symmetry)",
     options: [
-      "I- $\\oint$; II- $\\oplus$; III- $\%$",
+      "I- $\\oint$; II- $\\oplus$; III- \\%$",
       "I- $\\sigma$; II- $\%$; III- $\\oplus$",
       "I- $\\odot$; II- $\\oplus$; III- $\\circ$",
       "I- $\%$; II- $\\oplus$; III- $\\oint$"
@@ -9632,7 +9632,7 @@ export default [
     explanation: "Bryophyllum reproduces vegetatively via epiphyllous adventitious buds produced along the crenate margins of its fleshy leaves, which detach to establish new independent plantlets."
   },
   {
-    id: "mfp-pyq-209",
+    id: "mfp-pyq-209b",
     class: 11,
     chapter: "5",
     topic: "The Root",
