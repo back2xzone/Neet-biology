@@ -799,7 +799,6 @@ export default [
     answer: 0,
     explanation: "In an amphivasal (leptocentric) vascular bundle, the xylem completely surrounds the phloem, as seen in plants like Dracaena."
   },
-export default [
   {
     id: "afp-051",
     class: 11,
@@ -1600,7 +1599,6 @@ export default [
     answer: 2,
     explanation: "Xylem fibres (wood fibres) provide mechanical support and are found associated with both primary and secondary xylem, though they are more abundant in the secondary xylem."
   },
-export default [
   {
     id: "afp-101",
     class: 11,
