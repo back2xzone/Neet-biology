@@ -6544,22 +6544,6 @@ export default [
     explanation: "The curd of cauliflower is a dense, pre-floral hypertrophied mass of immature, fleshy inflorescence axes terminating in abortive floral meristems."
   },
   {
-    id: "mfp-409b",
-    class: 11,
-    chapter: "5",
-    topic: "The Leaf",
-    source: "NCERT",
-    question: "Circinate vernation, which refers to the tight inward coiling of young croziers from apex to base, is characteristic of:",
-    options: [
-      "Ferns and cycads",
-      "Monocotyledonous grasses",
-      "Dicotyledonous legumes",
-      "Coniferous pines"
-    ],
-    answer: 0,
-    explanation: "Circinate vernation is the watchspring-like inward coiling of developing fronds that protects tender growing apices, found in ferns and cycads."
-  },
-  {
     id: "mfp-410",
     class: 11,
     chapter: "5",
@@ -6575,7 +6559,7 @@ export default [
     answer: 0,
     explanation: "In pomegranate (Punica granatum), the fruit is a balausta where individual seeds are enveloped by a translucent, succulent, edible outer seed coat (succulent testa)."
   },
-    {
+  {
     id: "mfp-411",
     class: 11,
     chapter: "5",
