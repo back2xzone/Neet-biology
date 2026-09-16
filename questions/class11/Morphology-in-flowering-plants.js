@@ -3599,7 +3599,7 @@ export default [
     answer: 2,
     explanation: "Because both stem tendrils (climbing) and thorns (defense) originate as modified axillary buds, they are homologous structures representing divergent evolution."
   },
-    {
+  {
     id: "mfp-226",
     class: 11,
     chapter: "5",
@@ -4559,7 +4559,7 @@ export default [
     answer: 0,
     explanation: "Mangrove halophytes (e.g., Rhizophora, Ceriops) rely on vivipary to allow seedlings to develop radicles before falling into anoxic, saline coastal mud."
   },
-    {
+  {
     id: "mfp-286",
     class: 11,
     chapter: "5",
@@ -5519,7 +5519,7 @@ export default [
     answer: 1,
     explanation: "When flowers on a flat or convex receptacle open sequentially from outer margins inwards toward the central axis, the sequence is centripetal."
   },
-   {
+  {
     id: "mfp-346",
     class: 11,
     chapter: "5",
