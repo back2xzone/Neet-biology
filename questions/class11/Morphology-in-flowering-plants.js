@@ -6681,7 +6681,7 @@ export default [
     options: [
       "They secrete extracellular enzymes directly onto dead organic matter to absorb digested organic solutes, frequently aided by mycorrhizae",
       "They possess high chlorophyll content and fix atmospheric nitrogen independently",
-      "They absorb nutrients through haustoria that penetrate into living vascular cambium"
+      "They absorb nutrients through haustoria that penetrate into living vascular cambium",
       "They rely completely on insectivorous bladder leaf traps"
     ],
     answer: 0,
