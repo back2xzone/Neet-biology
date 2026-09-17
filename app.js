@@ -954,28 +954,50 @@ async function loadChapterQuestions(
 
     return questions;
 
-  } catch(error) {
+  } catch (error) {
+  const path = `./questions/class${classNumber}/${file}`;
 
-    console.error(
-      `Could not load question file: ${file}`,
-      error
-    );
+  const errorMessage = [
+    "Question file failed to load.",
+    "",
+    `Class: ${classNumber}`,
+    `Filename: ${file}`,
+    `Import path: ${path}`,
+    "",
+    `Error type: ${error.name || "Unknown error"}`,
+    `Exact cause: ${error.message || error}`,
+    "",
+    "Check the browser console for more details."
+  ].join("\n");
 
+  // Display the exact error in a popup
+  alert(errorMessage);
 
-    questionLoadErrors.add(
-      key
-    );
+  // Display the error in the browser console
+  console.error("QUESTION FILE LOAD ERROR");
+  console.error("Class:", classNumber);
+  console.error("Filename:", file);
+  console.error("Import path:", path);
+  console.error("Error name:", error.name);
+  console.error("Exact error message:", error.message);
+  console.error("Complete error object:", error);
+  console.error("Stack trace:", error.stack);
 
+  // Display the error on the page if a status element exists
+  const statusElement =
+    document.getElementById("chapterStatus") ||
+    document.getElementById("status");
 
-    questionCache.set(
-      key,
-      []
-    );
-
-
-    return [];
-
+  if (statusElement) {
+    statusElement.textContent = `Load error: ${error.message}`;
+    statusElement.style.color = "red";
   }
+
+  questionLoadErrors.add(key);
+  questionCache.set(key, []);
+
+  return [];
+}
 
 }
 
