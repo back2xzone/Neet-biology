@@ -102,7 +102,7 @@ export default [
     "chapter": "7",
     "topic": "Allergies",
     "source": "NCERT",
-    "question": "During an allergic reaction, the binding of antigens to IgE antibodies initiates a response, in which chemicals cause"
+    "question": "During an allergic reaction, the binding of antigens to IgE antibodies initiates a response, in which chemicals cause",
     "options": [
       "Interferons",
       "Hormones",
@@ -183,7 +183,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Which of the following health disorder includes symptoms of fever, chills, cough, headache, gray or bluish lips and f"
+    "question": "Which of the following health disorder includes symptoms of fever, chills, cough, headache, gray or bluish lips and f",
     "options": [
       "Filariasis",
       "Typhoid",
@@ -215,7 +215,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "The tendency of the body to manifest a characteristic and unpleasant withdrawal syndrome on abrupt discontinuation of"
+    "question": "The tendency of the body to manifest a characteristic and unpleasant withdrawal syndrome on abrupt discontinuation of",
     "options": [
       "Depression",
       "Dependence",
@@ -231,7 +231,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Regarding common cold consider the following statements I. Rhinovirus is responsible for common cold which infects th"
+    "question": "Regarding common cold consider the following statements I. Rhinovirus is responsible for common cold which infects th",
     "options": [
       "Only I",
       "Only II",
@@ -280,7 +280,7 @@ export default [
     "chapter": "7",
     "topic": "Innate Immunity",
     "source": "NCERT",
-    "question": "Note the following words. I. Skin II. Phagocytes III.B-cells IV. Inflammation V. Antibodies VI. T-cells VII. Fever VI"
+    "question": "Note the following words. I. Skin II. Phagocytes III.B-cells IV. Inflammation V. Antibodies VI. T-cells VII. Fever VI",
     "options": [
       "II, IV, VII and IX",
       "II, III, V and IX",
@@ -361,7 +361,7 @@ export default [
     "chapter": "7",
     "topic": "Immune System in the Body",
     "source": "NCERT",
-    "question": "The thymus is a lobed organ located near the ...A... and beneath the ...B... . The most appropriate combination for A"
+    "question": "The thymus is a lobed organ located near the ...A... and beneath the ...B... . The most appropriate combination for A",
     "options": [
       "A-heart; B-breast bone",
       "A-liver; B-ribs",
@@ -425,7 +425,7 @@ export default [
     "chapter": "7",
     "topic": "Immune System in the Body",
     "source": "NCERT",
-    "question": "Consider the following statements I. Neural system and endocrine system influences our immune system II. Immune syste"
+    "question": "Consider the following statements I. Neural system and endocrine system influences our immune system II. Immune syste",
     "options": [
 
       "Only I",
@@ -490,7 +490,7 @@ export default [
     "chapter": "7",
     "topic": "Vaccination and Immunisation",
     "source": "NCERT",
-    "question": "By recombinant DNA technology, vaccines have been produced on large scale, e. g., hepatitis-B vaccine is produced fro"
+    "question": "By recombinant DNA technology, vaccines have been produced on large scale, e. g., hepatitis-B vaccine is produced fro",
     "options": [
       "True",
       "False",
@@ -717,7 +717,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "A doctor advises a patient to include yellow fruits, carrots and butter in his diet. What deficiency disease do you t"
+    "question": "A doctor advises a patient to include yellow fruits, carrots and butter in his diet. What deficiency disease do you t",
     "options": [
       "Night blindness",
       "Colour blindness",
@@ -960,7 +960,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Regarding pathogens consider the following statements I. A pathogen or an infectious agent is a microorganism, such a"
+    "question": "Regarding pathogens consider the following statements I. A pathogen or an infectious agent is a microorganism, such a",
     "options": [
       "Only I",
       "Only II",
@@ -979,7 +979,7 @@ export default [
     "question": "Which one the following statements is false?",
     "options": [
       "Psychoactive drugs have the ability to alter the activity of the nervous system",
-      "Adolescence is marked by accelerated physical growth, development of reproductive organs and changes in functioning of the neur
+      "Adolescence is marked by accelerated physical growth, development of reproductive organs and changes in functioning of the neur",
       "Hallucinogen can alter a person’s thoughts, feeling and perceptions",
       "Mescaline is a stimulant"
     ],
@@ -1073,7 +1073,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Consider the following statements. Health is a combination of I. complete physical health II. mental health III. soci"
+    "question": "Consider the following statements. Health is a combination of I. complete physical health II. mental health III. soci",
     "options": [
       "I and II",
       "I and III",
@@ -1332,7 +1332,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Consider the following statements I. Opioids are the drugs, which bind to opioid receptors in the central nervous sys"
+    "question": "Consider the following statements I. Opioids are the drugs, which bind to opioid receptors in the central nervous sys",
     "options": [
       "I and II",
       "I and III",
@@ -1429,7 +1429,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Which one of the following is useful in identifying the different strains of a causal microbe of an infectious diseas"
+    "question": "Which one of the following is useful in identifying the different strains of a causal microbe of an infectious diseas",
     "options": [
       "Colchicines",
       "Agrobacterium",
@@ -1623,7 +1623,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Select the correct statement from the set given below I. Growing number of people are taking LSD and other drugs like"
+    "question": "Select the correct statement from the set given below I. Growing number of people are taking LSD and other drugs like",
     "options": [
       "Only I",
       "Only II",
@@ -1640,7 +1640,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Tobacco consumption is known to stimulate the secretion of adrenaline and nor-adrenaline. The component causing this "
+    "question": "Tobacco consumption is known to stimulate the secretion of adrenaline and nor-adrenaline. The component causing this ",
     "options": [
       "Nicotine",
       "Tannic acid",
@@ -1882,7 +1882,7 @@ export default [
     "chapter": "7",
     "topic": "Cancer",
     "source": "NCERT",
-    "question": "Benign tumours I. remain confined to their original location and do not spread to other parts II. cause little damage"
+    "question": "Benign tumours I. remain confined to their original location and do not spread to other parts II. cause little damage",
     "options": [
       "Only I",
       "Only II",
@@ -1931,7 +1931,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Smack is chemically a ...A... which is white and odourless and crystalline in nature. This is obtained by ...B... . H"
+    "question": "Smack is chemically a ...A... which is white and odourless and crystalline in nature. This is obtained by ...B... . H",
     "options": [
       "A-diacetyl morphine; B-acetylation of morphine",
       "A-morphine; B-acetylation of hashish",
@@ -2190,7 +2190,7 @@ export default [
     "chapter": "7",
     "topic": "Immune System in the Body",
     "source": "NCERT",
-    "question": "Graft transplantation to save certain patients fails due to the rejection of such organs by the patient. Which type o"
+    "question": "Graft transplantation to save certain patients fails due to the rejection of such organs by the patient. Which type o",
     "options": [
       "Cell-mediated immune response",
       "Humoral immune response",
@@ -2255,7 +2255,7 @@ export default [
     "chapter": "7",
     "topic": "Innate Immunity",
     "source": "NCERT",
-    "question": "Except skin, other physical barriers which also helps to prevent the entry of the microorganisms are I. mucus coating"
+    "question": "Except skin, other physical barriers which also helps to prevent the entry of the microorganisms are I. mucus coating",
     "options": [
       "I and II",
       "I and III",
@@ -2303,7 +2303,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "In a standard ECG, which one of the following alphabets is the correct representation of the respective activity of h"
+    "question": "In a standard ECG, which one of the following alphabets is the correct representation of the respective activity of h",
     "options": [
       "R-repolarization of ventricles",
       "S-start of systole",
@@ -2449,7 +2449,7 @@ export default [
     "chapter": "7",
     "topic": "Allergies",
     "source": "NCERT",
-    "question": "Consider the following statements I. Secondary lymphoid organs includes lymph nodes, spleen and small masses of lymph"
+    "question": "Consider the following statements I. Secondary lymphoid organs includes lymph nodes, spleen and small masses of lymph",
     "options": [
       "Only I",
       "Only II",
@@ -2643,7 +2643,7 @@ export default [
     "chapter": "7",
     "topic": "Innate Immunity",
     "source": "NCERT",
-    "question": "Choose the true statements I. Innate immunity is accomplished by providing different types of barriers II. Acquired i"
+    "question": "Choose the true statements I. Innate immunity is accomplished by providing different types of barriers II. Acquired i",
     "options": [
       "True False True",
       "True True False",
@@ -2886,7 +2886,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "With regard to the transmission of the Human Immunodeficiency Virus (HIV), Which one of the following statements is n"
+    "question": "With regard to the transmission of the Human Immunodeficiency Virus (HIV), Which one of the following statements is n",
     "options": [
       "The chances of transmission from female to male are twice as likely as from male to female",
       "The chances of transmission are more if a person suffers from other sexually transmitted infections",
@@ -3016,7 +3016,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Which group of three of the following five statements (I-V) contains is correct regarding beri beri? I. A crippling d"
+    "question": "Which group of three of the following five statements (I-V) contains is correct regarding beri beri? I. A crippling d",
     "options": [
       "I, II and IV",
       "II, III and V",
@@ -3113,7 +3113,7 @@ export default [
     "chapter": "7",
     "topic": "Cancer",
     "source": "NCERT",
-    "question": "Study the following sentences. I. The cells of malignant tumours divide erratically. II. They are malignant tumours o"
+    "question": "Study the following sentences. I. The cells of malignant tumours divide erratically. II. They are malignant tumours o",
     "options": [
       "I and II",
       "II and IV",
@@ -3339,7 +3339,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "The following table shows certain diseases, their causative organisms and symptoms Diseases Causative Organism s Symp"
+    "question": "The following table shows certain diseases, their causative organisms and symptoms Diseases Causative Organism s Symp",
     "options": [
       "A-Wuchereria, B-Salmonella typhi, C-Common cold, D-Internal bleeding, fever, anaemia",
       "A-Salmonella typhi, B-Ascaris, C-Typhoid, D-Stomach pain headache",
@@ -3420,7 +3420,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "A localized inflammatory response appears at the site of infection causes redness, swelling, pain and heat due to cer"
+    "question": "A localized inflammatory response appears at the site of infection causes redness, swelling, pain and heat due to cer",
     "options": [
       "Histamine and prostaglandins",
       "Cerumen and mucus",
@@ -3453,7 +3453,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Scientists were able to pinpoint the location of colour processing centers in the visual cortex of the brain by means"
+    "question": "Scientists were able to pinpoint the location of colour processing centers in the visual cortex of the brain by means",
     "options": [
       "PET",
       "NMR",
@@ -3517,7 +3517,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "A person is suffering from frequent episodes of nasal discharge, nasal congestion, reddening of eyes and watery eyes."
+    "question": "A person is suffering from frequent episodes of nasal discharge, nasal congestion, reddening of eyes and watery eyes.",
     "options": [
       "Cyanosis",
       "Bronchitis",
@@ -3647,7 +3647,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Antiviral substances, produced by many vertebrates in response to viral infections for resisting the multiplication o"
+    "question": "Antiviral substances, produced by many vertebrates in response to viral infections for resisting the multiplication o",
     "options": [
       "Viroid",
       "Interferon",
@@ -3793,7 +3793,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "World health organization has started a number of programmes to prevent spreading of HIV infection Few such steps inc"
+    "question": "World health organization has started a number of programmes to prevent spreading of HIV infection Few such steps inc",
     "options": [
       "I and II",
       "III and IV",
@@ -3841,7 +3841,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "Select the true statement I. AIDS has no cure, prevention is the best option II. During HIV infection, the person suf"
+    "question": "Select the true statement I. AIDS has no cure, prevention is the best option II. During HIV infection, the person suf",
     "options": [
       "I and II",
       "I and III",
@@ -3874,7 +3874,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Reasons for alcohol abuse in adolescents are I. social pressure II. curiosity and need for adventure, excitement and "
+    "question": "Reasons for alcohol abuse in adolescents are I. social pressure II. curiosity and need for adventure, excitement and ",
     "options": [
       "I, II and III",
       "I, III and IV",
@@ -4116,7 +4116,7 @@ export default [
     "chapter": "7",
     "topic": "Vaccination and Immunisation",
     "source": "NCERT",
-    "question": "Consider the following statements I. People should get vaccination to avoid infection II. Vaccination is available ag"
+    "question": "Consider the following statements I. People should get vaccination to avoid infection II. Vaccination is available ag",
     "options": [
       "I, II and III",
       "I, II and IV",
@@ -4214,7 +4214,7 @@ export default [
 
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Consider the statements given below regarding contraception and answer as directed thereafter I. Medical Termination "
+    "question": "Consider the statements given below regarding contraception and answer as directed thereafter I. Medical Termination ",
     "options": [
       "II, III",
       "III, IV",
@@ -4246,7 +4246,7 @@ export default [
     "chapter": "7",
     "topic": "Allergies",
     "source": "NCERT",
-    "question": "In recent years, which disease of digestive system in Indian has received great attention and against that active vac"
+    "question": "In recent years, which disease of digestive system in Indian has received great attention and against that active vac",
     "options": [
       "Poliomyelistis",
       "hepatitis",
@@ -4294,7 +4294,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Cell division or mitosis is normal process in a living cell, but sudden and abnormal mitosis in an organ will frequen"
+    "question": "Cell division or mitosis is normal process in a living cell, but sudden and abnormal mitosis in an organ will frequen",
     "options": [
       "Zygote",
 
@@ -4375,7 +4375,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "If you suspect major deficiency of antibodies in a person, to which of the following would you look for confirmatory "
+    "question": "If you suspect major deficiency of antibodies in a person, to which of the following would you look for confirmatory ",
     "options": [
       "Serum albumins",
       "Serum globulins",
@@ -4440,7 +4440,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "The person showing unpredictable moods, outbursts of emotions, quarrelsome behaviour and conflicts with others is suf"
+    "question": "The person showing unpredictable moods, outbursts of emotions, quarrelsome behaviour and conflicts with others is suf",
     "options": [
       "Schizophrenia",
       "Borderline personality disorder(BPD)",
@@ -4456,7 +4456,7 @@ export default [
     "chapter": "7",
     "topic": "Cancer",
     "source": "NCERT",
-    "question": "Identify the wrong statements I. The tumour of haematopoietic cells is called leukaemia. II. Cancer arising from the "
+    "question": "Identify the wrong statements I. The tumour of haematopoietic cells is called leukaemia. II. Cancer arising from the ",
     "options": [
       "I and II only",
       "II and III only",
@@ -4683,7 +4683,7 @@ export default [
     "chapter": "7",
     "topic": "Innate Immunity",
     "source": "NCERT",
-    "question": "The spleen I. is a large bean-shaped organ II. mainly contains lymphocytes and phagocytes III. acts as a filter of th"
+    "question": "The spleen I. is a large bean-shaped organ II. mainly contains lymphocytes and phagocytes III. acts as a filter of th",
     "options": [
       "I and II",
       "I and III",
@@ -4699,7 +4699,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Necessary steps for achieving good health are I. awareness about disease II. vaccination III. proper disposal of wast"
+    "question": "Necessary steps for achieving good health are I. awareness about disease II. vaccination III. proper disposal of wast",
     "options": [
       "I, II and III",
       "II, III and IV",
@@ -4893,7 +4893,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Nicotine intake stimulates the ...A... to release ...B... and ...C... into blood circulation. This lead to increase i"
+    "question": "Nicotine intake stimulates the ...A... to release ...B... and ...C... into blood circulation. This lead to increase i",
     "options": [
       "A-adrenal gland, B-adrenaline, C-nor-adrenaline, D-blood pressure, E-heart rate",
       "A-thyroid gland, B-thyroxine, C-parathyroxine, D-blood pressure, E-heart rate",
@@ -4942,7 +4942,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "The process of removal and replacement of the damaged tissues or organs like heart, eye, liver, kidney with healthy o"
+    "question": "The process of removal and replacement of the damaged tissues or organs like heart, eye, liver, kidney with healthy o",
     "options": [
       "Transplantation",
       "Repair and replacement",
@@ -4958,7 +4958,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Which of the following is the correct matching of a disease with its causative organism and mode of infection? Diseas"
+    "question": "Which of the following is the correct matching of a disease with its causative organism and mode of infection? Diseas",
     "options": [
       "Pneu- monia Streptoc -occus pneumo nia Droplet infection",
       "Typho -id Salmone -lla typhi With inspired air",
@@ -5314,7 +5314,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Measures for personal hygiene include I. Intake of clean drinking water II. Keeping the body clean III. Disinfection "
+    "question": "Measures for personal hygiene include I. Intake of clean drinking water II. Keeping the body clean III. Disinfection ",
     "options": [
       "I and II",
       "I and III",
@@ -5347,7 +5347,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "If a certain patient is suspected to be suffering from typhoid. Which diagnostic technique will you recommend for its"
+    "question": "If a certain patient is suspected to be suffering from typhoid. Which diagnostic technique will you recommend for its",
     "options": [
       "ELISA",
       "WIDAL",
@@ -5363,7 +5363,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "Consider the following statements about biomedical technologies. I. During open heart surgery, blood is circulated in"
+    "question": "Consider the following statements about biomedical technologies. I. During open heart surgery, blood is circulated in",
     "options": [
       "II and IV",
       "III and IV",
@@ -5444,7 +5444,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Mast cell is a cell of ...A... of vertebrate animals. Mast cells mediate inflammatory responses such as ...B....... ."
+    "question": "Mast cell is a cell of ...A... of vertebrate animals. Mast cells mediate inflammatory responses such as ...B....... .",
     "options": [
       "A-immune system, B-allergic reactions, C- histamine, D-serotonin",
       "A-bone marrow, B-allergic reactions, C-mucous, D- cerumen",
@@ -5460,7 +5460,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "HIV is a ...A... , which means it has genes composed of ...B... like all viruses, HIV replicates inside the host cell"
+    "question": "HIV is a ...A... , which means it has genes composed of ...B... like all viruses, HIV replicates inside the host cell",
     "options": [
       "A-retrovirus, B-RNA, C-reverse transcriptase, D-RNA, E-DNA",
       "A-retroviral, B-DNA, C-reverse transcriptase, D-DNA, E-RNA",
@@ -5590,7 +5590,7 @@ export default [
 
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "A sexually transmitted disease, symptomized by the development of ulcers on the genitals, is caused by the infection "
+    "question": "A sexually transmitted disease, symptomized by the development of ulcers on the genitals, is caused by the infection ",
     "options": [
       "Treponema pallidum",
       "Neisseria gonorrhoeae",
@@ -5622,7 +5622,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "The process, in which antibody comes in contact with antigen and convert them in harmless insoluble matter, is called"
+    "question": "The process, in which antibody comes in contact with antigen and convert them in harmless insoluble matter, is called",
     "options": [
       "Activation",
       "Agglutination",
@@ -5897,7 +5897,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Malignant tumours are I. mass of neoplastic cells II. cells that grow very rapidly and damaging the surrounding norma"
+    "question": "Malignant tumours are I. mass of neoplastic cells II. cells that grow very rapidly and damaging the surrounding norma",
     "options": [
       "I and II",
       "I and III",
@@ -5994,7 +5994,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Your immune system helps to protect you against viruses and bacteria that can cause sickness. Which cells are part of"
+    "question": "Your immune system helps to protect you against viruses and bacteria that can cause sickness. Which cells are part of",
     "options": [
       "White blood cells",
       "Red blood cells",
@@ -6010,7 +6010,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Consider the following statements I. The property of metastasis is shown by malignant tumours II. Carcinogens are the"
+    "question": "Consider the following statements I. The property of metastasis is shown by malignant tumours II. Carcinogens are the",
     "options": [
       "I and II",
       "I and III",
@@ -6108,7 +6108,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Side effects of anabolic steroids in females include I. masculinization II. aggressiveness III. mood swings, depressi"
+    "question": "Side effects of anabolic steroids in females include I. masculinization II. aggressiveness III. mood swings, depressi",
     "options": [
       "I, II and III",
       "I, II, III and IV",
@@ -6237,7 +6237,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "Each antibody has ...A... polypeptide chains, ...B... small chains called ....C... chains and ...D... longer chains c"
+    "question": "Each antibody has ...A... polypeptide chains, ...B... small chains called ....C... chains and ...D... longer chains c",
     "options": [
       "A-four, B-two, C-light, D-two, E-heavy, F-HILI",
       "A-six, B-three, C-light, D-three, E-heavy, F-H3L2",
@@ -6658,7 +6658,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Small proteins produced by vertebrate cells naturally in response to viral infections and which inhibit multiplicatio"
+    "question": "Small proteins produced by vertebrate cells naturally in response to viral infections and which inhibit multiplicatio",
     "options": [
       "Immunoglobulins",
       "Interferons",
@@ -6674,7 +6674,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "In the metropolitan cities of India, many children are suffering from allergy or asthma. What are the main causes of "
+    "question": "In the metropolitan cities of India, many children are suffering from allergy or asthma. What are the main causes of ",
     "options": [
       "I and II",
       "I and III",
@@ -6707,7 +6707,7 @@ export default [
     "topic": "Drugs and Alcohol Abuse",
 
     "source": "NCERT",
-    "question": "When the infection occurs in the alveoli (microscopic air sacs in the lungs) they fill the fluid. When the alveoli do"
+    "question": "When the infection occurs in the alveoli (microscopic air sacs in the lungs) they fill the fluid. When the alveoli do",
     "options": [
       "True",
       "False",
@@ -6852,7 +6852,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "In heavy smokers, the alveoil of the lungs are enlarged and damaged, which reduces the surface area for the exchange "
+    "question": "In heavy smokers, the alveoil of the lungs are enlarged and damaged, which reduces the surface area for the exchange ",
     "options": [
       "Asthma",
       "Silicosis",
@@ -6917,7 +6917,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Consider the following statements I. Dead cells of the skin prevents pathogen entry II. Skin secretes oil that makes "
+    "question": "Consider the following statements I. Dead cells of the skin prevents pathogen entry II. Skin secretes oil that makes ",
     "options": [
       "I and II",
       "I and III",
@@ -7111,7 +7111,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Short lived immunity acquired from mother to foetus across placenta or through mother’s milk to the infant is categor"
+    "question": "Short lived immunity acquired from mother to foetus across placenta or through mother’s milk to the infant is categor",
     "options": [
       "Active immunity",
       "Passive immunity",
@@ -7160,7 +7160,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Which of the following are the reasons for rheumatoid arthritis? Choose the correct option I. Lymphocytes become more"
+    "question": "Which of the following are the reasons for rheumatoid arthritis? Choose the correct option I. Lymphocytes become more",
     "options": [
       "I and II",
       "II and IV",
@@ -7192,7 +7192,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "Warning signs of drug and alcohol abuse includes I. Drop in academic performance II. Absence from school/college III."
+    "question": "Warning signs of drug and alcohol abuse includes I. Drop in academic performance II. Absence from school/college III.",
     "options": [
       "I, II and III",
       "I, III and IV",
@@ -7241,7 +7241,7 @@ export default [
     "chapter": "7",
     "topic": "Allergies",
     "source": "NCERT",
-    "question": "Health is affected by I. genetic disorders II. infections III. life style Which of the key words given above are corr"
+    "question": "Health is affected by I. genetic disorders II. infections III. life style Which of the key words given above are corr",
     "options": [
       "I and II",
       "I and III",
@@ -7257,7 +7257,7 @@ export default [
     "chapter": "7",
     "topic": "Allergies",
     "source": "NCERT",
-    "question": "Normal cell have genes called ...A... which are present in inactiveated state but under certain conditions like ...B."
+    "question": "Normal cell have genes called ...A... which are present in inactiveated state but under certain conditions like ...B.",
     "options": [
       "A-cellular oncogenes, B-mutation, C-cancer causing oncogenes",
       "A-proto-oncogenes, B-mutation, C-disease causing genes",
@@ -7305,7 +7305,7 @@ export default [
     "chapter": "7",
     "topic": "Drugs and Alcohol Abuse",
     "source": "NCERT",
-    "question": "Which of the following drugs can be used to reduce allergic reaction due to unavoidable substances? I. Anti-histamine"
+    "question": "Which of the following drugs can be used to reduce allergic reaction due to unavoidable substances? I. Anti-histamine",
     "options": [
 
       "I and II",
@@ -7548,7 +7548,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "Which of the following disease caused internal bleeding, muscular pain, fever, anaemia and blockage of the intestinal"
+    "question": "Which of the following disease caused internal bleeding, muscular pain, fever, anaemia and blockage of the intestinal",
     "options": [
       "Ascariasis",
       "Filariasis",
@@ -7775,7 +7775,7 @@ export default [
     "chapter": "7",
     "topic": "Immune System in the Body",
     "source": "NCERT",
-    "question": "Your immune system helps to protect you against viruses and bacteria that can cause sickness. Which cell is a part of"
+    "question": "Your immune system helps to protect you against viruses and bacteria that can cause sickness. Which cell is a part of",
     "options": [
       "White memory",
       "Red blood T-cells",
@@ -7824,7 +7824,7 @@ export default [
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
 
-    "question": "Immunological destruction of body tissue or its products due to antibodies reacting with it as foreign antigen is cal"
+    "question": "Immunological destruction of body tissue or its products due to antibodies reacting with it as foreign antigen is cal",
     "options": [
       "Immunodeficiency disease",
       "Auto-immune disease",
@@ -7840,7 +7840,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Consider the following statements about ascariasis I. Eggs of parasite are excreted along with contaminated water, so"
+    "question": "Consider the following statements about ascariasis I. Eggs of parasite are excreted along with contaminated water, so",
     "options": [
       "I-True; II-True",
       "I-False; II-False",
@@ -8034,7 +8034,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "The method , which yields the best pictorial from and does not expose the patient to potentially harmful ionizing rad"
+    "question": "The method , which yields the best pictorial from and does not expose the patient to potentially harmful ionizing rad",
     "options": [
       "X-ray radiography",
       "Angiography",
@@ -8050,7 +8050,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "Human Immunodeficiency Virus (HIV) I. belongs to the group retrovirus II. has RNA genome enclosed in an envelope Whic"
+    "question": "Human Immunodeficiency Virus (HIV) I. belongs to the group retrovirus II. has RNA genome enclosed in an envelope Whic",
     "options": [
       "Only I",
       "Only II",
@@ -8196,7 +8196,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "Select the true statements I. Cancer can be detected by the use of antibodies against cancer specific antigens for ce"
+    "question": "Select the true statements I. Cancer can be detected by the use of antibodies against cancer specific antigens for ce",
     "options": [
       "I and II",
       "I and III",
@@ -8277,7 +8277,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "If a quick immune response is needed as in tetanus infection, preformed antibodies or antitoxin is injected into the "
+    "question": "If a quick immune response is needed as in tetanus infection, preformed antibodies or antitoxin is injected into the ",
     "options": [
       "Active immunization",
       "Passive immunisation",
@@ -8439,7 +8439,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Consider the following statements I. Cocaine interferes with the transport of the neurotransmitter dopamine II. It is"
+    "question": "Consider the following statements I. Cocaine interferes with the transport of the neurotransmitter dopamine II. It is",
     "options": [
       "I and II",
       "I and III",
@@ -8811,7 +8811,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Transmission of HIV occurs by I. sexual contact with infected person II. transfusion of contaminated blood III. shari"
+    "question": "Transmission of HIV occurs by I. sexual contact with infected person II. transfusion of contaminated blood III. shari",
     "options": [
       "I and II",
       "I and III",
@@ -8860,7 +8860,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Identify the hepatitis virus, which cannot survive independently and requires another hepatitis virus for its multipl"
+    "question": "Identify the hepatitis virus, which cannot survive independently and requires another hepatitis virus for its multipl",
     "options": [
       "Hepatitis-A virus",
       "Hepatitis-B virus",
@@ -9021,7 +9021,7 @@ export default [
     "chapter": "7",
     "topic": "Allergies",
     "source": "NCERT",
-    "question": "The lymph nodes I. are small solid structures throughout the body II. filter lymph fluid as it flows through them, tr"
+    "question": "The lymph nodes I. are small solid structures throughout the body II. filter lymph fluid as it flows through them, tr",
     "options": [
       "Only I",
       "Only II",
@@ -9183,7 +9183,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "A male showing aggressiveness, mood swings, depression, reduction of size of the testicles, decreased sperm productio"
+    "question": "A male showing aggressiveness, mood swings, depression, reduction of size of the testicles, decreased sperm productio",
     "options": [
       "Anabolic steroids",
       "Heroin",
@@ -9539,7 +9539,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "Consider the following statements about AIDS. I. AIDS patient become easily infected by bacteria, viruses and even pa"
+    "question": "Consider the following statements about AIDS. I. AIDS patient become easily infected by bacteria, viruses and even pa",
     "options": [
       "I and II",
       "I and III",
@@ -9556,7 +9556,7 @@ export default [
     "chapter": "7",
     "topic": "AIDS",
     "source": "NCERT",
-    "question": "A certain patient is suspected to be suffering from acquired immuno deficiency syndrome. Which diagnostic technique w"
+    "question": "A certain patient is suspected to be suffering from acquired immuno deficiency syndrome. Which diagnostic technique w",
     "options": [
       "MIRI",
       "Ultra Sound",
@@ -9604,7 +9604,7 @@ export default [
     "chapter": "7",
     "topic": "Acquired Immunity",
     "source": "NCERT",
-    "question": "Regarding lymphocytes consider the following statement I. The T-lymphocytes form Cell Mediated Immune System (CMIS) I"
+    "question": "Regarding lymphocytes consider the following statement I. The T-lymphocytes form Cell Mediated Immune System (CMIS) I",
     "options": [
       "Only I",
       "Only II",
@@ -9637,7 +9637,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "In the sigmoid curve of growth, the alphabets indicate the sequence of events. Choose the correct option where the al"
+    "question": "In the sigmoid curve of growth, the alphabets indicate the sequence of events. Choose the correct option where the al",
     "options": [
       "A-Phase of slow growth B- Phase of exponential growth C- Phase of diminishing growth D-Stationary phase",
       "A- Phase of rapid growth B- Phase of diminishing growth C- Stationary phase D- Phase of slow growth",
@@ -9701,7 +9701,7 @@ export default [
     "chapter": "7",
     "topic": "Auto Immunity",
     "source": "NCERT",
-    "question": "The immune system may at times reject certain tissues of a person’s own body as ‘non-self’. This breakdown of the bod"
+    "question": "The immune system may at times reject certain tissues of a person’s own body as ‘non-self’. This breakdown of the bod",
     "options": [
       "A-autoimmunity, B-autoimmune disease, C-rheumatoid arthritis",
       "A-immunodeficiency, B-immunodeficiency disease, C-AIDS",
@@ -9750,7 +9750,7 @@ export default [
     "chapter": "7",
     "topic": "Immune System in the Body",
     "source": "NCERT",
-    "question": "Consider the following four statements (I-IV) regarding kidney transplant and select the two correct ones out of thes"
+    "question": "Consider the following four statements (I-IV) regarding kidney transplant and select the two correct ones out of thes",
     "options": [
       "II and III",
       "III and IV",
@@ -9782,7 +9782,7 @@ export default [
     "chapter": "7",
     "topic": "Common Diseases in Humans",
     "source": "NCERT",
-    "question": "Examination of blood of a person suspected of having anaemia, shows large, immature, nucleated erythrocytes without h"
+    "question": "Examination of blood of a person suspected of having anaemia, shows large, immature, nucleated erythrocytes without h",
     "options": [
       "Thiamine",
       "Folic acid and cobalamine",
